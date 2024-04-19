@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckwjt14nv403b"]
+
+[ext_resource type="Script" path="res://Code/hook.gd" id="1_be7q1"]
+[ext_resource type="Texture2D" uid="uid://p6jjr1rfjeu6" path="res://Assets/PlayerSprites.png" id="1_ff007"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rudgo"]
+radius = 6.0
+height = 16.0
+
+[node name="Hook" type="CharacterBody2D"]
+script = ExtResource("1_be7q1")
+
+[node name="LineSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -14)
+texture = ExtResource("1_ff007")
+hframes = 10
+frame = 6
+
+[node name="LineSprite2D2" type="Sprite2D" parent="LineSprite2D"]
+position = Vector2(0, -16)
+texture = ExtResource("1_ff007")
+hframes = 10
+frame = 6
+
+[node name="LineSprite2D3" type="Sprite2D" parent="LineSprite2D"]
+position = Vector2(0, -32)
+texture = ExtResource("1_ff007")
+hframes = 10
+frame = 6
+
+[node name="LineSprite2D4" type="Sprite2D" parent="LineSprite2D"]
+position = Vector2(0, -48)
+texture = ExtResource("1_ff007")
+hframes = 10
+frame = 6
+
+[node name="LineSprite2D5" type="Sprite2D" parent="LineSprite2D"]
+position = Vector2(0, -64)
+texture = ExtResource("1_ff007")
+hframes = 10
+frame = 6
+
+[node name="LineSprite2D6" type="Sprite2D" parent="LineSprite2D"]
+position = Vector2(0, -80)
+texture = ExtResource("1_ff007")
+hframes = 10
+frame = 6
+
+[node name="LineSprite2D7" type="Sprite2D" parent="LineSprite2D"]
+position = Vector2(0, -96)
+texture = ExtResource("1_ff007")
+hframes = 10
+frame = 6
+
+[node name="LineSprite2D8" type="Sprite2D" parent="LineSprite2D"]
+position = Vector2(0, -112)
+texture = ExtResource("1_ff007")
+hframes = 10
+frame = 6
+
+[node name="HookSprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ff007")
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("CapsuleShape2D_rudgo")
+one_way_collision_margin = 0.0
+metadata/_edit_lock_ = true
+
+[node name="SinkerSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_ff007")
+hframes = 10
+frame = 3
