@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfxx27d1l8jij"]
+[gd_scene load_steps=8 format=3 uid="uid://bfxx27d1l8jij"]
 
+[ext_resource type="Script" path="res://Code/clownfish.gd" id="1_cyxol"]
 [ext_resource type="Texture2D" uid="uid://cuunk22scl0hd" path="res://Assets/Clownfish.png" id="1_ejp1k"]
 
 [sub_resource type="Animation" id="Animation_wjmub"]
@@ -43,9 +44,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_xcv01"]
 radius = 5.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_uf3ol"]
+radius = 29.0
+
 [node name="Clownfish" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 2
+script = ExtResource("1_cyxol")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ejp1k")
@@ -56,6 +61,22 @@ libraries = {
 "": SubResource("AnimationLibrary_bg2bm")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CatchArea2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CatchCollisionShape2D" type="CollisionShape2D" parent="CatchArea2D"]
 position = Vector2(-6, 0)
 shape = SubResource("CircleShape2D_xcv01")
+
+[node name="EyesArea2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="EyesCollisionShape2D" type="CollisionShape2D" parent="EyesArea2D"]
+position = Vector2(-6, 0)
+shape = SubResource("CircleShape2D_uf3ol")
+
+[connection signal="body_entered" from="CatchArea2D" to="." method="_on_catch_area_2d_body_entered"]
+[connection signal="body_entered" from="EyesArea2D" to="." method="_on_eyes_area_2d_body_entered"]
+[connection signal="body_exited" from="EyesArea2D" to="." method="_on_eyes_area_2d_body_exited"]

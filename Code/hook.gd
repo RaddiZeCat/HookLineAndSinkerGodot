@@ -11,44 +11,58 @@ enum Sinker{SPLITSHOT,DIPSEY,DIAMOND}
 var hook_sprite = Hook.IRON
 var line_sprite = Line.STRING
 var sinker_sprite = Sinker.SPLITSHOT
+var mouse_position:Vector2
 
 
-func _rerady():
+func _ready():
 	match hook_sprite:
 		Hook.IRON:
-			hook.frame(0)
+			hook.set_frame(0)
 		Hook.ALUMINIUM:
-			hook.frame(1)
+			hook.set_frame(1)
 		Hook.BRONCE:
-			hook.frame(2)
+			hook.set_frame(2)
 	
 	match line_sprite:
 		Line.STRING:
-			$Control/HBoxContainer/TextureRect.visibile = true
+			$Control/HBoxContainer/TextureRect.visible
 			$Control/HBoxContainer/TextureRect2.visible = false
 			$Control/HBoxContainer/TextureRect3.visible = false
 			$Control/HBoxContainer/TextureRect4.visible = false
 		Line.NORMAL:
-			pass
+			$Control/HBoxContainer/TextureRect.visible = false
+			$Control/HBoxContainer/TextureRect2.visible
+			$Control/HBoxContainer/TextureRect3.visible = false
+			$Control/HBoxContainer/TextureRect4.visible = false
 		Line.HIGHTEST:
-			pass
+			$Control/HBoxContainer/TextureRect.visible = false
+			$Control/HBoxContainer/TextureRect2.visible = false
+			$Control/HBoxContainer/TextureRect3.visible
+			$Control/HBoxContainer/TextureRect4.visible = false
 		Line.REINFORCED:
-			pass
+			$Control/HBoxContainer/TextureRect.visible = false
+			$Control/HBoxContainer/TextureRect2.visible = false
+			$Control/HBoxContainer/TextureRect3.visible = false
+			$Control/HBoxContainer/TextureRect4.visible
 	
 	match sinker_sprite:
 		Sinker.SPLITSHOT:
-			sinker.frame(3)
+			sinker.set_frame(3)
 		Sinker.DIPSEY:
-			sinker.frame(4)
+			sinker.set_frame(4)
 		Sinker.DIAMOND:
-			sinker.frame(5)
+			sinker.set_frame(5)
+
+#func _input(event):
+	#if event.is_action_pressed("click_mouse"):
+		#mouse_position = get_global_mouse_position()
 
 
 func _physics_process(delta):
 	var input_horizontal = Input.get_axis("move_left","move_right")
 	var input_vertical = Input.get_axis("move_up","move_down")
 	var input = Vector2(input_horizontal,input_vertical)
-	
+	#position = position.move_toward(mouse_position,speed*delta)
 	velocity = input.normalized() * speed
 	
 	move_and_slide()

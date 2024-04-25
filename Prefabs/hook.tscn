@@ -13,7 +13,7 @@ height = 16.0
 
 [node name="Hook" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 7
 script = ExtResource("1_be7q1")
 
 [node name="Control" type="Control" parent="."]
@@ -43,19 +43,16 @@ texture = ExtResource("2_lmbl6")
 stretch_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
-visible = false
 layout_mode = 2
 texture = ExtResource("3_7fapv")
 stretch_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer"]
-visible = false
 layout_mode = 2
 texture = ExtResource("4_qgqbx")
 stretch_mode = 1
 
 [node name="TextureRect4" type="TextureRect" parent="Control/HBoxContainer"]
-visible = false
 layout_mode = 2
 texture = ExtResource("5_r11g6")
 stretch_mode = 1

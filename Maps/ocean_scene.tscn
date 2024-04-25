@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=11 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
 [ext_resource type="Texture2D" uid="uid://yeej2j2346x6" path="res://Assets/Tilemap.png" id="4_0wnhq"]
+[ext_resource type="PackedScene" uid="uid://bfxx27d1l8jij" path="res://Prefabs/clownfish.tscn" id="4_b8lfq"]
+[ext_resource type="Script" path="res://Code/fish_path.gd" id="5_w1pj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km7mu"]
 size = Vector2(480, 4)
@@ -53,11 +55,17 @@ sources/0 = SubResource("TileSetAtlasSource_do32f")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5c0xe"]
 size = Vector2(479, 20)
 
+[sub_resource type="Curve2D" id="Curve2D_rhv5m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 270, 62, 0, 0, 0, 0, 219, 62, 0, 0, 0, 0, 270, 62)
+}
+point_count = 3
+
 [node name="OceanScene" type="Node2D"]
 script = ExtResource("1_i2hc8")
 
 [node name="Hook" parent="." instance=ExtResource("1_32uxd")]
-position = Vector2(120, 68)
+position = Vector2(120, -29)
 motion_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -110,3 +118,17 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone_Area2D"]
 position = Vector2(114.5, 0)
 shape = SubResource("RectangleShape2D_5c0xe")
+
+[node name="Fish&Paths" type="Node" parent="."]
+
+[node name="Clownfish" parent="Fish&Paths" node_paths=PackedStringArray("PathPoint") instance=ExtResource("4_b8lfq")]
+position = Vector2(273, 62)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths"]
+curve = SubResource("Curve2D_rhv5m")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Path2D"]
+position = Vector2(270, 62)
+rotation = 3.14159
