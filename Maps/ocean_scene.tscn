@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=12 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -55,18 +55,22 @@ sources/0 = SubResource("TileSetAtlasSource_do32f")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5c0xe"]
 size = Vector2(479, 20)
 
-[sub_resource type="Curve2D" id="Curve2D_rhv5m"]
+[sub_resource type="Curve2D" id="Curve2D_6o8vh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 270, 62, 0, 0, 0, 0, 219, 62, 0, 0, 0, 0, 270, 62)
+"points": PackedVector2Array(0, 0, 0, 0, 252, 173, 0, 0, 0, 0, 168, 162, 0, 0, 0, 0, 252, 173)
 }
 point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hyb7"]
+size = Vector2(490, 20)
 
 [node name="OceanScene" type="Node2D"]
 script = ExtResource("1_i2hc8")
 
-[node name="Hook" parent="." instance=ExtResource("1_32uxd")]
+[node name="Hook" parent="." node_paths=PackedStringArray("ocean_scene") instance=ExtResource("1_32uxd")]
 position = Vector2(120, -29)
 motion_mode = 1
+ocean_scene = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(120, 68)
@@ -122,13 +126,24 @@ shape = SubResource("RectangleShape2D_5c0xe")
 [node name="Fish&Paths" type="Node" parent="."]
 
 [node name="Clownfish" parent="Fish&Paths" node_paths=PackedStringArray("PathPoint") instance=ExtResource("4_b8lfq")]
-position = Vector2(273, 62)
+position = Vector2(266, 173)
 PathPoint = NodePath("../Path2D/PathFollow2D")
+fish = "clownfish"
 
 [node name="Path2D" type="Path2D" parent="Fish&Paths"]
-curve = SubResource("Curve2D_rhv5m")
+curve = SubResource("Curve2D_6o8vh")
 script = ExtResource("5_w1pj5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Path2D"]
-position = Vector2(270, 62)
-rotation = 3.14159
+position = Vector2(252, 173)
+rotation = -3.01138
+
+[node name="GoalArea2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalArea2D"]
+position = Vector2(120, -83)
+shape = SubResource("RectangleShape2D_0hyb7")
+
+[connection signal="body_entered" from="GoalArea2D" to="." method="_on_goal_area_2d_body_entered"]

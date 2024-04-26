@@ -2,8 +2,11 @@ extends CharacterBody2D
 
 @export var speed:float = 10
 @export var PathPoint:PathFollow2D
+@export var fish = "fish"
+@export var strength = 1
 @onready var animation_player = $Sprite2D/AnimationPlayer
 @onready var path_point = PathPoint
+@onready var ocean_scene = $"../.."
 
 enum State{PATROL,CHASE}
 var state = State.PATROL
@@ -14,10 +17,16 @@ func _physics_process(delta):
 	match state:
 		State.PATROL:
 			position = position.move_toward(path_point.position,speed*delta)
-			pass
+			if position.x - path_point.position.x < 0.0:
+				$Sprite2D.flip_h = true
+			elif position.x - path_point.position.x > 0.0:
+				$Sprite2D.flip_h = false
 		State.CHASE:
 			position = position.move_toward(hook.position,speed*1.5*delta)
-			pass
+			if position.x - hook.position.x < 0.0:
+				$Sprite2D.flip_h = true
+			elif position.x - hook.position.x > 0.0:
+				$Sprite2D.flip_h = false
 	move_and_slide()
 
 func _on_eyes_area_2d_body_entered(body):
@@ -32,4 +41,9 @@ func _on_eyes_area_2d_body_exited(body):
 
 
 func _on_catch_area_2d_body_entered(body):
-	pass # Replace with function body.
+	if ocean_scene.hook_empty == true:
+		body.fish_caught(fish)
+		ocean_scene.hook_empty = false
+		queue_free()
+	else:
+		pass

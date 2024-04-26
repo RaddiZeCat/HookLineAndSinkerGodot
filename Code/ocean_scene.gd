@@ -17,7 +17,9 @@ func _physics_process(delta):
 			DepthCharge.position.y -=1*speed*delta
 	
 	if hook_empty:
-		State.SINKING
+		state = State.SINKING
 	else:
-		State.RISING
+		state = State.RISING
 
+func _on_goal_area_2d_body_entered(body):
+	print("Fish Caught")
