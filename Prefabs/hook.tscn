@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckwjt14nv403b"]
+[gd_scene load_steps=10 format=3 uid="uid://ckwjt14nv403b"]
 
 [ext_resource type="Script" path="res://Code/hook.gd" id="1_be7q1"]
 [ext_resource type="Texture2D" uid="uid://p6jjr1rfjeu6" path="res://Assets/PlayerSprites.png" id="1_ff007"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bui8dn4n1quc4" path="res://Assets/Line3.png" id="4_qgqbx"]
 [ext_resource type="Texture2D" uid="uid://cpywxwdjk1kh7" path="res://Assets/Line4.png" id="5_r11g6"]
 [ext_resource type="Texture2D" uid="uid://dygfrpot41ssl" path="res://Assets/ClownfishSingle.png" id="7_xo3jv"]
+[ext_resource type="Texture2D" uid="uid://c5bqrhuc8ksut" path="res://Assets/WolfHerringSingle.png" id="8_0ikku"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rudgo"]
 radius = 6.0
@@ -67,6 +68,12 @@ visible = false
 position = Vector2(4, 7)
 rotation = 1.5708
 texture = ExtResource("7_xo3jv")
+
+[node name="WolfHerringSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(5, 18)
+rotation = 1.5708
+texture = ExtResource("8_0ikku")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)

@@ -29,28 +29,28 @@ func _ready():
 	
 	match line_sprite:
 		Line.STRING:
-			$Control/HBoxContainer/TextureRect.visible
+			$Control/HBoxContainer/TextureRect.visible = true
 			$Control/HBoxContainer/TextureRect2.visible = false
 			$Control/HBoxContainer/TextureRect3.visible = false
 			$Control/HBoxContainer/TextureRect4.visible = false
 			line_strength = 1
 		Line.NORMAL:
 			$Control/HBoxContainer/TextureRect.visible = false
-			$Control/HBoxContainer/TextureRect2.visible
+			$Control/HBoxContainer/TextureRect2.visible = true
 			$Control/HBoxContainer/TextureRect3.visible = false
 			$Control/HBoxContainer/TextureRect4.visible = false
 			line_strength = 2
 		Line.HIGHTEST:
 			$Control/HBoxContainer/TextureRect.visible = false
 			$Control/HBoxContainer/TextureRect2.visible = false
-			$Control/HBoxContainer/TextureRect3.visible
+			$Control/HBoxContainer/TextureRect3.visible = true
 			$Control/HBoxContainer/TextureRect4.visible = false
 			line_strength = 3
 		Line.REINFORCED:
 			$Control/HBoxContainer/TextureRect.visible = false
 			$Control/HBoxContainer/TextureRect2.visible = false
 			$Control/HBoxContainer/TextureRect3.visible = false
-			$Control/HBoxContainer/TextureRect4.visible
+			$Control/HBoxContainer/TextureRect4.visible = true
 			line_strength = 4
 	
 	match sinker_sprite:
@@ -58,10 +58,10 @@ func _ready():
 			sinker.set_frame(3)
 		Sinker.DIPSEY:
 			sinker.set_frame(4)
-			ocean_scene.speed = 25
+			ocean_scene.speed = 20
 		Sinker.DIAMOND:
 			sinker.set_frame(5)
-			ocean_scene.speed = 50
+			ocean_scene.speed = 30
 
 #func _input(event):
 	#if event.is_action_pressed("click_mouse"):
@@ -78,11 +78,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 func fish_caught(fish):
-	if ocean_scene.hook_empty:
-		if fish == "clownfish":
-			$HookSprite2D/ClownfishSprite2D.visible = true
-			print(fish," cught")
-		else:
-			pass
+	if fish == "clownfish":
+		$HookSprite2D/ClownfishSprite2D.visible = true
+	elif fish == "wolf_herring":
+		$HookSprite2D/ClownfishSprite2D.visible = false
+		$HookSprite2D/WolfHerringSprite2D.visible = true
 	else:
-		print("hook full")
+		pass
+	print(fish," cught")
