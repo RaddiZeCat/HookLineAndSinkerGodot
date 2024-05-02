@@ -94,7 +94,6 @@ script = ExtResource("1_i2hc8")
 position = Vector2(125, 25)
 collision_mask = 15
 motion_mode = 1
-speed = 30.0
 ocean_scene = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -12,7 +12,6 @@ enum State{PATROL,CHASE}
 var state = State.PATROL
 var hook
 
-
 func _physics_process(delta):
 	animation_player.play("Swim")
 	match state:
