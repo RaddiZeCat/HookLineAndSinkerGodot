@@ -18,16 +18,17 @@ func _physics_process(delta):
 	match state:
 		State.PATROL:
 			position = position.move_toward(path_point.position,speed*delta)
-			if position.x - path_point.position.x < 0.0:
+			if position.x - path_point.position.x < 0.0000:
 				$Sprite2D.flip_h = true
-			elif position.x - path_point.position.x > 0.0:
+			elif position.x - path_point.position.x > 0.0000:
 				$Sprite2D.flip_h = false
 		State.CHASE:
 			position = position.move_toward(hook.position,speed*1.5*delta)
-			if position.x - hook.position.x < 0.0:
+			if position.x - hook.position.x < 0.0000:
 				$Sprite2D.flip_h = true
-			elif position.x - hook.position.x > 0.0:
+			elif position.x - hook.position.x > 0.0000:
 				$Sprite2D.flip_h = false
+	#print(fish," ",position.x - path_point.position.x)
 	move_and_slide()
 
 func _on_eyes_area_2d_body_entered(body):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cod44hi0bfxq6"
-path="res://.godot/imported/EquipmentUI.png-12016b5122962ce873c24e15d1528a72.ctex"
+uid="uid://cf11p02dtxxof"
+path="res://.godot/imported/BorderFilled.png-1cfa84595a12547f98cb990c80267720.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EquipmentUI.png"
-dest_files=["res://.godot/imported/EquipmentUI.png-12016b5122962ce873c24e15d1528a72.ctex"]
+source_file="res://Assets/UI/BorderFilled.png"
+dest_files=["res://.godot/imported/BorderFilled.png-1cfa84595a12547f98cb990c80267720.ctex"]
 
 [params]
 

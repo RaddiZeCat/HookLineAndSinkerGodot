@@ -7,61 +7,55 @@ extends CharacterBody2D
 @export var ocean_scene:Node2D
 @onready var clownfish = $HookSprite2D/ClownfishSprite2D
 
-enum Hook{IRON,ALUMINIUM,BRONCE}
-enum Line{STRING,NORMAL,HIGHTEST,REINFORCED}
-enum Sinker{SPLITSHOT,DIPSEY,DIAMOND}
-var hook_sprite = Hook.IRON
-var line_sprite = Line.STRING
-var sinker_sprite = Sinker.SPLITSHOT
 var mouse_position:Vector2
 var line_strength
 
 func _ready():
-	match hook_sprite:
-		Hook.IRON:
-			hook.set_frame(0)
-		Hook.ALUMINIUM:
-			hook.set_frame(1)
-			speed = 60
-		Hook.BRONCE:
-			hook.set_frame(2)
-			speed = 90
+	if Globals.hook_state == 1:
+		hook.set_frame(0)
+		speed = 30
+	elif Globals.hook_state == 2:
+		hook.set_frame(1)
+		speed = 60
+	elif Globals.hook_state == 3:
+		hook.set_frame(2)
+		speed = 90
 	
-	match line_sprite:
-		Line.STRING:
-			$Control/HBoxContainer/TextureRect.visible = true
-			$Control/HBoxContainer/TextureRect2.visible = false
-			$Control/HBoxContainer/TextureRect3.visible = false
-			$Control/HBoxContainer/TextureRect4.visible = false
-			line_strength = 1
-		Line.NORMAL:
-			$Control/HBoxContainer/TextureRect.visible = false
-			$Control/HBoxContainer/TextureRect2.visible = true
-			$Control/HBoxContainer/TextureRect3.visible = false
-			$Control/HBoxContainer/TextureRect4.visible = false
-			line_strength = 2
-		Line.HIGHTEST:
-			$Control/HBoxContainer/TextureRect.visible = false
-			$Control/HBoxContainer/TextureRect2.visible = false
-			$Control/HBoxContainer/TextureRect3.visible = true
-			$Control/HBoxContainer/TextureRect4.visible = false
-			line_strength = 3
-		Line.REINFORCED:
-			$Control/HBoxContainer/TextureRect.visible = false
-			$Control/HBoxContainer/TextureRect2.visible = false
-			$Control/HBoxContainer/TextureRect3.visible = false
-			$Control/HBoxContainer/TextureRect4.visible = true
-			line_strength = 4
+	if Globals.line_state == 1:
+		$Control/HBoxContainer/TextureRect.visible = true
+		$Control/HBoxContainer/TextureRect2.visible = false
+		$Control/HBoxContainer/TextureRect3.visible = false
+		$Control/HBoxContainer/TextureRect4.visible = false
+		line_strength = 1
+	elif Globals.line_state == 2:
+		$Control/HBoxContainer/TextureRect.visible = false
+		$Control/HBoxContainer/TextureRect2.visible = true
+		$Control/HBoxContainer/TextureRect3.visible = false
+		$Control/HBoxContainer/TextureRect4.visible = false
+		line_strength = 2
+	elif Globals.line_state == 3:
+		$Control/HBoxContainer/TextureRect.visible = false
+		$Control/HBoxContainer/TextureRect2.visible = false
+		$Control/HBoxContainer/TextureRect3.visible = true
+		$Control/HBoxContainer/TextureRect4.visible = false
+		line_strength = 3
+	elif Globals.line_state == 4:
+		$Control/HBoxContainer/TextureRect.visible = false
+		$Control/HBoxContainer/TextureRect2.visible = false
+		$Control/HBoxContainer/TextureRect3.visible = false
+		$Control/HBoxContainer/TextureRect4.visible = true
+		line_strength = 4
 	
-	match sinker_sprite:
-		Sinker.SPLITSHOT:
-			sinker.set_frame(3)
-		Sinker.DIPSEY:
-			sinker.set_frame(4)
-			ocean_scene.speed = 20
-		Sinker.DIAMOND:
-			sinker.set_frame(5)
-			ocean_scene.speed = 30
+	if Globals.sinker_state == 1:
+		sinker.set_frame(3)
+		ocean_scene.speed = 15
+	elif Globals.sinker_state == 2:
+		sinker.set_frame(4)
+		ocean_scene.speed = 20
+	elif Globals.sinker_state == 3:
+		sinker.set_frame(5)
+		ocean_scene.speed = 30
+
 
 #func _input(event):
 	#if event.is_action_pressed("click_mouse"):

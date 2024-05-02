@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bfxx27d1l8jij"]
 
 [ext_resource type="Script" path="res://Code/clownfish.gd" id="1_cyxol"]
-[ext_resource type="Texture2D" uid="uid://cuunk22scl0hd" path="res://Assets/Clownfish.png" id="1_ejp1k"]
+[ext_resource type="Texture2D" uid="uid://cuunk22scl0hd" path="res://Assets/Fish/Clownfish.png" id="1_ejp1k"]
 
 [sub_resource type="Animation" id="Animation_wjmub"]
 length = 0.001

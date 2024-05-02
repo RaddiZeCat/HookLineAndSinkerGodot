@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c46p4ojedgm2r"
-path="res://.godot/imported/WolfHerring.png-9ff505a1e639fc7d7857a3e98f5062d6.ctex"
+uid="uid://dygfrpot41ssl"
+path="res://.godot/imported/ClownfishSingle.png-35d623e22efc67353372bff5ede8da1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/WolfHerring.png"
-dest_files=["res://.godot/imported/WolfHerring.png-9ff505a1e639fc7d7857a3e98f5062d6.ctex"]
+source_file="res://Assets/Fish/ClownfishSingle.png"
+dest_files=["res://.godot/imported/ClownfishSingle.png-35d623e22efc67353372bff5ede8da1b.ctex"]
 
 [params]
 

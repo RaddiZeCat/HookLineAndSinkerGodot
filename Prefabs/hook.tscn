@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://gbsujfj5h1a1" path="res://Assets/Line2.png" id="3_7fapv"]
 [ext_resource type="Texture2D" uid="uid://bui8dn4n1quc4" path="res://Assets/Line3.png" id="4_qgqbx"]
 [ext_resource type="Texture2D" uid="uid://cpywxwdjk1kh7" path="res://Assets/Line4.png" id="5_r11g6"]
-[ext_resource type="Texture2D" uid="uid://dygfrpot41ssl" path="res://Assets/ClownfishSingle.png" id="7_xo3jv"]
-[ext_resource type="Texture2D" uid="uid://c5bqrhuc8ksut" path="res://Assets/WolfHerringSingle.png" id="8_0ikku"]
+[ext_resource type="Texture2D" uid="uid://dygfrpot41ssl" path="res://Assets/Fish/ClownfishSingle.png" id="7_pbukx"]
+[ext_resource type="Texture2D" uid="uid://c5bqrhuc8ksut" path="res://Assets/Fish/WolfHerringSingle.png" id="8_hthpa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rudgo"]
 radius = 6.0
@@ -67,13 +67,13 @@ hframes = 10
 visible = false
 position = Vector2(4, 7)
 rotation = 1.5708
-texture = ExtResource("7_xo3jv")
+texture = ExtResource("7_pbukx")
 
 [node name="WolfHerringSprite2D" type="Sprite2D" parent="HookSprite2D"]
 visible = false
 position = Vector2(5, 18)
 rotation = 1.5708
-texture = ExtResource("8_0ikku")
+texture = ExtResource("8_hthpa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)

@@ -1,6 +1,6 @@
 extends Node
 
-var hook_state
-var line_state
-var sinker_state
+var hook_state = 1
+var line_state = 1
+var sinker_state = 1
 
