@@ -39,7 +39,6 @@ func fish_caught():
 	get_tree().paused = true
 	fish_caught_screen.show()
 	$Camera2D/Control/ButtonPause.visible = false
-	fish_cught_text.add_text("The fish has been caught")
 
 
 func game_over():

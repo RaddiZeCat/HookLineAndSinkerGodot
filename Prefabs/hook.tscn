@@ -10,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://c5bqrhuc8ksut" path="res://Assets/Fish/WolfHerringSingle.png" id="8_hthpa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rudgo"]
-radius = 6.0
-height = 16.0
+radius = 5.5
+height = 14.0
 
 [node name="Hook" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 15
 script = ExtResource("1_be7q1")
 
 [node name="Control" type="Control" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=20 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bfxx27d1l8jij" path="res://Prefabs/clownfish.tscn" id="4_b8lfq"]
 [ext_resource type="Script" path="res://Code/fish_path.gd" id="5_w1pj5"]
 [ext_resource type="PackedScene" uid="uid://bs1qr1vsvhsa" path="res://Prefabs/wolf_herring.tscn" id="6_ud18k"]
+[ext_resource type="PackedScene" uid="uid://cvnwo2b0wkywi" path="res://Prefabs/trash.tscn" id="10_kkswm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km7mu"]
 size = Vector2(480, 4)
@@ -92,7 +93,6 @@ script = ExtResource("1_i2hc8")
 
 [node name="Hook" parent="." node_paths=PackedStringArray("ocean_scene") instance=ExtResource("1_32uxd")]
 position = Vector2(125, 25)
-collision_mask = 15
 motion_mode = 1
 ocean_scene = NodePath("..")
 
@@ -220,11 +220,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -75.0
-offset_top = -7.0
+offset_top = -12.0
 offset_right = 75.0
-offset_bottom = 6.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "You caught a Fish"
 fit_content = true
 scroll_active = false
 
@@ -274,6 +275,8 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone_Area2D"]
+light_mask = 8
+visibility_layer = 8
 position = Vector2(114.5, 0)
 shape = SubResource("RectangleShape2D_5c0xe")
 
@@ -343,6 +346,18 @@ rotation = -2.9381
 [node name="Clownfish" parent="Fish&Paths/Clownfish3" node_paths=PackedStringArray("PathPoint") instance=ExtResource("4_b8lfq")]
 position = Vector2(68, 289)
 PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Trash" parent="Fish&Paths" instance=ExtResource("10_kkswm")]
+position = Vector2(74, 97)
+
+[node name="Trash2" parent="Fish&Paths" instance=ExtResource("10_kkswm")]
+position = Vector2(230, 36)
+frame = 1
+state = 1
+
+[node name="Trash3" parent="Fish&Paths" instance=ExtResource("10_kkswm")]
+position = Vector2(139, 230)
+frame = 1
 
 [connection signal="pressed" from="Camera2D/Control/ButtonPause" to="." method="_on_button_pause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/ButtonUnpause" to="." method="_on_button_unpause_pressed"]
