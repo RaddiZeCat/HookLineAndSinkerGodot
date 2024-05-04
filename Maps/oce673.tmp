@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=21 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
+[ext_resource type="PackedScene" uid="uid://mb5guikusuwf" path="res://Maps/main_menu.tscn" id="2_ofl2a"]
 [ext_resource type="Texture2D" uid="uid://b1lk1errl4ybx" path="res://Assets/UI/PauseButton.png" id="3_4jk7y"]
 [ext_resource type="Texture2D" uid="uid://ddc4pnpwknox0" path="res://Assets/UI/FullScreenUI.png" id="3_05cf3"]
 [ext_resource type="Texture2D" uid="uid://f0qivmkp584" path="res://Assets/UI/PlayButton.png" id="3_uv7m6"]
@@ -90,6 +91,7 @@ point_count = 4
 [node name="OceanScene" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_i2hc8")
+main_menu = ExtResource("2_ofl2a")
 
 [node name="Hook" parent="." node_paths=PackedStringArray("ocean_scene") instance=ExtResource("1_32uxd")]
 position = Vector2(125, 25)
@@ -144,7 +146,6 @@ icon = ExtResource("3_4jk7y")
 flat = true
 
 [node name="Menu Paused" type="Control" parent="Camera2D/Control"]
-process_mode = 3
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -191,7 +192,6 @@ text = "Main Menu"
 flat = true
 
 [node name="Game Over Menu" type="Control" parent="Camera2D/Control"]
-process_mode = 3
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -208,51 +208,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = -80.0
-offset_right = 85.0
-offset_bottom = -34.0
+offset_left = -75.5
+offset_top = -23.0
+offset_right = 75.5
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "		  Oh no!
 Your line snapped"
 
-[node name="ButtonRetry" type="Button" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -28.0
-offset_right = 25.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Retry"
-flat = true
-
-[node name="ButtonMainMenu" type="Button" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = 1.0
-offset_right = 48.0
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Main Menu"
-flat = true
-
 [node name="Fish Caught Menu" type="Control" parent="Camera2D/Control"]
-process_mode = 3
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -270,49 +235,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -68.0
-offset_top = -82.0
-offset_right = 82.0
-offset_bottom = -59.0
+offset_left = -75.0
+offset_top = -12.0
+offset_right = 75.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "You caught a Fish"
 fit_content = true
 scroll_active = false
-
-[node name="ButtonRecast" type="Button" parent="Camera2D/Control/Fish Caught Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -29.5
-offset_top = -29.0
-offset_right = 29.5
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Recast"
-flat = true
-
-[node name="ButtonMainMenu2" type="Button" parent="Camera2D/Control/Fish Caught Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = 1.0
-offset_right = 48.0
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Main Menu"
-flat = true
 
 [node name="DepthCharge" type="RigidBody2D" parent="."]
 collision_layer = 0
@@ -447,9 +378,5 @@ frame = 1
 [connection signal="pressed" from="Camera2D/Control/ButtonPause" to="." method="_on_button_pause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/ButtonUnpause" to="." method="_on_button_unpause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonRetry" to="." method="_on_button_retry_pressed"]
-[connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
-[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/ButtonRecast" to="." method="_on_button_recast_pressed"]
-[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/ButtonMainMenu2" to="." method="_on_button_main_menu_2_pressed"]
 [connection signal="body_entered" from="Deathzone_Area2D" to="." method="_on_deathzone_area_2d_body_entered"]
 [connection signal="body_entered" from="GoalArea2D" to="." method="_on_goal_area_2d_body_entered"]

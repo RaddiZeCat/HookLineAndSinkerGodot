@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Hook Line And Sinker"
-run/main_scene="res://Maps/ocean_scene.tscn"
+run/main_scene="res://Maps/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*res://Code/globals.gd"
+SceneSwitcher="*res://Code/scene_switcher.gd"
 
 [display]
 
