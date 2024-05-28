@@ -52,7 +52,7 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_3gn7g")
 speed = 15.0
-fish = "wolf_herring"
+fish = "herring"
 size = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

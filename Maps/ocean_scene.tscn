@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=31 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -8,8 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://yeej2j2346x6" path="res://Assets/Tilemap.png" id="4_0wnhq"]
 [ext_resource type="PackedScene" uid="uid://bfxx27d1l8jij" path="res://Prefabs/clownfish.tscn" id="4_b8lfq"]
 [ext_resource type="Script" path="res://Code/fish_path.gd" id="5_w1pj5"]
+[ext_resource type="Texture2D" uid="uid://b7jgjkyyn80av" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle1.png" id="6_gki4e"]
 [ext_resource type="PackedScene" uid="uid://bs1qr1vsvhsa" path="res://Prefabs/wolf_herring.tscn" id="6_ud18k"]
+[ext_resource type="Texture2D" uid="uid://sg0s2ejico64" path="res://Assets/UI/BorderSmall1.png" id="7_jjagg"]
+[ext_resource type="Texture2D" uid="uid://boibb8p5825bf" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle2.png" id="7_yscf3"]
+[ext_resource type="Texture2D" uid="uid://b6keq8odd1pjr" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle3.png" id="8_ha36i"]
+[ext_resource type="Texture2D" uid="uid://6wim2yyjxcc5" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle4.png" id="9_sq4bt"]
+[ext_resource type="Texture2D" uid="uid://dkloi4fhh51m2" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle5.png" id="10_fxuit"]
 [ext_resource type="PackedScene" uid="uid://cvnwo2b0wkywi" path="res://Prefabs/trash.tscn" id="10_kkswm"]
+[ext_resource type="Texture2D" uid="uid://dsx7ubna1053h" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle6.png" id="11_qdqhp"]
+[ext_resource type="Texture2D" uid="uid://4i2wxdex4eji" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle7.png" id="12_qpcnf"]
+[ext_resource type="Texture2D" uid="uid://qbcds828o1ux" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle8.png" id="13_gfa3b"]
+[ext_resource type="Texture2D" uid="uid://3w4n8il7y2uo" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle9.png" id="14_kheoc"]
+[ext_resource type="Texture2D" uid="uid://cvo88acuy3v52" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle10.png" id="15_qxavx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km7mu"]
 size = Vector2(480, 4)
@@ -243,12 +254,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -48.0
-offset_top = 1.0
+offset_top = 27.0
 offset_right = 48.0
-offset_bottom = 32.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
+flat = true
+
+[node name="Shop Button 2" type="Button" parent="Camera2D/Control/Game Over Menu"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.5
+offset_top = 136.0
+offset_right = 23.5
+offset_bottom = 167.0
+grow_horizontal = 2
+text = "Shop"
 flat = true
 
 [node name="Fish Caught Menu" type="Control" parent="Camera2D/Control"]
@@ -261,24 +286,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/Control/Fish Caught Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
-custom_minimum_size = Vector2(150, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/Control/Fish Caught Menu"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -68.0
-offset_top = -82.0
-offset_right = 82.0
-offset_bottom = -59.0
+offset_left = -75.0
+offset_top = 53.645
+offset_right = 75.0
+offset_bottom = 93.6451
 grow_horizontal = 2
-grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+layout_mode = 2
+size_flags_horizontal = 4
 text = "You caught a Fish"
 fit_content = true
 scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
 
 [node name="ButtonRecast" type="Button" parent="Camera2D/Control/Fish Caught Menu"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -306,11 +341,284 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -48.0
-offset_top = 1.0
+offset_top = 27.0
 offset_right = 48.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+flat = true
+
+[node name="Shop Button 3" type="Button" parent="Camera2D/Control/Fish Caught Menu"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.5
+offset_top = 136.0
+offset_right = 23.5
+offset_bottom = 167.0
+grow_horizontal = 2
+text = "Shop"
+flat = true
+
+[node name="Shop Menu" type="Control" parent="Camera2D/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/Control/Shop Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -24.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button Play" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Recast"
+flat = true
+
+[node name="HBoxContainerHooks" type="HBoxContainer" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button Iron Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
+layout_mode = 2
+icon = ExtResource("6_gki4e")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Iron Hook"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="Button Aluminum Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
+layout_mode = 2
+icon = ExtResource("7_yscf3")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="Button Brass Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
+layout_mode = 2
+icon = ExtResource("8_ha36i")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Brass Hook"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="HBoxContainerSinkers" type="HBoxContainer" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button Splitshot" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
+layout_mode = 2
+icon = ExtResource("9_sq4bt")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Splitshot"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="Button Dipsey" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
+layout_mode = 2
+icon = ExtResource("10_fxuit")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Dipsey"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="Button Diamond" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
+layout_mode = 2
+icon = ExtResource("11_qdqhp")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Diamond"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="HBoxContainerLines" type="HBoxContainer" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button String" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
+layout_mode = 2
+icon = ExtResource("12_qpcnf")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button String"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="Button Line" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
+layout_mode = 2
+icon = ExtResource("13_gfa3b")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Line"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="Button Premium Line" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
+layout_mode = 2
+icon = ExtResource("14_kheoc")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Premium Line"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="Button Hightest Line2" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
+layout_mode = 2
+icon = ExtResource("15_qxavx")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jjagg")
+
+[node name="Button Menu" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Main Menu"
 flat = true
 
@@ -449,7 +757,21 @@ frame = 1
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonRetry" to="." method="_on_button_retry_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Game Over Menu/Shop Button 2" to="." method="_on_shop_button_2_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/ButtonRecast" to="." method="_on_button_recast_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/ButtonMainMenu2" to="." method="_on_button_main_menu_2_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/Shop Button 3" to="." method="_on_shop_button_3_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/Button Play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Iron Hook" to="." method="_on_button_iron_hook_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook" to="." method="_on_button_aluminum_hook_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Brass Hook" to="." method="_on_button_brass_hook_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Splitshot" to="." method="_on_button_splitshot_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Dipsey" to="." method="_on_button_dipsey_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Diamond" to="." method="_on_button_diamond_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button String" to="." method="_on_button_string_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Line" to="." method="_on_button_line_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Premium Line" to="." method="_on_button_premium_line_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2" to="." method="_on_button_hightest_line_2_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/Button Menu" to="." method="_on_button_menu_pressed"]
 [connection signal="body_entered" from="Deathzone_Area2D" to="." method="_on_deathzone_area_2d_body_entered"]
 [connection signal="body_entered" from="GoalArea2D" to="." method="_on_goal_area_2d_body_entered"]

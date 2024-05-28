@@ -50,6 +50,7 @@ func _on_catch_area_2d_body_entered(body):
 	if ocean_scene.catch_size == size-1:
 		if body.line_strength >= size:
 			body.fish_caught(fish)
+			ocean_scene.fish = fish
 			ocean_scene.hook_empty = false
 			ocean_scene.catch_size = size
 			queue_free()

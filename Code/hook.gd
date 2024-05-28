@@ -74,7 +74,7 @@ func _physics_process(delta):
 func fish_caught(fish):
 	if fish == "clownfish":
 		$HookSprite2D/ClownfishSprite2D.visible = true
-	elif fish == "wolf_herring":
+	elif fish == "herring":
 		$HookSprite2D/ClownfishSprite2D.visible = false
 		$HookSprite2D/WolfHerringSprite2D.visible = true
 	else:
