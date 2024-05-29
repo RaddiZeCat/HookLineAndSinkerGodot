@@ -11,16 +11,24 @@ extends Node2D
 @onready var game_over_screen = $"Camera2D/Control/Game Over Menu"
 @onready var shop_menu = $"Camera2D/Control/Shop Menu"
 @onready var fish_caught_screen = $"Camera2D/Control/Fish Caught Menu"
-@onready var fish_cught_text = $"Camera2D/Control/Fish Caught Menu/RichTextLabel"
+@onready var fish_cught_text = $"Camera2D/Control/Fish Caught Menu/VBoxContainer/RichTextLabel2"
 @onready var money_text = $"Camera2D/Control/Fish Caught Menu/VBoxContainer/RichTextLabel2"
+@onready var purse = $"Camera2D/Control/Shop Menu/Shop Purse"
+@onready var ingame_purse = $"Camera2D/Control/Ingame Purse"
+
 
 enum State{SINKING,RISING}
 var state = State.SINKING
 var players
 var fish
+var money
 
 func _ready():
 	SceneSwitcher.reload()
+	money = str(Globals.money)
+	ingame_purse.add_text(money)
+	ingame_purse.add_text("$")
+	
 
 func _physics_process(delta):
 	match state:
@@ -49,70 +57,83 @@ func fish_caught():
 	$Camera2D/Control/ButtonPause.visible = false
 	#use fish to dertermine money gathered and declare fish values here (exmp. clownfish = 10)
 	if fish == "clownfish":
-		Globals.money + 10
+		Globals.money = Globals.money + 10
 		money_text.add_text("and got 10$")
+		print(Globals.money)
 	elif fish == "pyramid":
-		Globals.money + 19
+		Globals.money = Globals.money + 19
 		money_text.add_text("and got 19$")
 	elif fish == "seargant":
-		Globals.money + 24
+		Globals.money = Globals.money + 24
 		money_text.add_text("and got 24$")
 	elif fish == "grubfish":
-		Globals.money + 28
+		Globals.money = Globals.money + 28
 		money_text.add_text("and got 28$")
 	elif fish == "moonfish":
-		Globals.money + 34
+		Globals.money = Globals.money + 34
 		money_text.add_text("and got 34$")
 	elif fish == "birdnosed":
-		Globals.money + 39
+		Globals.money = Globals.money + 39
 		money_text.add_text("and got 39$")
 	elif fish == "triggerfish":
-		Globals.money + 43
+		Globals.money = Globals.money + 43
 		money_text.add_text("and got 43$")
 	elif fish == "lunar":
-		Globals.money + 48
+		Globals.money = Globals.money + 48
 		money_text.add_text("and got 48$")
 	elif fish == "flyingfish":
-		Globals.money + 50
+		Globals.money = Globals.money + 50
 		money_text.add_text("and got 50$")
 	elif fish == "herring":
-		Globals.money + 60
+		Globals.money = Globals.money + 60
 		money_text.add_text("and got 60$")
 	elif fish == "mahi":
-		Globals.money + 72
+		Globals.money = Globals.money + 72
 		money_text.add_text("and got 72$")
 	elif fish == "spearfish":
-		Globals.money + 86
+		Globals.money = Globals.money + 86
 		money_text.add_text("and got 86$")
 	elif fish == "humphead":
-		Globals.money + 98
+		Globals.money = Globals.money + 98
 		money_text.add_text("and got 98$")
 	elif fish == "yellowfin":
-		Globals.money + 109
+		Globals.money = Globals.money + 109
 		money_text.add_text("and got 109$")
 	elif fish == "baracuda":
-		Globals.money + 121
+		Globals.money = Globals.money + 121
 		money_text.add_text("and got 121$")
 	elif fish == "shortfin":
-		Globals.money + 138
+		Globals.money = Globals.money + 138
 		money_text.add_text("and got 138$")
 	elif fish == "gemfish":
-		Globals.money + 146
+		Globals.money = Globals.money + 146
 		money_text.add_text("and got 146$")
 	elif fish == "marlin":
-		Globals.money + 165
+		Globals.money = Globals.money + 165
 		money_text.add_text("and got 165$")
 	elif fish == "tiger":
-		Globals.money + 200
+		Globals.money = Globals.money + 200
 		money_text.add_text("and got 200$")
 	else:
 		print("No fish found. Check if the fish is spelled correctly.")
 	get_tree().paused = true
+	if Globals.boat_owned == false:
+		Globals.money = Globals.money - 50
+	else:
+		pass
+	ingame_purse.visible = false
+
+# show "Your Boat cost 50$ when it did"
 
 func game_over():
 	get_tree().paused = true
+	if Globals.boat_owned == false:
+		Globals.money = Globals.money - 50
+	else:
+		pass
 	game_over_screen.show()
 	$Camera2D/Control/ButtonPause.visible = false
+	ingame_purse.visible = false
 
 # UI Screens after this
 # ingame pause button
@@ -161,12 +182,18 @@ func _on_shop_button_2_pressed():
 	$Camera2D/Control/ButtonPause.visible=false
 	game_over_screen.hide()
 	shop_menu.show()
+	money = str(Globals.money)
+	purse.add_text(money)
+	purse.add_text("$")
 
 
 func _on_shop_button_3_pressed():
 	$Camera2D/Control/ButtonPause.visible=false
 	fish_caught_screen.hide()
 	shop_menu.show()
+	money = str(Globals.money)
+	purse.add_text(money)
+	purse.add_text("$")
 
 # buttons from shop
 func _on_button_play_pressed():
