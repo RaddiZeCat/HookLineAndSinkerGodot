@@ -237,6 +237,23 @@ grow_vertical = 2
 text = "		  Oh no!
 Your line snapped"
 
+[node name="Boat Cost Text" type="RichTextLabel" parent="Camera2D/Control/Game Over Menu"]
+visible = false
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.5
+offset_top = 102.0
+offset_right = 95.5
+offset_bottom = 125.0
+grow_horizontal = 2
+text = "Your boat's rent was 50$"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [node name="ButtonRetry" type="Button" parent="Camera2D/Control/Game Over Menu"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 layout_mode = 1
@@ -246,9 +263,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -25.0
-offset_top = -28.0
+offset_top = -11.0
 offset_right = 25.0
-offset_bottom = 3.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Retry"
@@ -263,9 +280,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -48.0
-offset_top = 27.0
+offset_top = 44.0
 offset_right = 48.0
-offset_bottom = 58.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
@@ -278,9 +295,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -23.5
-offset_top = 136.0
+offset_top = 153.0
 offset_right = 23.5
-offset_bottom = 167.0
+offset_bottom = 184.0
 grow_horizontal = 2
 text = "Shop"
 flat = true
@@ -320,6 +337,15 @@ modulate = Color(0.984314, 0.752941, 0.176471, 1)
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Boat Cost Text2" type="RichTextLabel" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
+visible = false
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+layout_mode = 2
+text = "Your boat's rent was 50$"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0

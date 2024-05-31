@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var main_menu = "res://Maps/main_menu.tscn"
+@onready var game_over_menu = "res://Maps/game_over_menu.tscn"
+@onready var win_menu
 @export var speed = 15
 @onready var surface_position = global_position
 @onready var DepthCharge = $DepthCharge
@@ -15,6 +17,8 @@ extends Node2D
 @onready var money_text = $"Camera2D/Control/Fish Caught Menu/VBoxContainer/RichTextLabel2"
 @onready var purse = $"Camera2D/Control/Shop Menu/Shop Purse"
 @onready var ingame_purse = $"Camera2D/Control/Ingame Purse"
+@onready var boat_text_1 = $"Camera2D/Control/Game Over Menu/Boat Cost Text"
+@onready var boat_text_2 = $"Camera2D/Control/Fish Caught Menu/VBoxContainer/Boat Cost Text2"
 
 
 enum State{SINKING,RISING}
@@ -119,9 +123,13 @@ func fish_caught():
 	get_tree().paused = true
 	if Globals.boat_owned == false:
 		Globals.money = Globals.money - 50
+		boat_text_2.visible = true
 	else:
 		pass
 	ingame_purse.visible = false
+	if Globals.money <= 0:
+		print("Broke")
+		SceneSwitcher.switch_scene(game_over_menu)
 
 # show "Your Boat cost 50$ when it did"
 
@@ -129,11 +137,15 @@ func game_over():
 	get_tree().paused = true
 	if Globals.boat_owned == false:
 		Globals.money = Globals.money - 50
+		boat_text_1.visible = true
 	else:
 		pass
 	game_over_screen.show()
 	$Camera2D/Control/ButtonPause.visible = false
 	ingame_purse.visible = false
+	if Globals.money <= 0:
+		print("Broke")
+		SceneSwitcher.switch_scene(game_over_menu)
 
 # UI Screens after this
 # ingame pause button
@@ -206,6 +218,7 @@ func _on_button_menu_pressed():
 	SceneSwitcher.switch_scene(main_menu)
 
 # buttons to change equipment
+# visual indication that they are still locked & prices
 
 # hooks
 func _on_button_iron_hook_pressed():
@@ -213,11 +226,26 @@ func _on_button_iron_hook_pressed():
 
 
 func _on_button_aluminum_hook_pressed():
-	Globals.hook_state = 2
+	if Globals.hook_2_owned == true:
+		Globals.hook_state = 2
+	elif Globals.money >= 300:
+		Globals.money = Globals.money -300
+		Globals.hook_2_owned = true
+		Globals.hook_state = 2
+	else:
+		pass #error noise
+	
 
 
 func _on_button_brass_hook_pressed():
-	Globals.hook_state = 3
+	if Globals.hook_3_owned == true:
+		Globals.hook_state = 3
+	elif Globals.money >= 600:
+		Globals.money = Globals.money -600
+		Globals.hook_3_owned = true
+		Globals.hook_state = 3
+	else:
+		pass #error noise
 
 # sinkers
 func _on_button_splitshot_pressed():
@@ -225,11 +253,24 @@ func _on_button_splitshot_pressed():
 
 
 func _on_button_dipsey_pressed():
-	Globals.sinker_state = 2
-
+	if Globals.sinker_2_owned == true:
+		Globals.sinker_state = 2
+	elif Globals.money >= 500:
+		Globals.money = Globals.money -500
+		Globals.sinker_2_owned = true
+		Globals.sinker_state = 2
+	else:
+		pass #error noise
 
 func _on_button_diamond_pressed():
-	Globals.sinker_state = 3
+	if Globals.sinker_3_owned == true:
+		Globals.sinker_state = 3
+	elif Globals.money >= 700:
+		Globals.money = Globals.money -700
+		Globals.sinker_3_owned = true
+		Globals.sinker_state = 3
+	else:
+		pass #error noise
 
 # lines
 func _on_button_string_pressed():
@@ -237,12 +278,33 @@ func _on_button_string_pressed():
 
 
 func _on_button_line_pressed():
-	Globals.line_state = 2
+	if Globals.line_2_owned == true:
+		Globals.line_state = 2
+	elif Globals.money >= 200:
+		Globals.money = Globals.money -200
+		Globals.line_2_owned = true
+		Globals.line_state = 2
+	else:
+		pass #error noise
 
 
 func _on_button_premium_line_pressed():
-	Globals.line_state = 3
+	if Globals.line_3_owned == true:
+		Globals.line_state = 3
+	elif Globals.money >= 600:
+		Globals.money = Globals.money -600
+		Globals.line_3_owned = true
+		Globals.line_state = 3
+	else:
+		pass #error noise
 
 
 func _on_button_hightest_line_2_pressed():
-	Globals.line_state = 4
+	if Globals.line_4_owned == true:
+		Globals.line_state = 4
+	elif Globals.money >= 800:
+		Globals.money = Globals.money -800
+		Globals.line_4_owned = true
+		Globals.line_state = 4
+	else:
+		pass #error noise

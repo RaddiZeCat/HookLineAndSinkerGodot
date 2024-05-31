@@ -2,6 +2,8 @@ extends Node2D
 
 @export var ocean_scene = "res://Maps/ocean_scene.tscn"
 
+func _ready():
+	get_tree().paused = false
 
 func _on_button_pressed():
 	SceneSwitcher.switch_scene(ocean_scene)

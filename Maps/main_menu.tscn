@@ -15,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="Camera2D/Control"]
 layout_mode = 1
@@ -23,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Control"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -36,6 +38,7 @@ offset_right = 44.0
 offset_bottom = 44.0
 grow_horizontal = 2
 text = "Main Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Camera2D/Control"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -53,5 +56,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Camera2D/Control/Button" to="." method="_on_button_pressed"]
