@@ -1,14 +1,17 @@
 extends CharacterBody2D
 
 @export var speed:float = 30
+@onready var speed_multiplyer = 1.0
 @onready var hook = $HookSprite2D
 @onready var line = $Control/HBoxContainer
 @onready var sinker = $SinkerSprite2D
 @export var ocean_scene:Node2D
+@export var ocean_code:GDScript
 @onready var clownfish = $HookSprite2D/ClownfishSprite2D
 
 var mouse_position:Vector2
 var line_strength
+var size
 
 func _ready():
 	if Globals.hook_state == 1:
@@ -67,7 +70,7 @@ func _physics_process(delta):
 	var input_vertical = Input.get_axis("move_up","move_down")
 	var input = Vector2(input_horizontal,input_vertical)
 	#position = position.move_toward(mouse_position,speed*delta)
-	velocity = input.normalized() * speed
+	velocity = input.normalized() * speed * speed_multiplyer
 	
 	move_and_slide()
 
@@ -80,3 +83,16 @@ func fish_caught(fish):
 	else:
 		pass
 	print(fish," cught")
+	print(size)
+	if size == 0:
+		speed_multiplyer = 1.0
+	elif size == 1:
+		speed_multiplyer = 0.9
+	elif size == 2:
+		speed_multiplyer = 0.8
+	elif size == 3:
+		speed_multiplyer = 0.7
+	elif size == 4:
+		speed_multiplyer = 0.6
+	elif size == 5:
+		speed_multiplyer = 0.5

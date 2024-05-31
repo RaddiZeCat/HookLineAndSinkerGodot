@@ -49,6 +49,7 @@ func _on_eyes_area_2d_body_exited(body):
 func _on_catch_area_2d_body_entered(body): 
 	if ocean_scene.catch_size == size-1:
 		if body.line_strength >= size:
+			body.size = size
 			body.fish_caught(fish)
 			ocean_scene.fish = fish
 			ocean_scene.hook_empty = false

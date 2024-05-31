@@ -223,6 +223,7 @@ func _on_button_menu_pressed():
 # hooks
 func _on_button_iron_hook_pressed():
 	Globals.hook_state = 1
+	print(Globals.hook_state)
 
 
 func _on_button_aluminum_hook_pressed():
@@ -233,8 +234,8 @@ func _on_button_aluminum_hook_pressed():
 		Globals.hook_2_owned = true
 		Globals.hook_state = 2
 	else:
-		pass #error noise
-	
+		print("broke") #error noise
+	print(Globals.hook_state)
 
 
 func _on_button_brass_hook_pressed():
@@ -245,11 +246,13 @@ func _on_button_brass_hook_pressed():
 		Globals.hook_3_owned = true
 		Globals.hook_state = 3
 	else:
-		pass #error noise
+		print("broke") #error noise
+	print(Globals.hook_state)
 
 # sinkers
 func _on_button_splitshot_pressed():
 	Globals.sinker_state = 1
+	print(Globals.sinker_state)
 
 
 func _on_button_dipsey_pressed():
@@ -260,7 +263,8 @@ func _on_button_dipsey_pressed():
 		Globals.sinker_2_owned = true
 		Globals.sinker_state = 2
 	else:
-		pass #error noise
+		print("broke") #error noise
+	print(Globals.sinker_state)
 
 func _on_button_diamond_pressed():
 	if Globals.sinker_3_owned == true:
@@ -270,11 +274,13 @@ func _on_button_diamond_pressed():
 		Globals.sinker_3_owned = true
 		Globals.sinker_state = 3
 	else:
-		pass #error noise
+		print("broke") #error noise
+	print(Globals.sinker_state)
 
 # lines
 func _on_button_string_pressed():
 	Globals.line_state = 1
+	print(Globals.line_state)
 
 
 func _on_button_line_pressed():
@@ -285,7 +291,8 @@ func _on_button_line_pressed():
 		Globals.line_2_owned = true
 		Globals.line_state = 2
 	else:
-		pass #error noise
+		print("broke") #error noise
+	print(Globals.line_state)
 
 
 func _on_button_premium_line_pressed():
@@ -296,7 +303,8 @@ func _on_button_premium_line_pressed():
 		Globals.line_3_owned = true
 		Globals.line_state = 3
 	else:
-		pass #error noise
+		print("broke") #error noise
+	print(Globals.line_state)
 
 
 func _on_button_hightest_line_2_pressed():
@@ -307,4 +315,5 @@ func _on_button_hightest_line_2_pressed():
 		Globals.line_4_owned = true
 		Globals.line_state = 4
 	else:
-		pass #error noise
+		print("broke") #error noise
+	print(Globals.line_state)
