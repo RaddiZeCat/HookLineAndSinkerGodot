@@ -77,11 +77,44 @@ func _physics_process(delta):
 func fish_caught(fish):
 	if fish == "clownfish":
 		$HookSprite2D/ClownfishSprite2D.visible = true
+	elif fish == "pyramid":
+		pass
+	elif fish == "seargant":
+		pass
+	elif fish == "grubfish":
+		pass
+	elif fish == "moonfish":
+		pass
+	elif fish == "birdnosed":
+		pass
+	elif fish == "triggerfish":
+		pass
+	elif fish == "lunar":
+		pass
+	elif fish == "flyingfish":
+		pass
 	elif fish == "herring":
 		$HookSprite2D/ClownfishSprite2D.visible = false
 		$HookSprite2D/WolfHerringSprite2D.visible = true
-	else:
+	elif fish == "mahi":
 		pass
+	elif fish == "spearfish":
+		pass
+	elif fish == "humphead":
+		pass
+	elif fish == "yellowfin":
+		pass
+	elif fish == "baracuda":
+		pass
+	elif fish == "shortfin":
+		pass
+	elif fish == "gemfish":
+		pass
+	elif fish == "marlin":
+		pass
+	elif fish == "tiger":
+		pass
+	
 	print(fish," cught")
 	print(size)
 	if size == 0:

@@ -11,6 +11,8 @@ height = 31.1127
 texture = ExtResource("1_16kqr")
 hframes = 2
 script = ExtResource("2_hepv2")
+speed = 2
+deviation = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
