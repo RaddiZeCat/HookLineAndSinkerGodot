@@ -122,7 +122,7 @@ func fish_caught():
 		print("No fish found. Check if the fish is spelled correctly.")
 	get_tree().paused = true
 	if Globals.boat_owned == false:
-		Globals.money = Globals.money - 50
+		Globals.money = Globals.money - 30
 		boat_text_2.visible = true
 	else:
 		pass
@@ -131,12 +131,11 @@ func fish_caught():
 		print("Broke")
 		SceneSwitcher.switch_scene(game_over_menu)
 
-# show "Your Boat cost 50$ when it did"
 
 func game_over():
 	get_tree().paused = true
 	if Globals.boat_owned == false:
-		Globals.money = Globals.money - 50
+		Globals.money = Globals.money - 30
 		boat_text_1.visible = true
 	else:
 		pass
