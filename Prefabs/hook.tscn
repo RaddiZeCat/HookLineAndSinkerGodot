@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckwjt14nv403b"]
+[gd_scene load_steps=28 format=3 uid="uid://ckwjt14nv403b"]
 
 [ext_resource type="Script" path="res://Code/hook.gd" id="1_be7q1"]
 [ext_resource type="Texture2D" uid="uid://p6jjr1rfjeu6" path="res://Assets/PlayerSprites.png" id="1_ff007"]
@@ -9,6 +9,23 @@
 [ext_resource type="Texture2D" uid="uid://cpywxwdjk1kh7" path="res://Assets/Line4.png" id="5_r11g6"]
 [ext_resource type="Texture2D" uid="uid://dygfrpot41ssl" path="res://Assets/Fish/ClownfishSingle.png" id="7_pbukx"]
 [ext_resource type="Texture2D" uid="uid://c5bqrhuc8ksut" path="res://Assets/Fish/WolfHerringSingle.png" id="8_hthpa"]
+[ext_resource type="Texture2D" uid="uid://chbu00d8lqape" path="res://Assets/Fish/PyramidSingle.png" id="9_ivpos"]
+[ext_resource type="Texture2D" uid="uid://dld2t8d8lu4ri" path="res://Assets/Fish/SeargantSingle.png" id="10_38xc6"]
+[ext_resource type="Texture2D" uid="uid://b5ahjh7c6arc0" path="res://Assets/Fish/GrubfishSingle.png" id="11_miatd"]
+[ext_resource type="Texture2D" uid="uid://ljopwx3k6506" path="res://Assets/Fish/MoonfishSingle.png" id="12_us548"]
+[ext_resource type="Texture2D" uid="uid://c8fn2h05cil3h" path="res://Assets/Fish/BirdnosedSingle.png" id="13_jknid"]
+[ext_resource type="Texture2D" uid="uid://ddxew1d27rjga" path="res://Assets/Fish/PinkTailSingle.png" id="14_m66oy"]
+[ext_resource type="Texture2D" uid="uid://b22p7suo2htrd" path="res://Assets/Fish/LunarSingle.png" id="15_2ircg"]
+[ext_resource type="Texture2D" uid="uid://c7h4xq6t18lo4" path="res://Assets/Fish/FlyingfishSingle.png" id="16_ol3cy"]
+[ext_resource type="Texture2D" uid="uid://bpxiardbbma1g" path="res://Assets/Fish/MahiMahiSingle.png" id="18_rcd3g"]
+[ext_resource type="Texture2D" uid="uid://buq66rjnawfnw" path="res://Assets/Fish/SpearfishSingle.png" id="19_hh4lw"]
+[ext_resource type="Texture2D" uid="uid://dks0lgd0t4ge4" path="res://Assets/Fish/HumpheadSingle.png" id="20_obdd4"]
+[ext_resource type="Texture2D" uid="uid://i5g3sjao8u5u" path="res://Assets/Fish/YellowfinSingle.png" id="21_ef3k6"]
+[ext_resource type="Texture2D" uid="uid://bt7utk80tytn4" path="res://Assets/Fish/BaracudaSingle.png" id="22_hsuyq"]
+[ext_resource type="Texture2D" uid="uid://cs3qk7psww8ha" path="res://Assets/Fish/MakoSingle.png" id="23_ua5e7"]
+[ext_resource type="Texture2D" uid="uid://dyorn4to1rpo3" path="res://Assets/Fish/GemfishSingle.png" id="24_wgp43"]
+[ext_resource type="Texture2D" uid="uid://dwbnflvpmljkv" path="res://Assets/Fish/MarlinSingle.png" id="25_5ao5s"]
+[ext_resource type="Texture2D" uid="uid://cbc61ovbp7kcc" path="res://Assets/Fish/TigerSingle.png" id="26_ek7sj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rudgo"]
 radius = 5.5
@@ -71,11 +88,113 @@ position = Vector2(4, 7)
 rotation = 1.5708
 texture = ExtResource("7_pbukx")
 
+[node name="PyramidSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(4, 7)
+rotation = 1.5708
+texture = ExtResource("9_ivpos")
+
+[node name="SeargantSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(4, 7)
+rotation = 1.5708
+texture = ExtResource("10_38xc6")
+
+[node name="GrubfishSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(4, 8)
+rotation = 1.5708
+texture = ExtResource("11_miatd")
+
+[node name="MoonfishSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(4, 8)
+rotation = 1.5708
+texture = ExtResource("12_us548")
+
+[node name="BirdnosedSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(4, 8)
+rotation = 1.5708
+texture = ExtResource("13_jknid")
+
+[node name="TriggerfishSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(5, 10)
+rotation = 1.5708
+texture = ExtResource("14_m66oy")
+
+[node name="LunarSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(4, 10)
+rotation = 1.5708
+texture = ExtResource("15_2ircg")
+
+[node name="FlyingfishSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(4, 11)
+rotation = 1.5708
+texture = ExtResource("16_ol3cy")
+
 [node name="WolfHerringSprite2D" type="Sprite2D" parent="HookSprite2D"]
 visible = false
 position = Vector2(5, 18)
 rotation = 1.5708
 texture = ExtResource("8_hthpa")
+
+[node name="MahiMahiSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(7, 17)
+rotation = 1.5708
+texture = ExtResource("18_rcd3g")
+
+[node name="SpearfishSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(5, 19)
+rotation = 1.5708
+texture = ExtResource("19_hh4lw")
+
+[node name="HumpheadSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(2, 25)
+rotation = 1.5708
+texture = ExtResource("20_obdd4")
+
+[node name="YellowfinSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(3, 26)
+rotation = 1.5708
+texture = ExtResource("21_ef3k6")
+
+[node name="BaracudaSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(3, 28)
+rotation = 1.5708
+texture = ExtResource("22_hsuyq")
+
+[node name="ShortfinSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(5, 29)
+rotation = 1.5708
+texture = ExtResource("23_ua5e7")
+
+[node name="GemfishSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(4, 34)
+rotation = 1.5708
+texture = ExtResource("24_wgp43")
+
+[node name="MarlinSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(4, 31)
+rotation = 1.5708
+texture = ExtResource("25_5ao5s")
+
+[node name="TigerSprite2D" type="Sprite2D" parent="HookSprite2D"]
+visible = false
+position = Vector2(7, 45)
+rotation = 1.5708
+texture = ExtResource("26_ek7sj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)

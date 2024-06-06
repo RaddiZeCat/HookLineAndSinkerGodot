@@ -19,6 +19,7 @@ extends Node2D
 @onready var ingame_purse = $"Camera2D/Control/Ingame Purse"
 @onready var boat_text_1 = $"Camera2D/Control/Game Over Menu/Boat Cost Text"
 @onready var boat_text_2 = $"Camera2D/Control/Fish Caught Menu/VBoxContainer/Boat Cost Text2"
+@onready var fish_name = $"Camera2D/Control/Fish Caught Menu/VBoxContainer/RichTextLabel3"
 
 
 enum State{SINKING,RISING}
@@ -62,62 +63,82 @@ func fish_caught():
 	#use fish to dertermine money gathered and declare fish values here (exmp. clownfish = 10)
 	if fish == "clownfish":
 		Globals.money = Globals.money + 10
+		fish_name.add_text("Clown Anemonefish")
 		money_text.add_text("and got 10$")
 		print(Globals.money)
 	elif fish == "pyramid":
 		Globals.money = Globals.money + 19
+		fish_name.add_text("Pyramid Butterflyfish")
 		money_text.add_text("and got 19$")
 	elif fish == "seargant":
 		Globals.money = Globals.money + 24
+		fish_name.add_text("Seargant Major")
 		money_text.add_text("and got 24$")
 	elif fish == "grubfish":
 		Globals.money = Globals.money + 28
+		fish_name.add_text("Pink banded Grubfish")
 		money_text.add_text("and got 28$")
 	elif fish == "moonfish":
 		Globals.money = Globals.money + 34
+		fish_name.add_text("Silver Moonfish")
 		money_text.add_text("and got 34$")
 	elif fish == "birdnosed":
 		Globals.money = Globals.money + 39
+		fish_name.add_text("Bird nosed Wrasse")
 		money_text.add_text("and got 39$")
 	elif fish == "triggerfish":
 		Globals.money = Globals.money + 43
+		fish_name.add_text("Pink Tail Triggerfish")
 		money_text.add_text("and got 43$")
 	elif fish == "lunar":
 		Globals.money = Globals.money + 48
+		fish_name.add_text("Lunar Fusilier")
 		money_text.add_text("and got 48$")
 	elif fish == "flyingfish":
 		Globals.money = Globals.money + 50
+		fish_name.add_text("Tallfin Flyingfish")
 		money_text.add_text("and got 50$")
 	elif fish == "herring":
 		Globals.money = Globals.money + 60
+		fish_name.add_text("Dorab Wolf-herring")
 		money_text.add_text("and got 60$")
 	elif fish == "mahi":
 		Globals.money = Globals.money + 72
+		fish_name.add_text("Mahi Mahi")
 		money_text.add_text("and got 72$")
 	elif fish == "spearfish":
 		Globals.money = Globals.money + 86
+		fish_name.add_text("Shortbill Spearfish")
 		money_text.add_text("and got 86$")
 	elif fish == "humphead":
 		Globals.money = Globals.money + 98
+		fish_name.add_text("Humphead Maori Wrasse")
 		money_text.add_text("and got 98$")
 	elif fish == "yellowfin":
 		Globals.money = Globals.money + 109
+		fish_name.add_text("Yellowfin Tuna")
 		money_text.add_text("and got 109$")
 	elif fish == "baracuda":
 		Globals.money = Globals.money + 121
+		fish_name.add_text("Great Baracuda")
 		money_text.add_text("and got 121$")
 	elif fish == "shortfin":
 		Globals.money = Globals.money + 138
+		fish_name.add_text("Shortfin Mako")
 		money_text.add_text("and got 138$")
 	elif fish == "gemfish":
 		Globals.money = Globals.money + 146
+		fish_name.add_text("Silver Gemfish")
 		money_text.add_text("and got 146$")
 	elif fish == "marlin":
 		Globals.money = Globals.money + 165
+		fish_name.add_text("Black Marlin")
 		money_text.add_text("and got 165$")
 	elif fish == "tiger":
 		Globals.money = Globals.money + 200
+		fish_name.add_text("Tiger Shark")
 		money_text.add_text("and got 200$")
+		#Victory
 	else:
 		print("No fish found. Check if the fish is spelled correctly.")
 	get_tree().paused = true

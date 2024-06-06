@@ -78,42 +78,99 @@ func fish_caught(fish):
 	if fish == "clownfish":
 		$HookSprite2D/ClownfishSprite2D.visible = true
 	elif fish == "pyramid":
-		pass
+		$HookSprite2D/PyramidSprite2D.Visible = true
 	elif fish == "seargant":
-		pass
+		$HookSprite2D/SeargantSprite2D.Visible = true
 	elif fish == "grubfish":
-		pass
+		$HookSprite2D/GrubfishSprite2D.Visible = true
 	elif fish == "moonfish":
-		pass
+		$HookSprite2D/MoonfishSprite2D.Visible = true
 	elif fish == "birdnosed":
-		pass
+		$HookSprite2D/BirdnosedSprite2D.Visible = true
 	elif fish == "triggerfish":
-		pass
+		$HookSprite2D/TriggerfishSprite2D.Visible = true
 	elif fish == "lunar":
-		pass
+		$HookSprite2D/LunarSprite2D.Visible = true
 	elif fish == "flyingfish":
-		pass
+		$HookSprite2D/FlyingfishSprite2D.Visible = true
 	elif fish == "herring":
 		$HookSprite2D/ClownfishSprite2D.visible = false
+		$HookSprite2D/PyramidSprite2D.visible = false
+		$HookSprite2D/SeargantSprite2D.visible = false
+		$HookSprite2D/GrubfishSprite2D.visible = false
+		$HookSprite2D/MoonfishSprite2D.visible = false
+		$HookSprite2D/BirdnosedSprite2D.visible = false
+		$HookSprite2D/TriggerfishSprite2D.visible = false
+		$HookSprite2D/LunarSprite2D.visible = false
+		$HookSprite2D/FlyingfishSprite2D.visible = false
+		
 		$HookSprite2D/WolfHerringSprite2D.visible = true
 	elif fish == "mahi":
-		pass
+		$HookSprite2D/ClownfishSprite2D.visible = false
+		$HookSprite2D/PyramidSprite2D.visible = false
+		$HookSprite2D/SeargantSprite2D.visible = false
+		$HookSprite2D/GrubfishSprite2D.visible = false
+		$HookSprite2D/MoonfishSprite2D.visible = false
+		$HookSprite2D/BirdnosedSprite2D.visible = false
+		$HookSprite2D/TriggerfishSprite2D.visible = false
+		$HookSprite2D/LunarSprite2D.visible = false
+		$HookSprite2D/FlyingfishSprite2D.visible = false
+		
+		$HookSprite2D/MahiMahiSprite2D.visible = true
 	elif fish == "spearfish":
-		pass
+		$HookSprite2D/ClownfishSprite2D.visible = false
+		$HookSprite2D/PyramidSprite2D.visible = false
+		$HookSprite2D/SeargantSprite2D.visible = false
+		$HookSprite2D/GrubfishSprite2D.visible = false
+		$HookSprite2D/MoonfishSprite2D.visible = false
+		$HookSprite2D/BirdnosedSprite2D.visible = false
+		$HookSprite2D/TriggerfishSprite2D.visible = false
+		$HookSprite2D/LunarSprite2D.visible = false
+		$HookSprite2D/FlyingfishSprite2D.visible = false
+		
+		$HookSprite2D/SpearfishSprite2D.visible = true
 	elif fish == "humphead":
-		pass
+		$HookSprite2D/WolfHerringSprite2D.visible = false
+		$HookSprite2D/MahiMahiSprite2D.visible = false
+		$HookSprite2D/SpearfishSprite2D.visible = false
+		
+		$HookSprite2D/HumpheadSprite2D.visible = true
 	elif fish == "yellowfin":
-		pass
+		$HookSprite2D/WolfHerringSprite2D.visible = false
+		$HookSprite2D/MahiMahiSprite2D.visible = false
+		$HookSprite2D/SpearfishSprite2D.visible = false
+		
+		$HookSprite2D/YellowfinSprite2D.visible = true
 	elif fish == "baracuda":
-		pass
+		$HookSprite2D/WolfHerringSprite2D.visible = false
+		$HookSprite2D/MahiMahiSprite2D.visible = false
+		$HookSprite2D/SpearfishSprite2D.visible = false
+		
+		$HookSprite2D/BaracudaSprite2D.visible = true
 	elif fish == "shortfin":
-		pass
+		$HookSprite2D/HumpheadSprite2D.visible = false
+		$HookSprite2D/YellowfinSprite2D.visible = false
+		$HookSprite2D/BaracudaSprite2D.visible = false
+		
+		$HookSprite2D/ShortfinSprite2D.visible = true
 	elif fish == "gemfish":
-		pass
+		$HookSprite2D/HumpheadSprite2D.visible = false
+		$HookSprite2D/YellowfinSprite2D.visible = false
+		$HookSprite2D/BaracudaSprite2D.visible = false
+		
+		$HookSprite2D/GemfishSprite2D.visible = true
 	elif fish == "marlin":
-		pass
+		$HookSprite2D/HumpheadSprite2D.visible = false
+		$HookSprite2D/YellowfinSprite2D.visible = false
+		$HookSprite2D/BaracudaSprite2D.visible = false
+		
+		$HookSprite2D/MarlinSprite2D.visible = true
 	elif fish == "tiger":
-		pass
+		$HookSprite2D/ShortfinSprite2D.visible = false
+		$HookSprite2D/GemfishSprite2D.visible = false
+		$HookSprite2D/MarlinSprite2D.visible = false
+		
+		$HookSprite2D/TigerSprite2D.visible = true
 	
 	print(fish," cught")
 	print(size)
