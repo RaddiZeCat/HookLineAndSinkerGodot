@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var main_menu = "res://Maps/main_menu.tscn"
 @onready var game_over_menu = "res://Maps/game_over_menu.tscn"
+@onready var victory_menu = "res://Maps/victory_menu.tscn"
 @onready var win_menu
 @export var speed = 15
 @onready var surface_position = global_position
@@ -138,7 +139,7 @@ func fish_caught():
 		Globals.money = Globals.money + 200
 		fish_name.add_text("Tiger Shark")
 		money_text.add_text("and got 200$")
-		#Victory
+		SceneSwitcher.switch_scene(victory_menu)
 	else:
 		print("No fish found. Check if the fish is spelled correctly.")
 	get_tree().paused = true

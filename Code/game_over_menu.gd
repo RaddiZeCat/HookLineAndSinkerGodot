@@ -3,6 +3,7 @@ extends Node2D
 
 @export var ocean_scene = "res://Maps/ocean_scene.tscn"
 @export var main_menu = "res://Maps/main_menu.tscn"
+@export var victory = false
 
 func _ready():
 	get_tree().paused = false
@@ -34,3 +35,8 @@ func reset():
 	Globals.sinker_2_owned = false
 	Globals.sinker_3_owned = false
 	print("reset")
+
+
+func _on_button_3_pressed():
+	SceneSwitcher.switch_scene(ocean_scene)
+	print(ocean_scene)
