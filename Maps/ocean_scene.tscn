@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=65 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -220,6 +220,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -33, 116, 0, 0, 0, 0, 44, 176, 0, 0, 0, 0, 77, 158, 0, 0, 0, 0, 34, 125, 0, 0, 0, 0, 25, 99, 0, 0, 0, 0, -33, 116)
 }
 point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_ryw4e"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 181, 534, 0, 0, 0, 0, 289, 515, 0, 0, 0, 0, 307, 551, 0, 0, 0, 0, 181, 534)
+}
+point_count = 4
 
 [node name="OceanScene" type="Node2D"]
 process_mode = 1
@@ -588,6 +594,7 @@ texture = ExtResource("7_jjagg")
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
+layout_mode = 0
 offset_left = 32.0
 offset_top = 41.0
 offset_right = 69.0
@@ -619,6 +626,7 @@ texture = ExtResource("7_jjagg")
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Brass Hook/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
+layout_mode = 0
 offset_left = 32.0
 offset_top = 41.0
 offset_right = 69.0
@@ -675,6 +683,7 @@ texture = ExtResource("7_jjagg")
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Dipsey/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
+layout_mode = 0
 offset_left = 32.0
 offset_top = 41.0
 offset_right = 69.0
@@ -706,6 +715,7 @@ texture = ExtResource("7_jjagg")
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Diamond/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
+layout_mode = 0
 offset_left = 32.0
 offset_top = 41.0
 offset_right = 69.0
@@ -762,6 +772,7 @@ texture = ExtResource("7_jjagg")
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Line/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
+layout_mode = 0
 offset_left = 32.0
 offset_top = 41.0
 offset_right = 69.0
@@ -793,6 +804,7 @@ texture = ExtResource("7_jjagg")
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Premium Line/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
+layout_mode = 0
 offset_left = 32.0
 offset_top = 41.0
 offset_right = 69.0
@@ -824,6 +836,7 @@ texture = ExtResource("7_jjagg")
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
+layout_mode = 0
 offset_left = 32.0
 offset_top = 41.0
 offset_right = 69.0
@@ -1155,6 +1168,7 @@ PathPoint = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="Fish&Paths/Triggerfish2"]
 curve = SubResource("Curve2D_btswe")
+script = ExtResource("5_w1pj5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Triggerfish2/Path2D"]
 position = Vector2(214, 465)
@@ -1230,6 +1244,20 @@ script = ExtResource("5_w1pj5")
 [node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Pyramid2/Path2D"]
 position = Vector2(-33, 116)
 rotation = 0.661942
+
+[node name="Birdnosed2" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Birdnosed2" node_paths=PackedStringArray("PathPoint") instance=ExtResource("32_v5x4y")]
+position = Vector2(181, 534)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Birdnosed2"]
+curve = SubResource("Curve2D_ryw4e")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Birdnosed2/Path2D"]
+position = Vector2(181, 534)
+rotation = -0.174144
 
 [node name="Trash" parent="Fish&Paths" instance=ExtResource("10_kkswm")]
 position = Vector2(57, 103)
