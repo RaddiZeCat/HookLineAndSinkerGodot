@@ -48,6 +48,9 @@ func _physics_process(delta):
 	else:
 		state = State.RISING
 
+func click():
+	$AudioStreamPlayer2.play()
+
 func _on_goal_area_2d_body_entered(body):
 	fish_caught()
 
@@ -174,38 +177,45 @@ func _on_button_pause_pressed():
 	$Camera2D/Control/ButtonPause.visible=false
 	get_tree().paused = true
 	pause_menu.show()
+	click()
 
 
 func _on_button_unpause_pressed():
 	pause_menu.hide()
 	$Camera2D/Control/ButtonPause.visible=true
 	get_tree().paused = false
+	click()
 
 
 func _on_button_pressed():
 	SceneSwitcher.switch_scene(main_menu)
+	click()
 	#get_tree().change_scene_to_file(main_menu)
 
 
 func _on_button_retry_pressed():
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+	click()
 
 
 func _on_button_main_menu_pressed():
 	get_tree().paused = false
 	SceneSwitcher.switch_scene(main_menu)
+	click()
 	#get_tree().change_scene_to_file(main_menu)
 
 
 func _on_button_recast_pressed():
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+	click()
 
 
 func _on_button_main_menu_2_pressed():
 	get_tree().paused = false
 	SceneSwitcher.switch_scene(main_menu)
+	click()
 	#get_tree().change_scene_to_file(main_menu)
 
 # Shop Menu after this
@@ -218,6 +228,7 @@ func _on_shop_button_2_pressed():
 	money = str(Globals.money)
 	purse.add_text(money)
 	purse.add_text("$")
+	click()
 
 
 func _on_shop_button_3_pressed():
@@ -227,16 +238,19 @@ func _on_shop_button_3_pressed():
 	money = str(Globals.money)
 	purse.add_text(money)
 	purse.add_text("$")
+	click()
 
 # buttons from shop
 func _on_button_play_pressed():
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+	click()
 
 
 func _on_button_menu_pressed():
 	get_tree().paused = false
 	SceneSwitcher.switch_scene(main_menu)
+	click()
 
 # buttons to change equipment
 # visual indication that they are still locked & prices
@@ -245,15 +259,18 @@ func _on_button_menu_pressed():
 func _on_button_iron_hook_pressed():
 	Globals.hook_state = 1
 	print(Globals.hook_state)
+	click()
 
 
 func _on_button_aluminum_hook_pressed():
 	if Globals.hook_2_owned == true:
 		Globals.hook_state = 2
+		click()
 	elif Globals.money >= 300:
 		Globals.money = Globals.money -300
 		Globals.hook_2_owned = true
 		Globals.hook_state = 2
+		click()
 	else:
 		print("broke") #error noise
 	print(Globals.hook_state)
@@ -262,10 +279,12 @@ func _on_button_aluminum_hook_pressed():
 func _on_button_brass_hook_pressed():
 	if Globals.hook_3_owned == true:
 		Globals.hook_state = 3
+		click()
 	elif Globals.money >= 600:
 		Globals.money = Globals.money -600
 		Globals.hook_3_owned = true
 		Globals.hook_state = 3
+		click()
 	else:
 		print("broke") #error noise
 	print(Globals.hook_state)
@@ -274,15 +293,18 @@ func _on_button_brass_hook_pressed():
 func _on_button_splitshot_pressed():
 	Globals.sinker_state = 1
 	print(Globals.sinker_state)
+	click()
 
 
 func _on_button_dipsey_pressed():
 	if Globals.sinker_2_owned == true:
 		Globals.sinker_state = 2
+		click()
 	elif Globals.money >= 500:
 		Globals.money = Globals.money -500
 		Globals.sinker_2_owned = true
 		Globals.sinker_state = 2
+		click()
 	else:
 		print("broke") #error noise
 	print(Globals.sinker_state)
@@ -290,10 +312,12 @@ func _on_button_dipsey_pressed():
 func _on_button_diamond_pressed():
 	if Globals.sinker_3_owned == true:
 		Globals.sinker_state = 3
+		click()
 	elif Globals.money >= 700:
 		Globals.money = Globals.money -700
 		Globals.sinker_3_owned = true
 		Globals.sinker_state = 3
+		click()
 	else:
 		print("broke") #error noise
 	print(Globals.sinker_state)
@@ -302,15 +326,18 @@ func _on_button_diamond_pressed():
 func _on_button_string_pressed():
 	Globals.line_state = 1
 	print(Globals.line_state)
+	click()
 
 
 func _on_button_line_pressed():
 	if Globals.line_2_owned == true:
 		Globals.line_state = 2
+		click()
 	elif Globals.money >= 200:
 		Globals.money = Globals.money -200
 		Globals.line_2_owned = true
 		Globals.line_state = 2
+		click()
 	else:
 		print("broke") #error noise
 	print(Globals.line_state)
@@ -319,10 +346,12 @@ func _on_button_line_pressed():
 func _on_button_premium_line_pressed():
 	if Globals.line_3_owned == true:
 		Globals.line_state = 3
+		click()
 	elif Globals.money >= 600:
 		Globals.money = Globals.money -600
 		Globals.line_3_owned = true
 		Globals.line_state = 3
+		click()
 	else:
 		print("broke") #error noise
 	print(Globals.line_state)
@@ -331,10 +360,12 @@ func _on_button_premium_line_pressed():
 func _on_button_hightest_line_2_pressed():
 	if Globals.line_4_owned == true:
 		Globals.line_state = 4
+		click()
 	elif Globals.money >= 800:
 		Globals.money = Globals.money -800
 		Globals.line_4_owned = true
 		Globals.line_state = 4
+		click()
 	else:
 		print("broke") #error noise
 	print(Globals.line_state)

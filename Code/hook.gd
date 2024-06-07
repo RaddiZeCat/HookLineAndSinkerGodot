@@ -78,21 +78,21 @@ func fish_caught(fish):
 	if fish == "clownfish":
 		$HookSprite2D/ClownfishSprite2D.visible = true
 	elif fish == "pyramid":
-		$HookSprite2D/PyramidSprite2D.Visible = true
+		$HookSprite2D/PyramidSprite2D.visible = true
 	elif fish == "seargant":
-		$HookSprite2D/SeargantSprite2D.Visible = true
+		$HookSprite2D/SeargantSprite2D.visible = true
 	elif fish == "grubfish":
-		$HookSprite2D/GrubfishSprite2D.Visible = true
+		$HookSprite2D/GrubfishSprite2D.visible = true
 	elif fish == "moonfish":
-		$HookSprite2D/MoonfishSprite2D.Visible = true
+		$HookSprite2D/MoonfishSprite2D.visible = true
 	elif fish == "birdnosed":
-		$HookSprite2D/BirdnosedSprite2D.Visible = true
+		$HookSprite2D/BirdnosedSprite2D.visible = true
 	elif fish == "triggerfish":
-		$HookSprite2D/TriggerfishSprite2D.Visible = true
+		$HookSprite2D/TriggerfishSprite2D.visible = true
 	elif fish == "lunar":
-		$HookSprite2D/LunarSprite2D.Visible = true
+		$HookSprite2D/LunarSprite2D.visible = true
 	elif fish == "flyingfish":
-		$HookSprite2D/FlyingfishSprite2D.Visible = true
+		$HookSprite2D/FlyingfishSprite2D.visible = true
 	elif fish == "herring":
 		$HookSprite2D/ClownfishSprite2D.visible = false
 		$HookSprite2D/PyramidSprite2D.visible = false

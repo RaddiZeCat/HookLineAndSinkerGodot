@@ -8,13 +8,18 @@ extends Node2D
 func _ready():
 	get_tree().paused = false
 
+func click():
+	$AudioStreamPlayer2.play()
+
 func _on_button_pressed():
+	click()
 	reset()
 	SceneSwitcher.switch_scene(ocean_scene)
 	print(ocean_scene)
 
 
 func _on_button_2_pressed():
+	click()
 	reset()
 	SceneSwitcher.switch_scene(main_menu)
 	print(main_menu)
@@ -38,5 +43,6 @@ func reset():
 
 
 func _on_button_3_pressed():
+	click()
 	SceneSwitcher.switch_scene(ocean_scene)
 	print(ocean_scene)

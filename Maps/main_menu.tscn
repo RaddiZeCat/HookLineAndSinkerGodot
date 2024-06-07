@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://mb5guikusuwf"]
+[gd_scene load_steps=4 format=3 uid="uid://mb5guikusuwf"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_c1b0f"]
+[ext_resource type="AudioStream" uid="uid://d3jnxvo4ra8ta" path="res://Audio/Temporary/Music/ES_It's Not That Serious - Arthur Benson.wav" id="2_5t7ot"]
+[ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="3_77561"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_c1b0f")
@@ -57,5 +59,15 @@ grow_vertical = 2
 text = "Play"
 flat = true
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5t7ot")
+volume_db = -10.103
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_77561")
+volume_db = -5.943
 
 [connection signal="pressed" from="Camera2D/Control/Button" to="." method="_on_button_pressed"]

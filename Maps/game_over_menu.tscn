@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctpo80qdx26yv"]
+[gd_scene load_steps=4 format=3 uid="uid://ctpo80qdx26yv"]
 
 [ext_resource type="Script" path="res://Code/game_over_menu.gd" id="1_wfajb"]
+[ext_resource type="AudioStream" uid="uid://c7tt4l8edy80k" path="res://Audio/Temporary/Music/ES_Ode to What Could Have Been (Instrumental Version) - Par Hagstrom.wav" id="2_o8gw3"]
+[ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="3_o3y0p"]
 
 [node name="Game Over Menu" type="Node2D"]
 script = ExtResource("1_wfajb")
@@ -95,6 +97,15 @@ offset_bottom = 138.0
 grow_horizontal = 2
 text = "Main Menu"
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_o8gw3")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_o3y0p")
+volume_db = -5.943
 
 [connection signal="pressed" from="Camera2D/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Button2" to="." method="_on_button_2_pressed"]

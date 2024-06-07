@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=54 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -21,6 +21,19 @@
 [ext_resource type="Texture2D" uid="uid://qbcds828o1ux" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle8.png" id="13_gfa3b"]
 [ext_resource type="Texture2D" uid="uid://3w4n8il7y2uo" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle9.png" id="14_kheoc"]
 [ext_resource type="Texture2D" uid="uid://cvo88acuy3v52" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle10.png" id="15_qxavx"]
+[ext_resource type="AudioStream" uid="uid://hoomt3gujpvc" path="res://Audio/Temporary/Music/ES_Organized Chaos - Arthur Benson.wav" id="17_jswkf"]
+[ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="18_xqr50"]
+[ext_resource type="PackedScene" uid="uid://btp2qkompbqe" path="res://Prefabs/flyingfish.tscn" id="20_5kkhy"]
+[ext_resource type="PackedScene" uid="uid://beuog21hb2dft" path="res://Prefabs/tiger.tscn" id="21_gjwrh"]
+[ext_resource type="PackedScene" uid="uid://dhukvwbmr8dkc" path="res://Prefabs/moonfish.tscn" id="22_i0nr6"]
+[ext_resource type="PackedScene" uid="uid://cy761q5chvfwd" path="res://Prefabs/humphead.tscn" id="23_sf5qn"]
+[ext_resource type="PackedScene" uid="uid://b2l8k22dfngmd" path="res://Prefabs/grubfish.tscn" id="25_by5vp"]
+[ext_resource type="PackedScene" uid="uid://c2m5mksvedjsw" path="res://Prefabs/pyramid.tscn" id="26_yfipt"]
+[ext_resource type="PackedScene" uid="uid://d6iwi5w7342q" path="res://Prefabs/seargant.tscn" id="27_kok5f"]
+[ext_resource type="PackedScene" uid="uid://pajwutfla4pe" path="res://Prefabs/triggerfish.tscn" id="28_811y7"]
+[ext_resource type="PackedScene" uid="uid://bnyy22nas5adi" path="res://Prefabs/yellowfin.tscn" id="30_jxxx1"]
+[ext_resource type="PackedScene" uid="uid://bjdq1dk4vy0k" path="res://Prefabs/marlin.tscn" id="31_ec43r"]
+[ext_resource type="PackedScene" uid="uid://djva6vjmakg03" path="res://Prefabs/birdnosed.tscn" id="32_v5x4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km7mu"]
 size = Vector2(480, 4)
@@ -76,27 +89,87 @@ size = Vector2(490, 20)
 
 [sub_resource type="Curve2D" id="Curve2D_6o8vh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 252, 173, 0, 0, 0, 0, 168, 162, 0, 0, 0, 0, 252, 173)
+"points": PackedVector2Array(0, 0, 0, 0, 302, 169, 0, 0, 0, 0, 222, 141, 0, 0, 0, 0, 168, 162, 0, 0, 0, 0, 252, 173, 0, 0, 0, 0, 302, 169)
 }
-point_count = 3
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_2cxsa"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 186, 103, 0, 0, 0, 0, 338, 80, 0, 0, 0, 0, 286, 121, 0, 0, 0, 0, 186, 103)
+}
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_kpa4f"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -56, 35, 0, 0, 0, 0, 25, 75, 0, 0, 0, 0, -56, 35)
+"points": PackedVector2Array(0, 0, 0, 0, -56, 35, 0, 0, 0, 0, -30, 85, 0, 0, 0, 0, 25, 75, 0, 0, 0, 0, 10, 47, 0, 0, 0, 0, -56, 35)
 }
-point_count = 3
+point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_j6rte"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -52, 189, 0, 0, 0, 0, 40, 149, 0, 0, 0, 0, -52, 189)
+"points": PackedVector2Array(0, 0, 0, 0, -52, 189, 0, 0, 0, 0, 18, 183, 0, 0, 0, 0, 40, 149, 0, 0, 0, 0, -52, 189)
 }
-point_count = 3
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_re8rx"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 60, 289, 0, 0, 0, 0, -66, 263, 0, 0, 0, 0, 60, 289, 0, 0, 0, 0, 60, 289)
 }
 point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_t2lgn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 204, 278, 0, 0, 0, 0, 74, 255, 0, 0, 0, 0, 120, 181, 0, 0, 0, 0, 265, 217, 0, 0, 0, 0, 322, 309, 0, 0, 0, 0, 204, 278)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_6gsy6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 72, 130, 0, 0, 0, 0, 18, 129, 0, 0, 0, 0, 51, 69, 0, 0, 0, 0, 117, 79, 0, 0, 0, 0, 72, 130)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_1ca75"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 175, 48, 0, 0, 0, 0, 140, 116, 0, 0, 0, 0, 76, 54, 0, 0, 0, 0, 175, 48)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_a84gr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 52, -9, 0, 0, 0, 0, 91, 17, 0, 0, 0, 0, 79, 42, 0, 0, 0, 0, 22, 34, 0, 0, 0, 0, -6, 11, 0, 0, 0, 0, 40, 4, 0, 0, 0, 0, 52, -9)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_m3ufl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 131, 315, 0, 0, 0, 0, 197, 228, 0, 0, 0, 0, 300, 242, 0, 0, 0, 0, 329, 313, 0, 0, 0, 0, 245, 328, 0, 0, 0, 0, 180, 308, 0, 0, 0, 0, 131, 315)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_g5g4w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -61, 422, 0, 0, 0, 0, 7, 388, 0, 0, 0, 0, -42, 350, 0, 0, 0, 0, 23, 336, 0, 0, 0, 0, 86, 403, 0, 0, 0, 0, 15, 434, 0, 0, 0, 0, -61, 422)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_vpe6v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 259, 980, 0, 0, 0, 0, 171, 1022, 0, 0, 0, 0, 20, 978, 0, 0, 0, 0, -91, 1005, 0, 0, 0, 0, 21, 1027, 0, 0, 0, 0, 168, 978, 0, 0, 0, 0, 276, 1025, 0, 0, 0, 0, 313, 1002, 0, 0, 0, 0, 258, 981)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_y8tsm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 143, 380, 0, 0, 0, 0, 185, 358, 0, 0, 0, 0, 294, 399, 0, 0, 0, 0, 214, 428, 0, 0, 0, 0, 143, 380)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_w6fvw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 12, 349, 0, 0, 0, 0, 53, 316, 0, 0, 0, 0, 137, 354, 0, 0, 0, 0, 127, 360, 0, 0, 0, 0, 12, 349)
+}
+point_count = 5
 
 [node name="OceanScene" type="Node2D"]
 process_mode = 1
@@ -365,16 +438,16 @@ layout_mode = 2
 text = "Recast"
 flat = true
 
-[node name="ButtonMainMenu2" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
-layout_mode = 2
-text = "Main Menu"
-flat = true
-
 [node name="Shop Button 3" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 layout_mode = 2
 text = "Shop"
+flat = true
+
+[node name="ButtonMainMenu2" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+layout_mode = 2
+text = "Main Menu"
 flat = true
 
 [node name="Shop Menu" type="Control" parent="Camera2D/Control"]
@@ -645,6 +718,17 @@ size_flags_horizontal = 4
 text = "Main Menu"
 flat = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("17_jswkf")
+volume_db = -11.292
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("18_xqr50")
+volume_db = -5.943
+
 [node name="DepthCharge" type="RigidBody2D" parent="."]
 collision_layer = 0
 collision_mask = 0
@@ -706,19 +790,33 @@ shape = SubResource("RectangleShape2D_0hyb7")
 
 [node name="Fish&Paths" type="Node" parent="."]
 
-[node name="Clownfish1" type="Node" parent="Fish&Paths"]
+[node name="Clownfish" type="Node" parent="Fish&Paths"]
 
-[node name="Clownfish" parent="Fish&Paths/Clownfish1" node_paths=PackedStringArray("PathPoint") instance=ExtResource("4_b8lfq")]
-position = Vector2(266, 173)
+[node name="Clownfish" parent="Fish&Paths/Clownfish" node_paths=PackedStringArray("PathPoint") instance=ExtResource("4_b8lfq")]
+position = Vector2(303, 168)
 PathPoint = NodePath("../Path2D/PathFollow2D")
 
-[node name="Path2D" type="Path2D" parent="Fish&Paths/Clownfish1"]
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Clownfish"]
 curve = SubResource("Curve2D_6o8vh")
 script = ExtResource("5_w1pj5")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Clownfish1/Path2D"]
-position = Vector2(252, 173)
-rotation = -3.01138
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Clownfish/Path2D"]
+position = Vector2(302, 169)
+rotation = -2.80492
+
+[node name="Flyingfish" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Flyingfish" node_paths=PackedStringArray("PathPoint") instance=ExtResource("20_5kkhy")]
+position = Vector2(186, 103)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Flyingfish"]
+curve = SubResource("Curve2D_2cxsa")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Flyingfish/Path2D"]
+position = Vector2(186, 103)
+rotation = -0.150177
 
 [node name="Clownfish2" type="Node" parent="Fish&Paths"]
 
@@ -732,39 +830,177 @@ script = ExtResource("5_w1pj5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Clownfish2/Path2D2"]
 position = Vector2(-56, 35)
-rotation = 0.458697
+rotation = 1.09128
 
-[node name="WolfHerring1" type="Node" parent="Fish&Paths"]
+[node name="WolfHerring" type="Node" parent="Fish&Paths"]
 
-[node name="Path2D" type="Path2D" parent="Fish&Paths/WolfHerring1"]
+[node name="Path2D" type="Path2D" parent="Fish&Paths/WolfHerring"]
 curve = SubResource("Curve2D_j6rte")
 script = ExtResource("5_w1pj5")
 speed = 15.0
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/WolfHerring1/Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/WolfHerring/Path2D"]
 position = Vector2(-52, 189)
-rotation = -0.410127
+rotation = -0.0855053
 
-[node name="Clownfish" parent="Fish&Paths/WolfHerring1" node_paths=PackedStringArray("PathPoint") instance=ExtResource("6_ud18k")]
+[node name="Clownfish" parent="Fish&Paths/WolfHerring" node_paths=PackedStringArray("PathPoint") instance=ExtResource("6_ud18k")]
 position = Vector2(-51, 189)
 PathPoint = NodePath("../Path2D/PathFollow2D")
 
-[node name="Clownfish3" type="Node" parent="Fish&Paths"]
+[node name="Moonfish" type="Node" parent="Fish&Paths"]
 
-[node name="Path2D" type="Path2D" parent="Fish&Paths/Clownfish3"]
+[node name="Clownfish" parent="Fish&Paths/Moonfish" node_paths=PackedStringArray("PathPoint") instance=ExtResource("22_i0nr6")]
+position = Vector2(65, 289)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Moonfish"]
 curve = SubResource("Curve2D_re8rx")
 script = ExtResource("5_w1pj5")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Clownfish3/Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Moonfish/Path2D"]
 position = Vector2(60, 289)
 rotation = -2.9381
 
-[node name="Clownfish" parent="Fish&Paths/Clownfish3" node_paths=PackedStringArray("PathPoint") instance=ExtResource("4_b8lfq")]
-position = Vector2(68, 289)
+[node name="Humphead" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Humphead" node_paths=PackedStringArray("PathPoint") instance=ExtResource("23_sf5qn")]
+position = Vector2(215, 273)
 PathPoint = NodePath("../Path2D/PathFollow2D")
 
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Humphead"]
+curve = SubResource("Curve2D_t2lgn")
+script = ExtResource("5_w1pj5")
+speed = 20.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Humphead/Path2D"]
+position = Vector2(204, 278)
+rotation = -2.96648
+
+[node name="Grubfish" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Grubfish" node_paths=PackedStringArray("PathPoint") instance=ExtResource("25_by5vp")]
+position = Vector2(73, 130)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Grubfish"]
+curve = SubResource("Curve2D_6gsy6")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Grubfish/Path2D"]
+position = Vector2(72, 130)
+rotation = -3.12308
+
+[node name="Path2D2" type="Path2D" parent="Fish&Paths/Grubfish"]
+curve = SubResource("Curve2D_6gsy6")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Grubfish/Path2D2"]
+position = Vector2(72, 130)
+rotation = -3.12308
+
+[node name="Pyramid" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Pyramid" node_paths=PackedStringArray("PathPoint") instance=ExtResource("26_yfipt")]
+position = Vector2(176, 47)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Pyramid"]
+curve = SubResource("Curve2D_1ca75")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Pyramid/Path2D"]
+position = Vector2(175, 48)
+rotation = 2.04614
+
+[node name="Seargant" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Seargant" node_paths=PackedStringArray("PathPoint") instance=ExtResource("27_kok5f")]
+position = Vector2(52, -9)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Seargant"]
+curve = SubResource("Curve2D_a84gr")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Seargant/Path2D"]
+position = Vector2(52, -9)
+rotation = 0.588003
+
+[node name="Triggerfish" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Triggerfish" node_paths=PackedStringArray("PathPoint") instance=ExtResource("28_811y7")]
+position = Vector2(131, 315)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Triggerfish"]
+curve = SubResource("Curve2D_m3ufl")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Triggerfish/Path2D"]
+position = Vector2(131, 315)
+rotation = -0.921801
+
+[node name="Yellowfin" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Yellowfin" node_paths=PackedStringArray("PathPoint") instance=ExtResource("30_jxxx1")]
+position = Vector2(-60, 421)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Yellowfin"]
+curve = SubResource("Curve2D_g5g4w")
+script = ExtResource("5_w1pj5")
+speed = 20.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Yellowfin/Path2D"]
+position = Vector2(-61, 422)
+rotation = -0.463648
+
+[node name="Tiger" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Tiger" node_paths=PackedStringArray("PathPoint") instance=ExtResource("21_gjwrh")]
+position = Vector2(270, 993)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Tiger"]
+curve = SubResource("Curve2D_vpe6v")
+script = ExtResource("5_w1pj5")
+speed = 30.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Tiger/Path2D"]
+position = Vector2(259, 980)
+rotation = 2.69629
+
+[node name="Marlin" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Marlin" node_paths=PackedStringArray("PathPoint") instance=ExtResource("31_ec43r")]
+position = Vector2(143, 380)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Marlin"]
+curve = SubResource("Curve2D_y8tsm")
+script = ExtResource("5_w1pj5")
+speed = 25.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Marlin/Path2D"]
+position = Vector2(143, 380)
+rotation = -0.482513
+
+[node name="Birdnosed" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Birdnosed" node_paths=PackedStringArray("PathPoint") instance=ExtResource("32_v5x4y")]
+position = Vector2(12, 349)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Birdnosed"]
+curve = SubResource("Curve2D_w6fvw")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Birdnosed/Path2D"]
+position = Vector2(12, 349)
+rotation = -0.677708
+
 [node name="Trash" parent="Fish&Paths" instance=ExtResource("10_kkswm")]
-position = Vector2(74, 97)
+position = Vector2(57, 103)
 
 [node name="Trash2" parent="Fish&Paths" instance=ExtResource("10_kkswm")]
 position = Vector2(230, 36)
@@ -782,8 +1018,8 @@ frame = 1
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/Shop Button 2" to="." method="_on_shop_button_2_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/ButtonRecast" to="." method="_on_button_recast_pressed"]
-[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/ButtonMainMenu2" to="." method="_on_button_main_menu_2_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/Shop Button 3" to="." method="_on_shop_button_3_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/ButtonMainMenu2" to="." method="_on_button_main_menu_2_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/Button Play" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Iron Hook" to="." method="_on_button_iron_hook_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook" to="." method="_on_button_aluminum_hook_pressed"]
