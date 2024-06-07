@@ -585,6 +585,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_jjagg")
 
+[node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook/TextureRect"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+z_index = 1
+offset_left = 32.0
+offset_top = 41.0
+offset_right = 69.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+text = "300$"
+
 [node name="Button Brass Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
 icon = ExtResource("8_ha36i")
@@ -605,6 +615,16 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_jjagg")
+
+[node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Brass Hook/TextureRect"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+z_index = 1
+offset_left = 32.0
+offset_top = 41.0
+offset_right = 69.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+text = "600$"
 
 [node name="HBoxContainerSinkers" type="HBoxContainer" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
 layout_mode = 2
@@ -652,6 +672,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_jjagg")
 
+[node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Dipsey/TextureRect"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+z_index = 1
+offset_left = 32.0
+offset_top = 41.0
+offset_right = 69.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+text = "500$"
+
 [node name="Button Diamond" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
 icon = ExtResource("11_qdqhp")
@@ -672,6 +702,16 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_jjagg")
+
+[node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Diamond/TextureRect"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+z_index = 1
+offset_left = 32.0
+offset_top = 41.0
+offset_right = 69.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+text = "700$"
 
 [node name="HBoxContainerLines" type="HBoxContainer" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
 layout_mode = 2
@@ -719,6 +759,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_jjagg")
 
+[node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Line/TextureRect"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+z_index = 1
+offset_left = 32.0
+offset_top = 41.0
+offset_right = 69.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+text = "200$"
+
 [node name="Button Premium Line" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
 icon = ExtResource("14_kheoc")
@@ -740,6 +790,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_jjagg")
 
+[node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Premium Line/TextureRect"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+z_index = 1
+offset_left = 32.0
+offset_top = 41.0
+offset_right = 69.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+text = "600$"
+
 [node name="Button Hightest Line2" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
 icon = ExtResource("15_qxavx")
@@ -760,6 +820,16 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_jjagg")
+
+[node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2/TextureRect"]
+modulate = Color(0.984314, 0.752941, 0.176471, 1)
+z_index = 1
+offset_left = 32.0
+offset_top = 41.0
+offset_right = 69.0
+offset_bottom = 64.0
+scale = Vector2(0.5, 0.5)
+text = "800$"
 
 [node name="Button Menu" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)

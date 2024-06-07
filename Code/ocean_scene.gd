@@ -221,14 +221,35 @@ func _on_button_main_menu_2_pressed():
 # Shop Menu after this
 # open shop menu
 
-func _on_shop_button_2_pressed():
-	$Camera2D/Control/ButtonPause.visible=false
-	game_over_screen.hide()
-	shop_menu.show()
-	money = str(Globals.money)
-	purse.add_text(money)
-	purse.add_text("$")
-	click()
+func check_owned():
+	if Globals.hook_2_owned == true:
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook/TextureRect/Label".visible = false
+	else:
+		pass
+	if Globals.hook_3_owned == true:
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Brass Hook/TextureRect/Label".visible = false
+	else:
+		pass
+	if Globals.sinker_2_owned == true:
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Dipsey/TextureRect/Label".visible = false
+	else:
+		pass
+	if Globals.sinker_3_owned == true:
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Diamond/TextureRect/Label".visible = false
+	else:
+		pass
+	if Globals.line_2_owned == true:
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Line/TextureRect/Label".visible = false
+	else:
+		pass
+	if Globals.line_3_owned == true:
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Premium Line/TextureRect/Label".visible = false
+	else:
+		pass
+	if Globals.line_4_owned == true:
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2/TextureRect/Label".visible = false
+	else:
+		pass
 
 
 func _on_shop_button_3_pressed():
@@ -238,6 +259,17 @@ func _on_shop_button_3_pressed():
 	money = str(Globals.money)
 	purse.add_text(money)
 	purse.add_text("$")
+	check_owned()
+	click()
+
+func _on_shop_button_2_pressed():
+	$Camera2D/Control/ButtonPause.visible=false
+	game_over_screen.hide()
+	shop_menu.show()
+	money = str(Globals.money)
+	purse.add_text(money)
+	purse.add_text("$")
+	check_owned()
 	click()
 
 # buttons from shop
@@ -270,6 +302,7 @@ func _on_button_aluminum_hook_pressed():
 		Globals.money = Globals.money -300
 		Globals.hook_2_owned = true
 		Globals.hook_state = 2
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook/TextureRect/Label".visible = false
 		click()
 	else:
 		print("broke") #error noise
@@ -284,6 +317,7 @@ func _on_button_brass_hook_pressed():
 		Globals.money = Globals.money -600
 		Globals.hook_3_owned = true
 		Globals.hook_state = 3
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Brass Hook/TextureRect/Label".visible = false
 		click()
 	else:
 		print("broke") #error noise
@@ -304,6 +338,7 @@ func _on_button_dipsey_pressed():
 		Globals.money = Globals.money -500
 		Globals.sinker_2_owned = true
 		Globals.sinker_state = 2
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Dipsey/TextureRect/Label".visible = false
 		click()
 	else:
 		print("broke") #error noise
@@ -317,6 +352,7 @@ func _on_button_diamond_pressed():
 		Globals.money = Globals.money -700
 		Globals.sinker_3_owned = true
 		Globals.sinker_state = 3
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Diamond/TextureRect/Label".visible = false
 		click()
 	else:
 		print("broke") #error noise
@@ -337,6 +373,7 @@ func _on_button_line_pressed():
 		Globals.money = Globals.money -200
 		Globals.line_2_owned = true
 		Globals.line_state = 2
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Line/TextureRect/Label".visible = false
 		click()
 	else:
 		print("broke") #error noise
@@ -351,6 +388,7 @@ func _on_button_premium_line_pressed():
 		Globals.money = Globals.money -600
 		Globals.line_3_owned = true
 		Globals.line_state = 3
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Premium Line/TextureRect/Label".visible = false
 		click()
 	else:
 		print("broke") #error noise
@@ -365,6 +403,7 @@ func _on_button_hightest_line_2_pressed():
 		Globals.money = Globals.money -800
 		Globals.line_4_owned = true
 		Globals.line_state = 4
+		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2/TextureRect/Label".visible = false
 		click()
 	else:
 		print("broke") #error noise
