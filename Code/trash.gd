@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@onready var ocean_scene = $"../.."
+@onready var ocean_scene = $"../../.."
 @onready var zero = global_position.y
 @export var speed = 1
 @export var deviation = 2
