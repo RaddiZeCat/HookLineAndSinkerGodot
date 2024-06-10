@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=98 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -383,7 +383,7 @@ point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_b5m50"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 312, 78, 0, 0, 0, 0, 180, 181, 0, 0, 0, 0, 264, 190, 0, 0, 0, 0, 312, 78)
+"points": PackedVector2Array(0, 0, 0, 0, 312, 78, 0, 0, 0, 0, 224, 133, 0, 0, 0, 0, 260, 190, 0, 0, 0, 0, 312, 78)
 }
 point_count = 4
 
@@ -398,6 +398,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 282, 1323, 0, 0, 0, 0, 129, 1275, 0, 0, 0, 0, 184, 1341, 0, 0, 0, 0, 282, 1322)
 }
 point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_vix23"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 102, 917, 0, 0, 0, 0, 27, 886, 0, 0, 0, 0, 70, 846, 0, 0, 0, 0, 153, 878, 0, 0, 0, 0, 102, 917)
+}
+point_count = 5
 
 [node name="OceanScene" type="Node2D"]
 process_mode = 1
@@ -1866,7 +1872,7 @@ speed = 25.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Gemfish2/Path2D"]
 position = Vector2(312, 78)
-rotation = 2.47898
+rotation = 2.58299
 
 [node name="Shortfin2" type="Node" parent="Fish&Paths"]
 
@@ -1897,6 +1903,20 @@ speed = 25.0
 [node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Marlin2/Path2D"]
 position = Vector2(282, 1323)
 rotation = -2.83759
+
+[node name="Flyingfish3" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Flyingfish3" node_paths=PackedStringArray("PathPoint") instance=ExtResource("20_5kkhy")]
+position = Vector2(101, 918)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Flyingfish3"]
+curve = SubResource("Curve2D_vix23")
+script = ExtResource("5_w1pj5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Flyingfish3/Path2D"]
+position = Vector2(102, 917)
+rotation = -2.74965
 
 [connection signal="pressed" from="Camera2D/Control/ButtonPause" to="." method="_on_button_pause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/ButtonUnpause" to="." method="_on_button_unpause_pressed"]
