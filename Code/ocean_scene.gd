@@ -408,3 +408,7 @@ func _on_button_hightest_line_2_pressed():
 	else:
 		print("broke") #error noise
 	print(Globals.line_state)
+
+
+func _on_audio_stream_player_finished():
+	$AudioStreamPlayer.play()

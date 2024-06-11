@@ -13,3 +13,7 @@ func _on_button_pressed():
 
 func click():
 	$AudioStreamPlayer2.play()
+
+
+func _on_audio_stream_player_finished():
+	$AudioStreamPlayer.play()

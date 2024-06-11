@@ -46,3 +46,7 @@ func _on_button_3_pressed():
 	click()
 	SceneSwitcher.switch_scene(ocean_scene)
 	print(ocean_scene)
+
+
+func _on_audio_stream_player_finished():
+	$AudioStreamPlayer.play()
