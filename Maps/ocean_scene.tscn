@@ -1794,6 +1794,7 @@ PathPoint = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="Fish&Paths/Triggerfish4"]
 curve = SubResource("Curve2D_xw1nn")
+script = ExtResource("5_w1pj5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Triggerfish4/Path2D"]
 position = Vector2(159, 1886)

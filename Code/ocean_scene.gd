@@ -103,45 +103,45 @@ func fish_caught():
 		fish_name.add_text("Tallfin Flyingfish")
 		money_text.add_text("and got 50$")
 	elif fish == "herring":
-		Globals.money = Globals.money + 60
+		Globals.money = Globals.money + 76
 		fish_name.add_text("Dorab Wolf-herring")
-		money_text.add_text("and got 60$")
+		money_text.add_text("and got 76$")
 	elif fish == "mahi":
-		Globals.money = Globals.money + 72
+		Globals.money = Globals.money + 92
 		fish_name.add_text("Mahi Mahi")
-		money_text.add_text("and got 72$")
+		money_text.add_text("and got 92$")
 	elif fish == "spearfish":
-		Globals.money = Globals.money + 86
+		Globals.money = Globals.money + 128
 		fish_name.add_text("Shortbill Spearfish")
-		money_text.add_text("and got 86$")
+		money_text.add_text("and got 128$")
 	elif fish == "humphead":
-		Globals.money = Globals.money + 98
+		Globals.money = Globals.money + 168
 		fish_name.add_text("Humphead Maori Wrasse")
-		money_text.add_text("and got 98$")
+		money_text.add_text("and got 168$")
 	elif fish == "yellowfin":
-		Globals.money = Globals.money + 109
+		Globals.money = Globals.money + 193
 		fish_name.add_text("Yellowfin Tuna")
-		money_text.add_text("and got 109$")
+		money_text.add_text("and got 193$")
 	elif fish == "baracuda":
-		Globals.money = Globals.money + 121
+		Globals.money = Globals.money + 234
 		fish_name.add_text("Great Baracuda")
-		money_text.add_text("and got 121$")
+		money_text.add_text("and got 234$")
 	elif fish == "shortfin":
-		Globals.money = Globals.money + 138
+		Globals.money = Globals.money + 315
 		fish_name.add_text("Shortfin Mako")
-		money_text.add_text("and got 138$")
+		money_text.add_text("and got 315$")
 	elif fish == "gemfish":
-		Globals.money = Globals.money + 146
+		Globals.money = Globals.money + 357
 		fish_name.add_text("Silver Gemfish")
-		money_text.add_text("and got 146$")
+		money_text.add_text("and got 357$")
 	elif fish == "marlin":
-		Globals.money = Globals.money + 165
+		Globals.money = Globals.money + 438
 		fish_name.add_text("Black Marlin")
-		money_text.add_text("and got 165$")
+		money_text.add_text("and got 438$")
 	elif fish == "tiger":
-		Globals.money = Globals.money + 200
+		Globals.money = Globals.money + 500
 		fish_name.add_text("Tiger Shark")
-		money_text.add_text("and got 200$")
+		money_text.add_text("and got 500$")
 		SceneSwitcher.switch_scene(victory_menu)
 	else:
 		print("No fish found. Check if the fish is spelled correctly.")
