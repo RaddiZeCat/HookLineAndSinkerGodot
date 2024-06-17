@@ -46,7 +46,7 @@ radius = 5.0
 height = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uf3ol"]
-radius = 39.0128
+radius = 42.0
 
 [node name="Clownfish" type="CharacterBody2D"]
 position = Vector2(0, -1)
