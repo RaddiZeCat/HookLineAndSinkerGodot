@@ -1,8 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://mb5guikusuwf"]
+[gd_scene load_steps=24 format=3 uid="uid://mb5guikusuwf"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_c1b0f"]
 [ext_resource type="AudioStream" uid="uid://d3jnxvo4ra8ta" path="res://Audio/Temporary/Music/ES_It's Not That Serious - Arthur Benson.wav" id="2_5t7ot"]
+[ext_resource type="Texture2D" uid="uid://drvi4rnlovh10" path="res://Assets/HookLine&SinkerLogo.png" id="2_u5xi1"]
 [ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="3_77561"]
+[ext_resource type="FontFile" uid="uid://c3nn573cqpuwl" path="res://Assets/Extras/8bitoperator_jve.ttf" id="3_mvntq"]
+[ext_resource type="Texture2D" uid="uid://cuunk22scl0hd" path="res://Assets/Fish/Clownfish.png" id="6_o060q"]
+[ext_resource type="Texture2D" uid="uid://dsyt5geemklri" path="res://Assets/Fish/Flyingfish.png" id="7_iktra"]
+[ext_resource type="Script" path="res://Code/MenuFish.gd" id="7_io4mq"]
+[ext_resource type="Texture2D" uid="uid://bfwwn3421k7av" path="res://Assets/Fish/Gemfish.png" id="8_mfqv6"]
+[ext_resource type="Texture2D" uid="uid://c8iqa5rs4x16d" path="res://Assets/Fish/Humphead.png" id="9_16eip"]
+[ext_resource type="Texture2D" uid="uid://cx75fddt04bxa" path="res://Assets/Fish/Mako.png" id="10_15umh"]
+[ext_resource type="Texture2D" uid="uid://boxtyd04tsjik" path="res://Assets/Fish/Pyramid.png" id="12_qq01b"]
+[ext_resource type="Texture2D" uid="uid://bcymfdi6crxmh" path="res://Assets/Fish/PinkTail.png" id="13_wkdj0"]
+[ext_resource type="Texture2D" uid="uid://d1owcc7scme0v" path="res://Assets/Fish/Yellowfin.png" id="14_casp1"]
+[ext_resource type="Texture2D" uid="uid://rs45cot8ykrw" path="res://Assets/Fish/Seargant.png" id="15_n0ck3"]
+[ext_resource type="Texture2D" uid="uid://dy63d2yuev80c" path="res://Assets/Fish/MahiMahi.png" id="16_80um3"]
+[ext_resource type="Texture2D" uid="uid://lrlwrbug4ypq" path="res://Assets/Fish/Tiger.png" id="17_cpmla"]
+[ext_resource type="Texture2D" uid="uid://e42sefsqsaoh" path="res://Assets/Fish/Grubfish.png" id="18_agw1f"]
+[ext_resource type="Texture2D" uid="uid://drdbu2kbyfsc0" path="res://Assets/Fish/Moonfish.png" id="19_irrd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ae85x"]
+
+[sub_resource type="Animation" id="Animation_vu01t"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_5a0ew"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vnvoe"]
+_data = {
+"Idle": SubResource("Animation_vu01t"),
+"RESET": SubResource("Animation_5a0ew")
+}
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_c1b0f")
@@ -28,34 +84,42 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Camera2D/Control"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+[node name="ColorRect" type="ColorRect" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.737255, 0.831373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -44.0
-offset_top = 21.0
-offset_right = 44.0
-offset_bottom = 44.0
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 128.0
 grow_horizontal = 2
-text = "Main Menu"
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_u5xi1")
 
 [node name="Button" type="Button" parent="Camera2D/Control"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.748148
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.748148
 offset_left = -20.0
 offset_top = -70.0
 offset_right = 21.0
 offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_mvntq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
 text = "Play"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -69,6 +133,160 @@ autoplay = true
 process_mode = 3
 stream = ExtResource("3_77561")
 volume_db = -5.943
+
+[node name="Fish" type="Node" parent="."]
+process_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Fish"]
+position = Vector2(60, -65)
+texture = ExtResource("6_o060q")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="Fish"]
+position = Vector2(123, -13)
+texture = ExtResource("7_iktra")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D3" type="Sprite2D" parent="Fish"]
+position = Vector2(149, -73)
+texture = ExtResource("8_mfqv6")
+flip_h = true
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D3"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D4" type="Sprite2D" parent="Fish"]
+position = Vector2(85, 45)
+texture = ExtResource("9_16eip")
+flip_h = true
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D4"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D5" type="Sprite2D" parent="Fish"]
+position = Vector2(172, 92)
+texture = ExtResource("10_15umh")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D5"]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D6" type="Sprite2D" parent="Fish"]
+position = Vector2(13, 99)
+texture = ExtResource("12_qq01b")
+flip_h = true
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D6"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D7" type="Sprite2D" parent="Fish"]
+position = Vector2(-169, 77)
+texture = ExtResource("13_wkdj0")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D7"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D8" type="Sprite2D" parent="Fish"]
+position = Vector2(-70, 45)
+texture = ExtResource("14_casp1")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D8"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D9" type="Sprite2D" parent="Fish"]
+position = Vector2(-95, 100)
+texture = ExtResource("15_n0ck3")
+flip_h = true
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D9"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D10" type="Sprite2D" parent="Fish"]
+position = Vector2(-162, 16)
+texture = ExtResource("16_80um3")
+flip_h = true
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D10"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D11" type="Sprite2D" parent="Fish"]
+position = Vector2(-107, -55)
+texture = ExtResource("17_cpmla")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D11"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D12" type="Sprite2D" parent="Fish"]
+position = Vector2(-182, -89)
+texture = ExtResource("18_agw1f")
+flip_h = true
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D12"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Sprite2D13" type="Sprite2D" parent="Fish"]
+position = Vector2(183, 18)
+texture = ExtResource("19_irrd1")
+flip_h = true
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D13"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
 
 [connection signal="pressed" from="Camera2D/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

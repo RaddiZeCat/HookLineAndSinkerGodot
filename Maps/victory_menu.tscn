@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dux3g2g7prpli"]
+[gd_scene load_steps=6 format=3 uid="uid://dux3g2g7prpli"]
 
 [ext_resource type="Script" path="res://Code/game_over_menu.gd" id="1_a1jho"]
 [ext_resource type="AudioStream" uid="uid://c7tt4l8edy80k" path="res://Audio/Temporary/Music/ES_Ode to What Could Have Been (Instrumental Version) - Par Hagstrom.wav" id="2_67crl"]
+[ext_resource type="FontFile" uid="uid://c3nn573cqpuwl" path="res://Assets/Extras/8bitoperator_jve.ttf" id="2_phopy"]
 [ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="3_g4vsq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3slli"]
 
 [node name="Game Over Menu" type="Node2D"]
 script = ExtResource("1_a1jho")
@@ -29,8 +32,17 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="ColorRect" type="ColorRect" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.427451, 0.792157, 1, 1)
+
 [node name="Label" type="Label" parent="Camera2D/Control"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -40,11 +52,12 @@ offset_top = 21.0
 offset_right = 44.0
 offset_bottom = 44.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_phopy")
 text = "Congratulations!"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Camera2D/Control"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.428125
@@ -56,11 +69,12 @@ offset_top = 21.0
 offset_right = 44.0
 offset_bottom = 44.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_phopy")
 text = "This is the Catch of a Lifetime"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Camera2D/Control"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.473958
@@ -72,11 +86,12 @@ offset_top = 21.0
 offset_right = 44.0
 offset_bottom = 44.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_phopy")
 text = "Time to head home"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="Camera2D/Control"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.435417
@@ -88,31 +103,36 @@ offset_top = 21.0
 offset_right = 44.0
 offset_bottom = 44.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_phopy")
 text = "and brag to your friends"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Camera2D/Control"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 0
 offset_left = 190.0
 offset_top = 102.0
 offset_right = 291.0
 offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("2_phopy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3slli")
 text = "Reset Game"
 flat = true
 
 [node name="Button3" type="Button" parent="Camera2D/Control"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 0
 offset_left = 171.0
 offset_top = 127.0
 offset_right = 310.0
 offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("2_phopy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3slli")
 text = "Continue Playing"
 flat = true
 
 [node name="Button2" type="Button" parent="Camera2D/Control"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -122,6 +142,8 @@ offset_top = 151.0
 offset_right = 48.0
 offset_bottom = 182.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_phopy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3slli")
 text = "Main Menu"
 flat = true
 

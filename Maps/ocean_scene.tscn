@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=102 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -8,11 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://yeej2j2346x6" path="res://Assets/Tilemap.png" id="4_0wnhq"]
 [ext_resource type="PackedScene" uid="uid://bfxx27d1l8jij" path="res://Prefabs/clownfish.tscn" id="4_b8lfq"]
 [ext_resource type="Script" path="res://Code/fish_path.gd" id="5_w1pj5"]
+[ext_resource type="FontFile" uid="uid://c3nn573cqpuwl" path="res://Assets/Extras/8bitoperator_jve.ttf" id="6_2f7jt"]
 [ext_resource type="Texture2D" uid="uid://b7jgjkyyn80av" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle1.png" id="6_gki4e"]
 [ext_resource type="PackedScene" uid="uid://bs1qr1vsvhsa" path="res://Prefabs/wolf_herring.tscn" id="6_ud18k"]
-[ext_resource type="Texture2D" uid="uid://sg0s2ejico64" path="res://Assets/UI/BorderSmall1.png" id="7_jjagg"]
 [ext_resource type="Texture2D" uid="uid://boibb8p5825bf" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle2.png" id="7_yscf3"]
 [ext_resource type="Texture2D" uid="uid://b6keq8odd1pjr" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle3.png" id="8_ha36i"]
+[ext_resource type="Texture2D" uid="uid://cfbatax1p17q6" path="res://Assets/UI/BorderSmall2.png" id="8_l221o"]
 [ext_resource type="Texture2D" uid="uid://6wim2yyjxcc5" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle4.png" id="9_sq4bt"]
 [ext_resource type="Texture2D" uid="uid://dkloi4fhh51m2" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle5.png" id="10_fxuit"]
 [ext_resource type="PackedScene" uid="uid://cvnwo2b0wkywi" path="res://Prefabs/trash.tscn" id="10_kkswm"]
@@ -40,6 +41,12 @@
 [ext_resource type="PackedScene" uid="uid://86qn0i2h4cnc" path="res://Prefabs/spearfish.tscn" id="37_t50k6"]
 [ext_resource type="PackedScene" uid="uid://c4aah4tithh5n" path="res://Prefabs/shortfin.tscn" id="39_wjab3"]
 [ext_resource type="PackedScene" uid="uid://cojer2wymkcb3" path="res://Prefabs/gemfish.tscn" id="40_1ligm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m42rt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46240"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fj2vy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km7mu"]
 size = Vector2(480, 4)
@@ -468,6 +475,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("3_4jk7y")
 flat = true
 
@@ -489,23 +497,26 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_46240")
 icon = ExtResource("3_uv7m6")
 flat = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/Control/Menu Paused"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -23.5
-offset_right = 23.5
+offset_left = -17.0
+offset_right = 18.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("6_2f7jt")
 text = "Pause"
+fit_content = true
 
 [node name="Button" type="Button" parent="Camera2D/Control/Menu Paused"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -515,6 +526,8 @@ offset_top = 49.0
 offset_right = 48.0
 offset_bottom = 80.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Main Menu"
 flat = true
 
@@ -529,41 +542,43 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -66.0
+offset_left = -55.0
 offset_top = -80.0
-offset_right = 85.0
+offset_right = 56.0
 offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "		  Oh no!
+theme_override_fonts/normal_font = ExtResource("6_2f7jt")
+text = "		     Oh no!
 Your line snapped"
 
 [node name="Boat Cost Text" type="RichTextLabel" parent="Camera2D/Control/Game Over Menu"]
 visible = false
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -95.5
+offset_left = -75.0
 offset_top = 102.0
-offset_right = 95.5
-offset_bottom = 125.0
+offset_right = 75.0
+offset_bottom = 120.0
 grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("6_2f7jt")
 text = "Your boat's rent was 30$"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="ButtonRetry" type="Button" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -576,11 +591,13 @@ offset_right = 25.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Retry"
 flat = true
 
 [node name="ButtonMainMenu" type="Button" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -593,11 +610,13 @@ offset_right = 48.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Main Menu"
 flat = true
 
 [node name="Shop Button 2" type="Button" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -607,6 +626,8 @@ offset_top = 153.0
 offset_right = 23.5
 offset_bottom = 184.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Shop"
 flat = true
 
@@ -632,55 +653,69 @@ offset_bottom = 156.0
 grow_horizontal = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fj2vy")
 text = "You caught a"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fj2vy")
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fj2vy")
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="Boat Cost Text2" type="RichTextLabel" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
 visible = false
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fj2vy")
 text = "Your boat's rent was 30$"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="ButtonRecast" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Recast"
 flat = true
 
 [node name="Shop Button 3" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Shop"
 flat = true
 
 [node name="ButtonMainMenu2" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Main Menu"
 flat = true
 
@@ -694,10 +729,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Shop Purse" type="RichTextLabel" parent="Camera2D/Control/Shop Menu"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 offset_right = 107.0
 offset_bottom = 23.0
+theme_override_fonts/normal_font = ExtResource("6_2f7jt")
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -717,9 +753,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button Play" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Recast"
 flat = true
 
@@ -729,6 +767,7 @@ size_flags_horizontal = 4
 
 [node name="Button Iron Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("6_gki4e")
 flat = true
 
@@ -746,10 +785,11 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Button Aluminum Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("7_yscf3")
 flat = true
 
@@ -767,21 +807,23 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 32.0
-offset_top = 41.0
-offset_right = 69.0
-offset_bottom = 64.0
+offset_left = 35.0
+offset_top = 42.5
+offset_right = 72.0
+offset_bottom = 65.5
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("6_2f7jt")
 text = "300$"
 
 [node name="Button Brass Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("8_ha36i")
 flat = true
 
@@ -799,17 +841,18 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Brass Hook/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 32.0
-offset_top = 41.0
-offset_right = 69.0
-offset_bottom = 64.0
+offset_left = 35.0
+offset_top = 42.5
+offset_right = 72.0
+offset_bottom = 65.5
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("6_2f7jt")
 text = "600$"
 
 [node name="HBoxContainerSinkers" type="HBoxContainer" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
@@ -818,6 +861,7 @@ size_flags_horizontal = 4
 
 [node name="Button Splitshot" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("9_sq4bt")
 flat = true
 
@@ -835,10 +879,11 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Button Dipsey" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("10_fxuit")
 flat = true
 
@@ -856,21 +901,23 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Dipsey/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 32.0
-offset_top = 41.0
-offset_right = 69.0
-offset_bottom = 64.0
+offset_left = 35.0
+offset_top = 42.5
+offset_right = 72.0
+offset_bottom = 65.5
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("6_2f7jt")
 text = "500$"
 
 [node name="Button Diamond" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("11_qdqhp")
 flat = true
 
@@ -888,17 +935,18 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Diamond/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 32.0
-offset_top = 41.0
-offset_right = 69.0
-offset_bottom = 64.0
+offset_left = 35.0
+offset_top = 42.5
+offset_right = 72.0
+offset_bottom = 65.5
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("6_2f7jt")
 text = "700$"
 
 [node name="HBoxContainerLines" type="HBoxContainer" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
@@ -907,6 +955,7 @@ size_flags_horizontal = 4
 
 [node name="Button String" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("12_qpcnf")
 flat = true
 
@@ -924,10 +973,11 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Button Line" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("13_gfa3b")
 flat = true
 
@@ -945,21 +995,23 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Line/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 32.0
-offset_top = 41.0
-offset_right = 69.0
-offset_bottom = 64.0
+offset_left = 35.0
+offset_top = 42.5
+offset_right = 72.0
+offset_bottom = 65.5
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("6_2f7jt")
 text = "200$"
 
 [node name="Button Premium Line" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("14_kheoc")
 flat = true
 
@@ -977,21 +1029,23 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Premium Line/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 32.0
-offset_top = 41.0
-offset_right = 69.0
-offset_bottom = 64.0
+offset_left = 35.0
+offset_top = 42.5
+offset_right = 72.0
+offset_bottom = 65.5
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("6_2f7jt")
 text = "600$"
 
 [node name="Button Hightest Line2" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("15_qxavx")
 flat = true
 
@@ -1009,23 +1063,26 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jjagg")
+texture = ExtResource("8_l221o")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 32.0
-offset_top = 41.0
-offset_right = 69.0
-offset_bottom = 64.0
+offset_left = 35.0
+offset_top = 42.5
+offset_right = 72.0
+offset_bottom = 65.5
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("6_2f7jt")
 text = "800$"
 
 [node name="Button Menu" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
-modulate = Color(0.984314, 0.752941, 0.176471, 1)
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_2f7jt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Main Menu"
 flat = true
 
