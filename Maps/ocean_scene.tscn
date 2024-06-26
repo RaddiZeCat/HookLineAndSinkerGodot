@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b1lk1errl4ybx" path="res://Assets/UI/PauseButton.png" id="3_4jk7y"]
 [ext_resource type="Texture2D" uid="uid://ddc4pnpwknox0" path="res://Assets/UI/FullScreenUI.png" id="3_05cf3"]
 [ext_resource type="Texture2D" uid="uid://f0qivmkp584" path="res://Assets/UI/PlayButton.png" id="3_uv7m6"]
-[ext_resource type="Texture2D" uid="uid://yeej2j2346x6" path="res://Assets/Tilemap.png" id="4_0wnhq"]
+[ext_resource type="Texture2D" uid="uid://yeej2j2346x6" path="res://Assets/Environment/Tilemap.png" id="4_0wnhq"]
 [ext_resource type="PackedScene" uid="uid://bfxx27d1l8jij" path="res://Prefabs/clownfish.tscn" id="4_b8lfq"]
 [ext_resource type="Script" path="res://Code/fish_path.gd" id="5_w1pj5"]
 [ext_resource type="FontFile" uid="uid://c3nn573cqpuwl" path="res://Assets/Extras/8bitoperator_jve.ttf" id="6_2f7jt"]
@@ -29,8 +29,8 @@
 [ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="18_xqr50"]
 [ext_resource type="PackedScene" uid="uid://btp2qkompbqe" path="res://Prefabs/flyingfish.tscn" id="20_5kkhy"]
 [ext_resource type="PackedScene" uid="uid://beuog21hb2dft" path="res://Prefabs/tiger.tscn" id="21_gjwrh"]
-[ext_resource type="Texture2D" uid="uid://ct4e4vypv3xkg" path="res://Assets/Surface.png" id="21_rxhh2"]
-[ext_resource type="Texture2D" uid="uid://bgubk5d57obyg" path="res://Assets/Blue.png" id="22_6fc4i"]
+[ext_resource type="Texture2D" uid="uid://ct4e4vypv3xkg" path="res://Assets/Environment/Surface.png" id="21_rxhh2"]
+[ext_resource type="Texture2D" uid="uid://bgubk5d57obyg" path="res://Assets/Environment/Blue.png" id="22_6fc4i"]
 [ext_resource type="PackedScene" uid="uid://dhukvwbmr8dkc" path="res://Prefabs/moonfish.tscn" id="22_i0nr6"]
 [ext_resource type="PackedScene" uid="uid://cy761q5chvfwd" path="res://Prefabs/humphead.tscn" id="23_sf5qn"]
 [ext_resource type="PackedScene" uid="uid://b2l8k22dfngmd" path="res://Prefabs/grubfish.tscn" id="25_by5vp"]
@@ -424,6 +424,7 @@ process_mode = 1
 script = ExtResource("1_i2hc8")
 
 [node name="Hook" parent="." node_paths=PackedStringArray("ocean_scene") instance=ExtResource("1_32uxd")]
+z_index = 1
 position = Vector2(125, 25)
 motion_mode = 1
 ocean_scene = NodePath("..")
@@ -618,7 +619,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
+modulate = Color(0.168627, 0.168627, 0.168627, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -637,7 +638,7 @@ Your line snapped"
 
 [node name="Boat Cost Text" type="RichTextLabel" parent="Camera2D/Control/Game Over Menu"]
 visible = false
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
+modulate = Color(0.168627, 0.168627, 0.168627, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -654,7 +655,6 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="ButtonRetry" type="Button" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -667,13 +667,19 @@ offset_right = 25.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_2f7jt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Retry"
+icon = ExtResource("7_8gpnd")
 flat = true
+icon_alignment = 1
 
 [node name="ButtonMainMenu" type="Button" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -681,31 +687,44 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -48.0
-offset_top = 44.0
+offset_top = 53.0
 offset_right = 48.0
-offset_bottom = 75.0
+offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_2f7jt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Main Menu"
+icon = ExtResource("7_8gpnd")
 flat = true
+icon_alignment = 1
 
 [node name="Shop Button 2" type="Button" parent="Camera2D/Control/Game Over Menu"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -23.5
-offset_top = 153.0
-offset_right = 23.5
-offset_bottom = 184.0
+offset_left = -44.0
+offset_top = 154.0
+offset_right = 44.0
+offset_bottom = 194.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_2f7jt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Shop"
+icon = ExtResource("7_8gpnd")
 flat = true
+icon_alignment = 1
 
 [node name="Fish Caught Menu" type="Control" parent="Camera2D/Control"]
 process_mode = 3
@@ -727,6 +746,7 @@ offset_top = 20.0
 offset_right = 75.0
 offset_bottom = 156.0
 grow_horizontal = 2
+theme_override_constants/separation = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
 modulate = Color(0.258824, 0.258824, 0.258824, 1)
@@ -771,29 +791,51 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="ButtonRecast" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="ButtonRecast" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_2f7jt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Recast"
+icon = ExtResource("7_8gpnd")
 flat = true
+icon_alignment = 1
 
-[node name="Shop Button 3" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
+[node name="Shop Button 3" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_2f7jt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Shop"
+icon = ExtResource("7_8gpnd")
 flat = true
+icon_alignment = 1
 
-[node name="ButtonMainMenu2" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
+[node name="ButtonMainMenu2" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_2f7jt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Main Menu"
+icon = ExtResource("7_8gpnd")
 flat = true
+icon_alignment = 1
 
 [node name="Shop Menu" type="Control" parent="Camera2D/Control"]
 visible = false
@@ -829,13 +871,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button Play" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_2f7jt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Recast"
+icon = ExtResource("7_8gpnd")
 flat = true
+icon_alignment = 1
 
 [node name="HBoxContainerHooks" type="HBoxContainer" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
 layout_mode = 2
@@ -1154,13 +1202,19 @@ theme_override_fonts/font = ExtResource("6_2f7jt")
 text = "800$"
 
 [node name="Button Menu" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_2f7jt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 text = "Main Menu"
+icon = ExtResource("7_8gpnd")
 flat = true
+icon_alignment = 1
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -1170,10 +1224,9 @@ position = Vector2(120, -139)
 texture = ExtResource("21_rxhh2")
 
 [node name="Blue" type="Sprite2D" parent="Background"]
-modulate = Color(1, 1, 1, 0.298039)
-z_index = 1
-position = Vector2(120, 951.5)
-scale = Vector2(1, 1.68931)
+modulate = Color(1, 1, 1, 0.737255)
+position = Vector2(120, 952)
+scale = Vector2(1, 1.68848)
 texture = ExtResource("22_6fc4i")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -2073,9 +2126,9 @@ rotation = -2.74965
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonRetry" to="." method="_on_button_retry_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/Shop Button 2" to="." method="_on_shop_button_2_pressed"]
-[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/ButtonRecast" to="." method="_on_button_recast_pressed"]
-[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/Shop Button 3" to="." method="_on_shop_button_3_pressed"]
-[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/ButtonMainMenu2" to="." method="_on_button_main_menu_2_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer/ButtonRecast" to="." method="_on_button_recast_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer/Shop Button 3" to="." method="_on_shop_button_3_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer/ButtonMainMenu2" to="." method="_on_button_main_menu_2_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/Button Play" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Iron Hook" to="." method="_on_button_iron_hook_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook" to="." method="_on_button_aluminum_hook_pressed"]
