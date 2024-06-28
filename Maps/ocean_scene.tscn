@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=109 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -418,6 +418,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 102, 917, 0, 0, 0, 0, 27, 886, 0, 0, 0, 0, 70, 846, 0, 0, 0, 0, 153, 878, 0, 0, 0, 0, 102, 917)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_0lj6q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 144, 897, 0, 0, 0, 0, 164, 868, 0, 0, 0, 0, 193, 851, 0, 0, 0, 0, 241, 864, 0, 0, 0, 0, 300, 854, 0, 0, 0, 0, 256, 895, 0, 0, 0, 0, 205, 892, 0, 0, 0, 0, 177, 886, 0, 0, 0, 0, 144, 897)
+}
+point_count = 9
 
 [node name="OceanScene" type="Node2D"]
 process_mode = 1
@@ -2119,6 +2125,19 @@ script = ExtResource("5_w1pj5")
 [node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Flyingfish3/Path2D"]
 position = Vector2(102, 917)
 rotation = -2.74965
+
+[node name="Moonfish4" type="Node" parent="Fish&Paths"]
+
+[node name="Clownfish" parent="Fish&Paths/Moonfish4" node_paths=PackedStringArray("PathPoint") instance=ExtResource("22_i0nr6")]
+position = Vector2(143, 896)
+PathPoint = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="Fish&Paths/Moonfish4"]
+curve = SubResource("Curve2D_0lj6q")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths/Moonfish4/Path2D"]
+position = Vector2(144, 897)
+rotation = -0.967047
 
 [connection signal="pressed" from="Camera2D/Control/ButtonPause" to="." method="_on_button_pause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/ButtonUnpause" to="." method="_on_button_unpause_pressed"]
