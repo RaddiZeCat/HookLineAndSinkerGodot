@@ -107,26 +107,77 @@ texture = ExtResource("2_u5xi1")
 
 [node name="Button" type="Button" parent="Camera2D/Control"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.351852
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.359259
 offset_left = -44.0
-offset_top = -20.0
 offset_right = 44.0
-offset_bottom = 20.0
+offset_bottom = 40.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_mvntq")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
-text = "PLAY"
+text = "Play
+Normal"
+icon = ExtResource("4_pfv6o")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.477778
+anchor_right = 0.5
+anchor_bottom = 0.485185
+offset_left = -44.0
+offset_right = 44.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_mvntq")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
+text = "Play
+Casual"
+icon = ExtResource("4_pfv6o")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.603704
+anchor_right = 0.5
+anchor_bottom = 0.611111
+offset_left = -44.0
+offset_right = 44.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_mvntq")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
+text = "Quit
+Game"
 icon = ExtResource("4_pfv6o")
 flat = true
 icon_alignment = 1
@@ -297,4 +348,6 @@ libraries = {
 }
 
 [connection signal="pressed" from="Camera2D/Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

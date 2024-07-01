@@ -58,6 +58,9 @@ func _on_goal_area_2d_body_entered(body):
 func _on_deathzone_area_2d_body_entered(body):
 	game_over()
 
+func quicksave():
+	Globals.save_game()
+
 # Win and Loose
 
 func fish_caught():
@@ -188,6 +191,7 @@ func _on_button_unpause_pressed():
 
 
 func _on_button_pressed():
+	quicksave()
 	SceneSwitcher.switch_scene(main_menu)
 	click()
 	#get_tree().change_scene_to_file(main_menu)
@@ -195,12 +199,14 @@ func _on_button_pressed():
 
 func _on_button_retry_pressed():
 	get_tree().paused = false
+	quicksave()
 	get_tree().reload_current_scene()
 	click()
 
 
 func _on_button_main_menu_pressed():
 	get_tree().paused = false
+	quicksave()
 	SceneSwitcher.switch_scene(main_menu)
 	click()
 	#get_tree().change_scene_to_file(main_menu)
@@ -208,12 +214,14 @@ func _on_button_main_menu_pressed():
 
 func _on_button_recast_pressed():
 	get_tree().paused = false
+	quicksave()
 	get_tree().reload_current_scene()
 	click()
 
 
 func _on_button_main_menu_2_pressed():
 	get_tree().paused = false
+	quicksave()
 	SceneSwitcher.switch_scene(main_menu)
 	click()
 	#get_tree().change_scene_to_file(main_menu)
@@ -275,12 +283,14 @@ func _on_shop_button_2_pressed():
 # buttons from shop
 func _on_button_play_pressed():
 	get_tree().paused = false
+	quicksave()
 	get_tree().reload_current_scene()
 	click()
 
 
 func _on_button_menu_pressed():
 	get_tree().paused = false
+	quicksave()
 	SceneSwitcher.switch_scene(main_menu)
 	click()
 

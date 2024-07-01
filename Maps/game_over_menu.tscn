@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctpo80qdx26yv"]
+[gd_scene load_steps=8 format=3 uid="uid://ctpo80qdx26yv"]
 
 [ext_resource type="Script" path="res://Code/game_over_menu.gd" id="1_wfajb"]
 [ext_resource type="FontFile" uid="uid://c3nn573cqpuwl" path="res://Assets/Extras/8bitoperator_jve.ttf" id="2_30bdu"]
 [ext_resource type="AudioStream" uid="uid://c7tt4l8edy80k" path="res://Audio/Temporary/Music/ES_Ode to What Could Have Been (Instrumental Version) - Par Hagstrom.wav" id="2_o8gw3"]
 [ext_resource type="Texture2D" uid="uid://7crlfome1lly" path="res://Assets/UI/Board.png" id="3_jcbj4"]
 [ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="3_o3y0p"]
+[ext_resource type="Texture2D" uid="uid://bttxscwjotq36" path="res://Assets/UI/Board2.png" id="3_ocj62"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sgkaw"]
 
@@ -101,11 +102,11 @@ theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_30bdu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sgkaw")
 text = "Replay"
-icon = ExtResource("3_jcbj4")
+icon = ExtResource("3_ocj62")
 flat = true
 icon_alignment = 1
 
-[node name="Button2" type="Button" parent="Camera2D/Control"]
+[node name="ButtonMenuGameOver" type="Button" parent="Camera2D/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -122,7 +123,8 @@ theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_30bdu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sgkaw")
-text = "Main Menu"
+text = "Main
+Menu"
 icon = ExtResource("3_jcbj4")
 flat = true
 icon_alignment = 1
@@ -138,5 +140,5 @@ stream = ExtResource("3_o3y0p")
 volume_db = -5.943
 
 [connection signal="pressed" from="Camera2D/Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Camera2D/Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Camera2D/Control/ButtonMenuGameOver" to="." method="_on_button_menu_game_over_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

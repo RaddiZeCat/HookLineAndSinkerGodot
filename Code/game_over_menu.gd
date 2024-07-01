@@ -11,16 +11,17 @@ func _ready():
 func click():
 	$AudioStreamPlayer2.play()
 
-func _on_button_pressed():
+func _on_button_pressed(): #reset
 	click()
 	reset()
+	Globals.save_game()
 	SceneSwitcher.switch_scene(ocean_scene)
 	print(ocean_scene)
 
 
 func _on_button_2_pressed():
 	click()
-	reset()
+	Globals.save_game()
 	SceneSwitcher.switch_scene(main_menu)
 	print(main_menu)
 
@@ -41,9 +42,17 @@ func reset():
 	Globals.sinker_3_owned = false
 	print("reset")
 
+func _on_button_menu_game_over_pressed():
+	click()
+	reset()
+	Globals.save_game()
+	SceneSwitcher.switch_scene(main_menu)
+	print(main_menu)
+
 
 func _on_button_3_pressed():
 	click()
+	Globals.save_game()
 	SceneSwitcher.switch_scene(ocean_scene)
 	print(ocean_scene)
 
