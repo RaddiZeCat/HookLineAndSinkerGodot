@@ -21,6 +21,7 @@ extends Node2D
 @onready var boat_text_1 = $"Camera2D/Control/Game Over Menu/Boat Cost Text"
 @onready var boat_text_2 = $"Camera2D/Control/Fish Caught Menu/VBoxContainer/Boat Cost Text2"
 @onready var fish_name = $"Camera2D/Control/Fish Caught Menu/VBoxContainer/RichTextLabel3"
+@onready var depth_text = $Camera2D/Control/DepthText
 
 
 enum State{SINKING,RISING}
@@ -28,6 +29,7 @@ var state = State.SINKING
 var players
 var fish
 var money
+var depth
 
 func _ready():
 	SceneSwitcher.reload()
@@ -47,6 +49,12 @@ func _physics_process(delta):
 		state = State.SINKING
 	else:
 		state = State.RISING
+	
+	if DepthCharge.position.y >= 0:
+		depth = int(DepthCharge.position.y / 20)
+		depth_text.set_text(str(depth,"m"))
+	else:
+		depth_text.set_text(str(0,"m"))
 
 func click():
 	$AudioStreamPlayer2.play()
@@ -67,6 +75,8 @@ func fish_caught():
 	print(fish)
 	fish_caught_screen.show()
 	$Camera2D/Control/ButtonPause.visible = false
+	$Camera2D/Control/DepthText.visible = false
+	$Hook.visible = false
 	#use fish to dertermine money gathered and declare fish values here (exmp. clownfish = 10)
 	if fish == "clownfish":
 		Globals.money = Globals.money + 10
@@ -168,7 +178,9 @@ func game_over():
 	else:
 		pass
 	game_over_screen.show()
+	$Camera2D/Control/DepthText.visible = false
 	$Camera2D/Control/ButtonPause.visible = false
+	$Hook.visible = false
 	ingame_purse.visible = false
 	if Globals.money <= 0:
 		print("Broke")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://mb5guikusuwf"]
+[gd_scene load_steps=26 format=3 uid="uid://mb5guikusuwf"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_c1b0f"]
 [ext_resource type="AudioStream" uid="uid://d3jnxvo4ra8ta" path="res://Audio/Temporary/Music/ES_It's Not That Serious - Arthur Benson.wav" id="2_5t7ot"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="3_77561"]
 [ext_resource type="FontFile" uid="uid://c3nn573cqpuwl" path="res://Assets/Extras/8bitoperator_jve.ttf" id="3_mvntq"]
 [ext_resource type="Texture2D" uid="uid://7crlfome1lly" path="res://Assets/UI/Board.png" id="4_pfv6o"]
+[ext_resource type="Texture2D" uid="uid://bh6seooomkwpj" path="res://Assets/UI/Board3.png" id="5_xs3sm"]
 [ext_resource type="Texture2D" uid="uid://cuunk22scl0hd" path="res://Assets/Fish/Clownfish.png" id="6_o060q"]
 [ext_resource type="Texture2D" uid="uid://dsyt5geemklri" path="res://Assets/Fish/Flyingfish.png" id="7_iktra"]
 [ext_resource type="Script" path="res://Code/MenuFish.gd" id="7_io4mq"]
@@ -183,6 +184,57 @@ flat = true
 icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Button4" type="Button" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625333
+anchor_top = 0.403259
+anchor_right = 0.625333
+anchor_bottom = 0.403259
+offset_left = -20.16
+offset_top = -11.88
+offset_right = 19.84
+offset_bottom = 12.12
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_mvntq")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
+text = "Reset"
+icon = ExtResource("5_xs3sm")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button5" type="Button" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625333
+anchor_top = 0.529185
+anchor_right = 0.625333
+anchor_bottom = 0.529185
+offset_left = -20.16
+offset_top = -11.88
+offset_right = 19.84
+offset_bottom = 12.12
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_mvntq")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
+text = "Reset"
+icon = ExtResource("5_xs3sm")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5t7ot")
 volume_db = -10.103
@@ -350,4 +402,6 @@ libraries = {
 [connection signal="pressed" from="Camera2D/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
