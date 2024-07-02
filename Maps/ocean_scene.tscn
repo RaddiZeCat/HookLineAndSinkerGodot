@@ -1301,7 +1301,7 @@ icon_alignment = 1
 
 [node name="Sky" type="Sprite2D" parent="Background"]
 z_index = -1
-position = Vector2(120, -139)
+position = Vector2(120, -138)
 texture = ExtResource("21_rxhh2")
 
 [node name="Blue" type="Sprite2D" parent="Background"]

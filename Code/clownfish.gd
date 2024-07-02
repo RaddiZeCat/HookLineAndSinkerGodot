@@ -7,10 +7,14 @@ extends CharacterBody2D
 @onready var animation_player = $Sprite2D/AnimationPlayer
 @onready var path_point = PathPoint
 @onready var ocean_scene = $"../../.."
+@onready var visualization = $Sprite2D2/AnimationPlayer
 
 enum State{PATROL,CHASE}
 var state = State.PATROL
 var hook
+
+func _ready():
+	visualization.play("none")
 
 func _physics_process(delta):
 	animation_player.play("Swim")
@@ -35,12 +39,22 @@ func _on_eyes_area_2d_body_entered(body):
 		if ocean_scene.catch_size == size-1:
 			hook = body
 			state = State.CHASE
+			$Sprite2D2.visible = true
+			visualization.play("attack")
+		else:
+			visualization.play("bored")
 	else:
 		if ocean_scene.hook_empty == true:
 			hook = body
 			state = State.CHASE
+			$Sprite2D2.visible = true
+			visualization.play("attack")
+		else:
+			visualization.play("bored")
 
 func _on_eyes_area_2d_body_exited(body):
+	if state == State.CHASE:
+		visualization.play("anger")
 	hook = null
 	state = State.PATROL
 
@@ -58,4 +72,4 @@ func _on_catch_area_2d_body_entered(body):
 		else:
 			ocean_scene.game_over()
 	else:
-		pass
+		visualization.play("anger")
