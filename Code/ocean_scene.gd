@@ -30,6 +30,7 @@ var players
 var fish
 var money
 var depth
+var volume
 
 func _ready():
 	SceneSwitcher.reload()
@@ -162,12 +163,12 @@ func fish_caught():
 	if Globals.boat_owned == false:
 		Globals.money = Globals.money - 30
 		boat_text_2.visible = true
+		if Globals.money <= 0:
+			print("Broke")
+			SceneSwitcher.switch_scene(game_over_menu)
 	else:
 		pass
 	ingame_purse.visible = false
-	if Globals.money <= 0:
-		print("Broke")
-		SceneSwitcher.switch_scene(game_over_menu)
 
 
 func game_over():
@@ -175,6 +176,9 @@ func game_over():
 	if Globals.boat_owned == false:
 		Globals.money = Globals.money - 30
 		boat_text_1.visible = true
+		if Globals.money <= 0:
+			print("Broke")
+			SceneSwitcher.switch_scene(game_over_menu)
 	else:
 		pass
 	game_over_screen.show()
@@ -182,14 +186,14 @@ func game_over():
 	$Camera2D/Control/ButtonPause.visible = false
 	$Hook.visible = false
 	ingame_purse.visible = false
-	if Globals.money <= 0:
-		print("Broke")
-		SceneSwitcher.switch_scene(game_over_menu)
 
 # UI Screens after this
 # ingame pause button
 func _on_button_pause_pressed():
 	$Camera2D/Control/ButtonPause.visible=false
+	$"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster".set("value",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
+	$"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic".set("value",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+	$"Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound".set("value",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Sound")))
 	get_tree().paused = true
 	pause_menu.show()
 	click()
@@ -197,6 +201,7 @@ func _on_button_pause_pressed():
 
 func _on_button_unpause_pressed():
 	pause_menu.hide()
+	Globals.save_options()
 	$Camera2D/Control/ButtonPause.visible=true
 	get_tree().paused = false
 	click()
@@ -204,6 +209,7 @@ func _on_button_unpause_pressed():
 
 func _on_button_pressed():
 	quicksave()
+	Globals.save_options()
 	SceneSwitcher.switch_scene(main_menu)
 	click()
 	#get_tree().change_scene_to_file(main_menu)
@@ -434,3 +440,18 @@ func _on_button_hightest_line_2_pressed():
 
 func _on_audio_stream_player_finished():
 	$AudioStreamPlayer.play()
+
+
+func _on_h_slider_master_drag_ended(value_changed):
+	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster".get("value")
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),volume)
+
+
+func _on_h_slider_music_drag_ended(value_changed):
+	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic".get("value")
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),volume)
+
+
+func _on_h_slider_sound_drag_ended(value_changed):
+	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound".get("value")
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"),volume)

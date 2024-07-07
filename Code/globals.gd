@@ -22,6 +22,10 @@ var current_save = normal_save
 
 var normal_save = "user://normal.save"
 var casual_save = "user://casual.save"
+var settings_save = "user://settings.save"
+var masterVolume:float
+var musicVolume:float
+var soundVolume:float
 
 func save_game():
 	var file = FileAccess.open(current_save, FileAccess.WRITE)
@@ -59,3 +63,21 @@ func load_game():
 		sinker_1_owned = file.get_var(sinker_1_owned)
 		sinker_2_owned = file.get_var(sinker_2_owned)
 		sinker_3_owned = file.get_var(sinker_3_owned)
+
+func save_options():
+	masterVolume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
+	musicVolume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))
+	soundVolume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Sound"))
+	var file = FileAccess.open(settings_save, FileAccess.WRITE)
+	file.store_var(masterVolume)
+	file.store_var(musicVolume)
+	file.store_var(soundVolume)
+
+func load_options():
+	var file = FileAccess.open(settings_save, FileAccess.READ)
+	masterVolume = file.get_var(masterVolume)
+	musicVolume = file.get_var(musicVolume)
+	soundVolume = file.get_var(soundVolume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),masterVolume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),musicVolume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"),soundVolume)

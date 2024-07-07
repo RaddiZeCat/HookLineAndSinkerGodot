@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctpo80qdx26yv"]
+[gd_scene load_steps=13 format=3 uid="uid://ctpo80qdx26yv"]
 
 [ext_resource type="Script" path="res://Code/game_over_menu.gd" id="1_wfajb"]
 [ext_resource type="FontFile" uid="uid://c3nn573cqpuwl" path="res://Assets/Extras/8bitoperator_jve.ttf" id="2_30bdu"]
@@ -6,8 +6,65 @@
 [ext_resource type="Texture2D" uid="uid://7crlfome1lly" path="res://Assets/UI/Board.png" id="3_jcbj4"]
 [ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="3_o3y0p"]
 [ext_resource type="Texture2D" uid="uid://bttxscwjotq36" path="res://Assets/UI/Board2.png" id="3_ocj62"]
+[ext_resource type="Texture2D" uid="uid://bby51xrvrpkv3" path="res://Assets/Trash.png" id="7_ihfjd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sgkaw"]
+
+[sub_resource type="Animation" id="Animation_j2v0e"]
+resource_name = "bobb"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lgcvj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mvgxv"]
+resource_name = "bobb2"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -2), Vector2(0, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tocg0"]
+_data = {
+"RESET": SubResource("Animation_lgcvj"),
+"bobb": SubResource("Animation_j2v0e"),
+"bobb2": SubResource("Animation_mvgxv")
+}
 
 [node name="Game Over Menu" type="Node2D"]
 script = ExtResource("1_wfajb")
@@ -64,9 +121,9 @@ anchor_left = 0.428125
 anchor_top = 0.062963
 anchor_right = 0.571875
 anchor_bottom = 0.062963
-offset_left = -44.0
+offset_left = -24.5
 offset_top = 21.0
-offset_right = 44.0
+offset_right = 23.5
 offset_bottom = 44.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_30bdu")
@@ -80,9 +137,9 @@ anchor_left = 0.473958
 anchor_top = 0.125926
 anchor_right = 0.526042
 anchor_bottom = 0.125926
-offset_left = -44.0
+offset_left = -36.4998
 offset_top = 21.0
-offset_right = 44.0
+offset_right = 35.4998
 offset_bottom = 44.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_30bdu")
@@ -133,11 +190,99 @@ icon_alignment = 1
 stream = ExtResource("2_o8gw3")
 volume_db = -11.291
 autoplay = true
+bus = &"Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("3_o3y0p")
 volume_db = -5.943
+bus = &"Sound"
+
+[node name="Trash" type="Node" parent="."]
+
+[node name="Trash2D" type="Sprite2D" parent="Trash"]
+position = Vector2(187, 93)
+texture = ExtResource("7_ihfjd")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash/Trash2D"]
+libraries = {
+"": SubResource("AnimationLibrary_tocg0")
+}
+
+[node name="Trash2D5" type="Sprite2D" parent="Trash"]
+position = Vector2(-183, 86)
+texture = ExtResource("7_ihfjd")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash/Trash2D5"]
+libraries = {
+"": SubResource("AnimationLibrary_tocg0")
+}
+
+[node name="Trash2D6" type="Sprite2D" parent="Trash"]
+position = Vector2(-61, 68)
+texture = ExtResource("7_ihfjd")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash/Trash2D6"]
+libraries = {
+"": SubResource("AnimationLibrary_tocg0")
+}
+
+[node name="Trash2D7" type="Sprite2D" parent="Trash"]
+position = Vector2(191, -43)
+texture = ExtResource("7_ihfjd")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash/Trash2D7"]
+libraries = {
+"": SubResource("AnimationLibrary_tocg0")
+}
+
+[node name="Trash2D8" type="Sprite2D" parent="Trash"]
+position = Vector2(80, 48)
+texture = ExtResource("7_ihfjd")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash/Trash2D8"]
+libraries = {
+"": SubResource("AnimationLibrary_tocg0")
+}
+
+[node name="Trash2D2" type="Sprite2D" parent="Trash"]
+position = Vector2(101, -84)
+texture = ExtResource("7_ihfjd")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash/Trash2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_tocg0")
+}
+
+[node name="Trash2D3" type="Sprite2D" parent="Trash"]
+position = Vector2(-194, -60)
+texture = ExtResource("7_ihfjd")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash/Trash2D3"]
+libraries = {
+"": SubResource("AnimationLibrary_tocg0")
+}
+
+[node name="Trash2D4" type="Sprite2D" parent="Trash"]
+position = Vector2(-112, -22)
+texture = ExtResource("7_ihfjd")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash/Trash2D4"]
+libraries = {
+"": SubResource("AnimationLibrary_tocg0")
+}
 
 [connection signal="pressed" from="Camera2D/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Camera2D/Control/ButtonMenuGameOver" to="." method="_on_button_menu_game_over_pressed"]
