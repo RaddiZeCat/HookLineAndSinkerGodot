@@ -7,6 +7,7 @@ extends Node2D
 
 func _ready():
 	get_tree().paused = false
+	$Camera2D/Control/Button.grab_focus()
 
 func click():
 	$AudioStreamPlayer2.play()

@@ -9,7 +9,7 @@ var volume
 func _ready():
 	get_tree().paused = false
 	Globals.load_options()
-	
+	$Camera2D/Control/Button.grab_focus()
 
 func _on_button_pressed(): #play normal
 	click()
@@ -39,6 +39,9 @@ func _on_button_3_pressed(): #quit
 
 func click():
 	$AudioStreamPlayer2.play()
+
+func clack():
+	$AudioStreamPlayer3.play()
 
 
 func _on_audio_stream_player_finished():
@@ -84,25 +87,51 @@ func _on_button_6_pressed(): #Options
 	$Camera2D/ControlOptions/VBoxContainer/HSliderSound.set("value",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Sound")))
 	$Camera2D/Control.visible = false
 	$Camera2D/ControlOptions.visible = true
-
-
-func _on_h_slider_master_drag_ended(value_changed):
-	volume = $Camera2D/ControlOptions/VBoxContainer/HSliderMaster.get("value")
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),volume)
-
-
-func _on_h_slider_music_drag_ended(value_changed):
-	volume = $Camera2D/ControlOptions/VBoxContainer/HSliderMusic.get("value")
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),volume)
-
-
-func _on_h_slider_sound_drag_ended(value_changed):
-	volume = $Camera2D/ControlOptions/VBoxContainer/HSliderSound.get("value")
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"),volume)
-
+	$Camera2D/ControlOptions/VBoxContainer/ButtonBack.grab_focus()
 
 func _on_button_back_pressed():
 	click()
 	$Camera2D/Control.visible = true
 	$Camera2D/ControlOptions.visible = false
 	Globals.save_options()
+	$Camera2D/Control/Button.grab_focus()
+
+
+func _on_h_slider_master_drag_started():
+	clack()
+
+
+func _on_h_slider_music_drag_started():
+	clack()
+
+
+func _on_h_slider_sound_drag_started():
+	clack()
+
+
+func _on_button_7_pressed(): #Credits
+	click()
+	$Camera2D/Control.visible = false
+	$Camera2D/ControlCredits.visible = true
+	$Camera2D/ControlCredits/VBoxContainer/ButtonBackCredits.grab_focus()
+
+
+func _on_button_back_credits_pressed(): #credits back
+	click()
+	$Camera2D/Control.visible = true
+	$Camera2D/ControlCredits.visible = false
+	$Camera2D/Control/Button.grab_focus()
+
+func _on_h_slider_master_value_changed(value):
+	volume = $Camera2D/ControlOptions/VBoxContainer/HSliderMaster.get("value")
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),volume)
+
+
+func _on_h_slider_music_value_changed(value):
+	volume = $Camera2D/ControlOptions/VBoxContainer/HSliderMusic.get("value")
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),volume)
+
+
+func _on_h_slider_sound_value_changed(value):
+	volume = $Camera2D/ControlOptions/VBoxContainer/HSliderSound.get("value")
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"),volume)

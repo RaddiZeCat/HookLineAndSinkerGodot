@@ -2,13 +2,28 @@
 
 [ext_resource type="Script" path="res://Code/game_over_menu.gd" id="1_wfajb"]
 [ext_resource type="FontFile" uid="uid://c3nn573cqpuwl" path="res://Assets/Extras/8bitoperator_jve.ttf" id="2_30bdu"]
-[ext_resource type="AudioStream" uid="uid://c7tt4l8edy80k" path="res://Audio/Temporary/Music/ES_Ode to What Could Have Been (Instrumental Version) - Par Hagstrom.wav" id="2_o8gw3"]
+[ext_resource type="AudioStream" uid="uid://c7tt4l8edy80k" path="res://Audio/Music/ES_Ode to What Could Have Been (Instrumental Version) - Par Hagstrom.wav" id="2_o8gw3"]
 [ext_resource type="Texture2D" uid="uid://7crlfome1lly" path="res://Assets/UI/Board.png" id="3_jcbj4"]
-[ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="3_o3y0p"]
 [ext_resource type="Texture2D" uid="uid://bttxscwjotq36" path="res://Assets/UI/Board2.png" id="3_ocj62"]
+[ext_resource type="AudioStream" uid="uid://dm305u3v2y4fm" path="res://Audio/SFX/Klack.wav" id="6_b781o"]
 [ext_resource type="Texture2D" uid="uid://bby51xrvrpkv3" path="res://Assets/Trash.png" id="7_ihfjd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sgkaw"]
+
+[sub_resource type="Animation" id="Animation_lgcvj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_j2v0e"]
 resource_name = "bobb"
@@ -25,21 +40,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_lgcvj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_mvgxv"]
@@ -151,6 +151,7 @@ offset_left = 196.0
 offset_top = 83.0
 offset_right = 284.0
 offset_bottom = 123.0
+focus_neighbor_bottom = NodePath("../ButtonMenuGameOver")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -173,6 +174,7 @@ offset_top = 121.0
 offset_right = 48.0
 offset_bottom = 161.0
 grow_horizontal = 2
+focus_neighbor_top = NodePath("../Button")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -194,8 +196,7 @@ bus = &"Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("3_o3y0p")
-volume_db = -5.943
+stream = ExtResource("6_b781o")
 bus = &"Sound"
 
 [node name="Trash" type="Node" parent="."]

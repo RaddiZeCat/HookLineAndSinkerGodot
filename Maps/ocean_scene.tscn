@@ -1,9 +1,10 @@
-[gd_scene load_steps=120 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=125 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
 [ext_resource type="Texture2D" uid="uid://b1lk1errl4ybx" path="res://Assets/UI/PauseButton.png" id="3_4jk7y"]
 [ext_resource type="Texture2D" uid="uid://ddc4pnpwknox0" path="res://Assets/UI/FullScreenUI.png" id="3_05cf3"]
+[ext_resource type="Script" path="res://Code/menu_pause.gd" id="3_14uln"]
 [ext_resource type="Texture2D" uid="uid://f0qivmkp584" path="res://Assets/UI/PlayButton.png" id="3_uv7m6"]
 [ext_resource type="Texture2D" uid="uid://yeej2j2346x6" path="res://Assets/Environment/Tilemap.png" id="4_0wnhq"]
 [ext_resource type="PackedScene" uid="uid://bfxx27d1l8jij" path="res://Prefabs/clownfish.tscn" id="4_b8lfq"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cfbatax1p17q6" path="res://Assets/UI/BorderSmall2.png" id="8_l221o"]
 [ext_resource type="Texture2D" uid="uid://d3fj2i41tmves" path="res://Assets/UI/TextButtons5.png" id="9_nyw46"]
 [ext_resource type="Texture2D" uid="uid://6wim2yyjxcc5" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle4.png" id="9_sq4bt"]
+[ext_resource type="Texture2D" uid="uid://46dhykyqtkl2" path="res://Assets/UI/TextButtons7.png" id="9_twspj"]
 [ext_resource type="Texture2D" uid="uid://bttxscwjotq36" path="res://Assets/UI/Board2.png" id="10_ckkqg"]
 [ext_resource type="Texture2D" uid="uid://dkloi4fhh51m2" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle5.png" id="10_fxuit"]
 [ext_resource type="PackedScene" uid="uid://cvnwo2b0wkywi" path="res://Prefabs/trash.tscn" id="10_kkswm"]
@@ -26,8 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://qbcds828o1ux" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle8.png" id="13_gfa3b"]
 [ext_resource type="Texture2D" uid="uid://3w4n8il7y2uo" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle9.png" id="14_kheoc"]
 [ext_resource type="Texture2D" uid="uid://cvo88acuy3v52" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle10.png" id="15_qxavx"]
-[ext_resource type="AudioStream" uid="uid://hoomt3gujpvc" path="res://Audio/Temporary/Music/ES_Organized Chaos - Arthur Benson.wav" id="17_jswkf"]
-[ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="18_xqr50"]
+[ext_resource type="AudioStream" uid="uid://hoomt3gujpvc" path="res://Audio/Music/ES_Organized Chaos - Arthur Benson.wav" id="17_jswkf"]
 [ext_resource type="PackedScene" uid="uid://btp2qkompbqe" path="res://Prefabs/flyingfish.tscn" id="20_5kkhy"]
 [ext_resource type="PackedScene" uid="uid://beuog21hb2dft" path="res://Prefabs/tiger.tscn" id="21_gjwrh"]
 [ext_resource type="Texture2D" uid="uid://ct4e4vypv3xkg" path="res://Assets/Environment/Surface.png" id="21_rxhh2"]
@@ -35,9 +36,13 @@
 [ext_resource type="PackedScene" uid="uid://dhukvwbmr8dkc" path="res://Prefabs/moonfish.tscn" id="22_i0nr6"]
 [ext_resource type="PackedScene" uid="uid://cy761q5chvfwd" path="res://Prefabs/humphead.tscn" id="23_sf5qn"]
 [ext_resource type="PackedScene" uid="uid://b2l8k22dfngmd" path="res://Prefabs/grubfish.tscn" id="25_by5vp"]
+[ext_resource type="AudioStream" uid="uid://dm305u3v2y4fm" path="res://Audio/SFX/Klack.wav" id="25_vyavy"]
+[ext_resource type="AudioStream" uid="uid://duybne78cdw3w" path="res://Audio/SFX/Klick.wav" id="26_jnj2c"]
+[ext_resource type="AudioStream" uid="uid://dt6al3l4y612y" path="res://Audio/SFX/ReelLoop.wav" id="26_xaxvl"]
 [ext_resource type="PackedScene" uid="uid://c2m5mksvedjsw" path="res://Prefabs/pyramid.tscn" id="26_yfipt"]
 [ext_resource type="PackedScene" uid="uid://d6iwi5w7342q" path="res://Prefabs/seargant.tscn" id="27_kok5f"]
 [ext_resource type="Texture2D" uid="uid://drsyhkhr7n3ah" path="res://Assets/Environment/UnderwaterAssets.png" id="27_mkcqa"]
+[ext_resource type="AudioStream" uid="uid://c4nn4vnyfh5s8" path="res://Audio/SFX/Lure.wav" id="27_s288r"]
 [ext_resource type="PackedScene" uid="uid://pajwutfla4pe" path="res://Prefabs/triggerfish.tscn" id="28_811y7"]
 [ext_resource type="PackedScene" uid="uid://bnyy22nas5adi" path="res://Prefabs/yellowfin.tscn" id="30_jxxx1"]
 [ext_resource type="PackedScene" uid="uid://bjdq1dk4vy0k" path="res://Prefabs/marlin.tscn" id="31_ec43r"]
@@ -51,7 +56,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m42rt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46240"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ql0tp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5t07a"]
 
@@ -510,6 +515,7 @@ offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("3_14uln")
 
 [node name="ReferenceRect" type="ReferenceRect" parent="Camera2D/Control"]
 layout_mode = 1
@@ -582,7 +588,9 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_46240")
+focus_neighbor_left = NodePath("../VBoxContainer/HSliderMaster")
+focus_neighbor_bottom = NodePath("../Button")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ql0tp")
 icon = ExtResource("3_uv7m6")
 flat = true
 
@@ -611,6 +619,8 @@ offset_top = 166.0
 offset_right = 44.0
 offset_bottom = 206.0
 grow_horizontal = 2
+focus_neighbor_top = NodePath("../VBoxContainer/HSliderSound")
+focus_neighbor_right = NodePath("../ButtonUnpause")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -644,8 +654,11 @@ text = "Master"
 [node name="HSliderMaster" type="HSlider" parent="Camera2D/Control/Menu Paused/VBoxContainer"]
 z_index = 1
 layout_mode = 2
+focus_neighbor_top = NodePath("../../ButtonUnpause")
+focus_neighbor_right = NodePath("../../ButtonUnpause")
+focus_neighbor_bottom = NodePath("../HSliderMusic")
 theme_override_icons/grabber = ExtResource("8_c07x5")
-theme_override_icons/grabber_highlight = ExtResource("8_c07x5")
+theme_override_icons/grabber_highlight = ExtResource("9_twspj")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_5t07a")
 min_value = -40.0
 max_value = 0.0
@@ -664,8 +677,11 @@ text = "Music"
 [node name="HSliderMusic" type="HSlider" parent="Camera2D/Control/Menu Paused/VBoxContainer"]
 z_index = 1
 layout_mode = 2
+focus_neighbor_top = NodePath("../HSliderMaster")
+focus_neighbor_right = NodePath("../../ButtonUnpause")
+focus_neighbor_bottom = NodePath("../HSliderSound")
 theme_override_icons/grabber = ExtResource("8_c07x5")
-theme_override_icons/grabber_highlight = ExtResource("8_c07x5")
+theme_override_icons/grabber_highlight = ExtResource("9_twspj")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_5t07a")
 min_value = -40.0
 max_value = 0.0
@@ -684,8 +700,11 @@ text = "Sound"
 [node name="HSliderSound" type="HSlider" parent="Camera2D/Control/Menu Paused/VBoxContainer"]
 z_index = 1
 layout_mode = 2
+focus_neighbor_top = NodePath("../HSliderMusic")
+focus_neighbor_right = NodePath("../../ButtonUnpause")
+focus_neighbor_bottom = NodePath("../../Button")
 theme_override_icons/grabber = ExtResource("8_c07x5")
-theme_override_icons/grabber_highlight = ExtResource("8_c07x5")
+theme_override_icons/grabber_highlight = ExtResource("9_twspj")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_5t07a")
 min_value = -40.0
 max_value = 0.0
@@ -1328,8 +1347,19 @@ bus = &"Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("18_xqr50")
-volume_db = -5.943
+stream = ExtResource("25_vyavy")
+bus = &"Sound"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_jnj2c")
+bus = &"Sound"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_s288r")
+bus = &"Sound"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_xaxvl")
 bus = &"Sound"
 
 [node name="DepthCharge" type="RigidBody2D" parent="."]
@@ -2427,9 +2457,12 @@ rotation = 2.50704
 [connection signal="pressed" from="Camera2D/Control/ButtonPause" to="." method="_on_button_pause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/ButtonUnpause" to="." method="_on_button_unpause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/Button" to="." method="_on_button_pressed"]
-[connection signal="drag_ended" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_drag_ended"]
-[connection signal="drag_ended" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_drag_ended"]
-[connection signal="drag_ended" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_drag_ended"]
+[connection signal="changed" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_changed"]
+[connection signal="drag_started" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_drag_started"]
+[connection signal="changed" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_changed"]
+[connection signal="drag_started" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_drag_started"]
+[connection signal="changed" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_changed"]
+[connection signal="drag_started" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_drag_started"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonRetry" to="." method="_on_button_retry_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/Shop Button 2" to="." method="_on_shop_button_2_pressed"]
@@ -2449,5 +2482,6 @@ rotation = 2.50704
 [connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2" to="." method="_on_button_hightest_line_2_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/Button Menu" to="." method="_on_button_menu_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="AudioStreamPlayer5" to="." method="_on_audio_stream_player_5_finished"]
 [connection signal="body_entered" from="Deathzone_Area2D" to="." method="_on_deathzone_area_2d_body_entered"]
 [connection signal="body_entered" from="GoalArea2D" to="." method="_on_goal_area_2d_body_entered"]

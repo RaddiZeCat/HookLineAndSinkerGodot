@@ -31,13 +31,14 @@ var fish
 var money
 var depth
 var volume
+var paused:bool = false
 
 func _ready():
 	SceneSwitcher.reload()
 	money = str(Globals.money)
 	ingame_purse.add_text(money)
 	ingame_purse.add_text("$")
-	
+	reel()
 
 func _physics_process(delta):
 	match state:
@@ -60,9 +61,21 @@ func _physics_process(delta):
 func click():
 	$AudioStreamPlayer2.play()
 
-func _on_goal_area_2d_body_entered(body):
-	fish_caught()
+func clack():
+	$AudioStreamPlayer3.play()
 
+func rustle():
+	$AudioStreamPlayer4.play()
+
+func reel():
+	$AudioStreamPlayer5.play()
+
+func _on_audio_stream_player_5_finished():
+	$AudioStreamPlayer5.play()
+
+func _on_goal_area_2d_body_entered(body):
+	$AudioStreamPlayer5.stop()
+	fish_caught()
 
 func _on_deathzone_area_2d_body_entered(body):
 	game_over()
@@ -190,6 +203,7 @@ func game_over():
 # UI Screens after this
 # ingame pause button
 func _on_button_pause_pressed():
+	paused = true
 	$Camera2D/Control/ButtonPause.visible=false
 	$"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster".set("value",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
 	$"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic".set("value",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
@@ -200,12 +214,33 @@ func _on_button_pause_pressed():
 
 
 func _on_button_unpause_pressed():
+	paused = false
 	pause_menu.hide()
 	Globals.save_options()
 	$Camera2D/Control/ButtonPause.visible=true
 	get_tree().paused = false
 	click()
 
+func pause_game():
+	if paused == false:
+		paused = true
+		$"Camera2D/Control/Menu Paused/Button".grab_focus()
+		$Camera2D/Control/ButtonPause.visible=false
+		$"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster".set("value",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
+		$"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic".set("value",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+		$"Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound".set("value",AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Sound")))
+		get_tree().paused = true
+		pause_menu.show()
+		click()
+		print("Pause",paused)
+	elif paused == true:
+		paused = false
+		pause_menu.hide()
+		Globals.save_options()
+		$Camera2D/Control/ButtonPause.visible=true
+		get_tree().paused = false
+		click()
+		print("Pause",paused)
 
 func _on_button_pressed():
 	quicksave()
@@ -319,19 +354,19 @@ func _on_button_menu_pressed():
 func _on_button_iron_hook_pressed():
 	Globals.hook_state = 1
 	print(Globals.hook_state)
-	click()
+	rustle()
 
 
 func _on_button_aluminum_hook_pressed():
 	if Globals.hook_2_owned == true:
 		Globals.hook_state = 2
-		click()
+		rustle()
 	elif Globals.money >= 300:
 		Globals.money = Globals.money -300
 		Globals.hook_2_owned = true
 		Globals.hook_state = 2
 		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook/TextureRect/Label".visible = false
-		click()
+		rustle()
 	else:
 		print("broke") #error noise
 	print(Globals.hook_state)
@@ -340,13 +375,13 @@ func _on_button_aluminum_hook_pressed():
 func _on_button_brass_hook_pressed():
 	if Globals.hook_3_owned == true:
 		Globals.hook_state = 3
-		click()
+		rustle()
 	elif Globals.money >= 600:
 		Globals.money = Globals.money -600
 		Globals.hook_3_owned = true
 		Globals.hook_state = 3
 		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Brass Hook/TextureRect/Label".visible = false
-		click()
+		rustle()
 	else:
 		print("broke") #error noise
 	print(Globals.hook_state)
@@ -355,19 +390,19 @@ func _on_button_brass_hook_pressed():
 func _on_button_splitshot_pressed():
 	Globals.sinker_state = 1
 	print(Globals.sinker_state)
-	click()
+	rustle()
 
 
 func _on_button_dipsey_pressed():
 	if Globals.sinker_2_owned == true:
 		Globals.sinker_state = 2
-		click()
+		rustle()
 	elif Globals.money >= 500:
 		Globals.money = Globals.money -500
 		Globals.sinker_2_owned = true
 		Globals.sinker_state = 2
 		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Dipsey/TextureRect/Label".visible = false
-		click()
+		rustle()
 	else:
 		print("broke") #error noise
 	print(Globals.sinker_state)
@@ -375,13 +410,13 @@ func _on_button_dipsey_pressed():
 func _on_button_diamond_pressed():
 	if Globals.sinker_3_owned == true:
 		Globals.sinker_state = 3
-		click()
+		rustle()
 	elif Globals.money >= 700:
 		Globals.money = Globals.money -700
 		Globals.sinker_3_owned = true
 		Globals.sinker_state = 3
 		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Diamond/TextureRect/Label".visible = false
-		click()
+		rustle()
 	else:
 		print("broke") #error noise
 	print(Globals.sinker_state)
@@ -390,19 +425,19 @@ func _on_button_diamond_pressed():
 func _on_button_string_pressed():
 	Globals.line_state = 1
 	print(Globals.line_state)
-	click()
+	rustle()
 
 
 func _on_button_line_pressed():
 	if Globals.line_2_owned == true:
 		Globals.line_state = 2
-		click()
+		rustle()
 	elif Globals.money >= 200:
 		Globals.money = Globals.money -200
 		Globals.line_2_owned = true
 		Globals.line_state = 2
 		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Line/TextureRect/Label".visible = false
-		click()
+		rustle()
 	else:
 		print("broke") #error noise
 	print(Globals.line_state)
@@ -411,13 +446,13 @@ func _on_button_line_pressed():
 func _on_button_premium_line_pressed():
 	if Globals.line_3_owned == true:
 		Globals.line_state = 3
-		click()
+		rustle()
 	elif Globals.money >= 600:
 		Globals.money = Globals.money -600
 		Globals.line_3_owned = true
 		Globals.line_state = 3
 		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Premium Line/TextureRect/Label".visible = false
-		click()
+		rustle()
 	else:
 		print("broke") #error noise
 	print(Globals.line_state)
@@ -426,13 +461,13 @@ func _on_button_premium_line_pressed():
 func _on_button_hightest_line_2_pressed():
 	if Globals.line_4_owned == true:
 		Globals.line_state = 4
-		click()
+		rustle()
 	elif Globals.money >= 800:
 		Globals.money = Globals.money -800
 		Globals.line_4_owned = true
 		Globals.line_state = 4
 		$"Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2/TextureRect/Label".visible = false
-		click()
+		rustle()
 	else:
 		print("broke") #error noise
 	print(Globals.line_state)
@@ -441,17 +476,28 @@ func _on_button_hightest_line_2_pressed():
 func _on_audio_stream_player_finished():
 	$AudioStreamPlayer.play()
 
+func _on_h_slider_master_drag_started():
+	clack()
 
-func _on_h_slider_master_drag_ended(value_changed):
+
+func _on_h_slider_music_drag_started():
+	clack()
+
+
+func _on_h_slider_sound_drag_started():
+	clack()
+
+
+func _on_h_slider_master_changed():
 	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster".get("value")
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),volume)
 
 
-func _on_h_slider_music_drag_ended(value_changed):
+func _on_h_slider_music_changed():
 	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic".get("value")
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),volume)
 
 
-func _on_h_slider_sound_drag_ended(value_changed):
+func _on_h_slider_sound_changed():
 	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound".get("value")
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"),volume)

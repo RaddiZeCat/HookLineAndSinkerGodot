@@ -1,9 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://mb5guikusuwf"]
+[gd_scene load_steps=34 format=3 uid="uid://mb5guikusuwf"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_c1b0f"]
-[ext_resource type="AudioStream" uid="uid://d3jnxvo4ra8ta" path="res://Audio/Temporary/Music/ES_It's Not That Serious - Arthur Benson.wav" id="2_5t7ot"]
+[ext_resource type="AudioStream" uid="uid://d3jnxvo4ra8ta" path="res://Audio/Music/ES_It's Not That Serious - Arthur Benson.wav" id="2_5t7ot"]
 [ext_resource type="Texture2D" uid="uid://drvi4rnlovh10" path="res://Assets/HookLine&SinkerLogo.png" id="2_u5xi1"]
-[ext_resource type="AudioStream" uid="uid://fqgrvw4yaycx" path="res://Audio/Temporary/Sound/ES_Impact Wood 1 - SFX Producer.wav" id="3_77561"]
 [ext_resource type="FontFile" uid="uid://c3nn573cqpuwl" path="res://Assets/Extras/8bitoperator_jve.ttf" id="3_mvntq"]
 [ext_resource type="Texture2D" uid="uid://7crlfome1lly" path="res://Assets/UI/Board.png" id="4_pfv6o"]
 [ext_resource type="Texture2D" uid="uid://bttxscwjotq36" path="res://Assets/UI/Board2.png" id="5_6x66q"]
@@ -13,9 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://dsyt5geemklri" path="res://Assets/Fish/Flyingfish.png" id="7_iktra"]
 [ext_resource type="Script" path="res://Code/MenuFish.gd" id="7_io4mq"]
 [ext_resource type="Texture2D" uid="uid://d3fj2i41tmves" path="res://Assets/UI/TextButtons5.png" id="7_wdogv"]
+[ext_resource type="Texture2D" uid="uid://46dhykyqtkl2" path="res://Assets/UI/TextButtons7.png" id="8_cy1lw"]
 [ext_resource type="Texture2D" uid="uid://bfwwn3421k7av" path="res://Assets/Fish/Gemfish.png" id="8_mfqv6"]
 [ext_resource type="Texture2D" uid="uid://c8iqa5rs4x16d" path="res://Assets/Fish/Humphead.png" id="9_16eip"]
+[ext_resource type="AudioStream" uid="uid://dm305u3v2y4fm" path="res://Audio/SFX/Klack.wav" id="10_4sb6n"]
 [ext_resource type="Texture2D" uid="uid://cx75fddt04bxa" path="res://Assets/Fish/Mako.png" id="10_15umh"]
+[ext_resource type="AudioStream" uid="uid://duybne78cdw3w" path="res://Audio/SFX/Klick.wav" id="11_wak5b"]
 [ext_resource type="Texture2D" uid="uid://boxtyd04tsjik" path="res://Assets/Fish/Pyramid.png" id="12_qq01b"]
 [ext_resource type="Texture2D" uid="uid://bcymfdi6crxmh" path="res://Assets/Fish/PinkTail.png" id="13_wkdj0"]
 [ext_resource type="Texture2D" uid="uid://d1owcc7scme0v" path="res://Assets/Fish/Yellowfin.png" id="14_casp1"]
@@ -28,6 +30,10 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ae85x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_skvlo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpwqr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ws871"]
 
 [sub_resource type="Animation" id="Animation_vu01t"]
 resource_name = "Idle"
@@ -131,6 +137,8 @@ offset_left = -44.0
 offset_right = 44.0
 offset_bottom = 40.0
 grow_horizontal = 2
+focus_neighbor_right = NodePath("../Button4")
+focus_neighbor_bottom = NodePath("../Button2")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -157,6 +165,9 @@ offset_left = -44.0
 offset_right = 44.0
 offset_bottom = 40.0
 grow_horizontal = 2
+focus_neighbor_top = NodePath("../Button")
+focus_neighbor_right = NodePath("../Button5")
+focus_neighbor_bottom = NodePath("../Button6")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -183,6 +194,7 @@ offset_left = -44.0
 offset_right = 44.0
 offset_bottom = 40.0
 grow_horizontal = 2
+focus_neighbor_top = NodePath("../Button6")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -209,6 +221,9 @@ offset_left = -44.0
 offset_right = 44.0
 offset_bottom = 40.0
 grow_horizontal = 2
+focus_neighbor_top = NodePath("../Button2")
+focus_neighbor_right = NodePath("../Button7")
+focus_neighbor_bottom = NodePath("../Button3")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -234,6 +249,8 @@ offset_left = -20.16
 offset_top = -11.88
 offset_right = 19.84
 offset_bottom = 12.12
+focus_neighbor_left = NodePath("../Button")
+focus_neighbor_bottom = NodePath("../Button5")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -260,6 +277,9 @@ offset_top = -11.88
 offset_right = 19.84
 offset_bottom = 12.12
 grow_horizontal = 2
+focus_neighbor_left = NodePath("../Button2")
+focus_neighbor_top = NodePath("../Button4")
+focus_neighbor_bottom = NodePath("../Button7")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -269,6 +289,35 @@ theme_override_fonts/font = ExtResource("3_mvntq")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
 text = "Reset"
+icon = ExtResource("5_xs3sm")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button7" type="Button" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625333
+anchor_top = 0.655111
+anchor_right = 0.625333
+anchor_bottom = 0.655111
+offset_left = -20.16
+offset_top = -11.88
+offset_right = 19.84
+offset_bottom = 12.12
+grow_horizontal = 2
+focus_neighbor_left = NodePath("../Button6")
+focus_neighbor_top = NodePath("../Button5")
+focus_neighbor_bottom = NodePath("../Button3")
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_mvntq")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
+text = "Credits"
 icon = ExtResource("5_xs3sm")
 flat = true
 icon_alignment = 1
@@ -303,8 +352,9 @@ text = "Master"
 [node name="HSliderMaster" type="HSlider" parent="Camera2D/ControlOptions/VBoxContainer"]
 z_index = 1
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../HSliderMusic")
 theme_override_icons/grabber = ExtResource("6_qrtt5")
-theme_override_icons/grabber_highlight = ExtResource("6_qrtt5")
+theme_override_icons/grabber_highlight = ExtResource("8_cy1lw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_skvlo")
 min_value = -40.0
 max_value = 0.0
@@ -323,8 +373,10 @@ text = "Music"
 [node name="HSliderMusic" type="HSlider" parent="Camera2D/ControlOptions/VBoxContainer"]
 z_index = 1
 layout_mode = 2
+focus_neighbor_top = NodePath("../HSliderMaster")
+focus_neighbor_bottom = NodePath("../HSliderSound")
 theme_override_icons/grabber = ExtResource("6_qrtt5")
-theme_override_icons/grabber_highlight = ExtResource("6_qrtt5")
+theme_override_icons/grabber_highlight = ExtResource("8_cy1lw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_skvlo")
 min_value = -40.0
 max_value = 0.0
@@ -343,8 +395,10 @@ text = "Sound"
 [node name="HSliderSound" type="HSlider" parent="Camera2D/ControlOptions/VBoxContainer"]
 z_index = 1
 layout_mode = 2
+focus_neighbor_top = NodePath("../HSliderMusic")
+focus_neighbor_bottom = NodePath("../ButtonBack")
 theme_override_icons/grabber = ExtResource("6_qrtt5")
-theme_override_icons/grabber_highlight = ExtResource("6_qrtt5")
+theme_override_icons/grabber_highlight = ExtResource("8_cy1lw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_skvlo")
 min_value = -40.0
 max_value = 0.0
@@ -372,6 +426,58 @@ flat = true
 icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="ControlCredits" type="Control" parent="Camera2D"]
+visible = false
+custom_minimum_size = Vector2(480, 270)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/ControlCredits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -33.0
+offset_right = 55.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/ControlCredits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.168627, 0.168627, 0.168627, 1)
+theme_override_fonts/normal_font = ExtResource("3_mvntq")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lpwqr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ws871")
+text = "Credits will go here"
+fit_content = true
+
+[node name="ButtonBackCredits" type="Button" parent="Camera2D/ControlCredits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_mvntq")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
+text = "Back"
+icon = ExtResource("5_xs3sm")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5t7ot")
 volume_db = -10.103
@@ -380,8 +486,11 @@ bus = &"Music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("3_77561")
-volume_db = -5.943
+stream = ExtResource("10_4sb6n")
+bus = &"Sound"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_wak5b")
 bus = &"Sound"
 
 [node name="Fish" type="Node" parent="."]
@@ -422,7 +531,7 @@ libraries = {
 }
 
 [node name="Sprite2D4" type="Sprite2D" parent="Fish"]
-position = Vector2(85, 45)
+position = Vector2(97, 63)
 texture = ExtResource("9_16eip")
 flip_h = true
 hframes = 4
@@ -458,7 +567,7 @@ libraries = {
 }
 
 [node name="Sprite2D7" type="Sprite2D" parent="Fish"]
-position = Vector2(-169, 77)
+position = Vector2(-183, 80)
 texture = ExtResource("13_wkdj0")
 hframes = 4
 script = ExtResource("7_io4mq")
@@ -544,8 +653,13 @@ libraries = {
 [connection signal="pressed" from="Camera2D/Control/Button6" to="." method="_on_button_6_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="drag_ended" from="Camera2D/ControlOptions/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_drag_ended"]
-[connection signal="drag_ended" from="Camera2D/ControlOptions/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_drag_ended"]
-[connection signal="drag_ended" from="Camera2D/ControlOptions/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_drag_ended"]
+[connection signal="pressed" from="Camera2D/Control/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="drag_started" from="Camera2D/ControlOptions/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_drag_started"]
+[connection signal="value_changed" from="Camera2D/ControlOptions/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_value_changed"]
+[connection signal="drag_started" from="Camera2D/ControlOptions/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_drag_started"]
+[connection signal="value_changed" from="Camera2D/ControlOptions/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_value_changed"]
+[connection signal="drag_started" from="Camera2D/ControlOptions/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_drag_started"]
+[connection signal="value_changed" from="Camera2D/ControlOptions/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_value_changed"]
 [connection signal="pressed" from="Camera2D/ControlOptions/VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="Camera2D/ControlCredits/VBoxContainer/ButtonBackCredits" to="." method="_on_button_back_credits_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
