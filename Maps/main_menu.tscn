@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://mb5guikusuwf"]
+[gd_scene load_steps=35 format=3 uid="uid://mb5guikusuwf"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_c1b0f"]
 [ext_resource type="AudioStream" uid="uid://d3jnxvo4ra8ta" path="res://Audio/Music/ES_It's Not That Serious - Arthur Benson.wav" id="2_5t7ot"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://lrlwrbug4ypq" path="res://Assets/Fish/Tiger.png" id="17_cpmla"]
 [ext_resource type="Texture2D" uid="uid://e42sefsqsaoh" path="res://Assets/Fish/Grubfish.png" id="18_agw1f"]
 [ext_resource type="Texture2D" uid="uid://drdbu2kbyfsc0" path="res://Assets/Fish/Moonfish.png" id="19_irrd1"]
+[ext_resource type="Texture2D" uid="uid://dix3wfmnoshhr" path="res://Assets/Fish/Birdnosed.png" id="21_h5p2u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ae85x"]
 
@@ -437,16 +438,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/ControlCredits"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -54.0
-offset_top = -33.0
-offset_right = 55.0
-offset_bottom = 102.0
+offset_left = -150.0
+offset_top = -26.0
+offset_right = 150.0
+offset_bottom = 101.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -457,7 +459,15 @@ theme_override_fonts/normal_font = ExtResource("3_mvntq")
 theme_override_font_sizes/normal_font_size = 10
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lpwqr")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ws871")
-text = "Credits will go here"
+text = "Engine:							Godot 4.2.1
+Coding:							Max F. Raddatz
+Font:								8Bitoperator
+Music:							It's Not That Serious - Arthur Benson
+										Organized Chaos - Arthur Benson
+										Ode to What Could Have Been (Instrumental) - Par Hagstrom
+Sound Design:				Max F. Raddatz
+Art designed with:	Aseprite	
+Art Design:					Max F. Raddatz"
 fit_content = true
 
 [node name="ButtonBackCredits" type="Button" parent="Camera2D/ControlCredits/VBoxContainer"]
@@ -567,7 +577,7 @@ libraries = {
 }
 
 [node name="Sprite2D7" type="Sprite2D" parent="Fish"]
-position = Vector2(-183, 80)
+position = Vector2(-173, 69)
 texture = ExtResource("13_wkdj0")
 hframes = 4
 script = ExtResource("7_io4mq")
@@ -577,8 +587,20 @@ libraries = {
 "": SubResource("AnimationLibrary_vnvoe")
 }
 
+[node name="Sprite2D14" type="Sprite2D" parent="Fish"]
+position = Vector2(-199, 5)
+texture = ExtResource("21_h5p2u")
+flip_h = true
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fish/Sprite2D14"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
 [node name="Sprite2D8" type="Sprite2D" parent="Fish"]
-position = Vector2(-86, 48)
+position = Vector2(-90, 91)
 texture = ExtResource("14_casp1")
 hframes = 4
 script = ExtResource("7_io4mq")
@@ -589,7 +611,7 @@ libraries = {
 }
 
 [node name="Sprite2D9" type="Sprite2D" parent="Fish"]
-position = Vector2(-95, 100)
+position = Vector2(-102, -2)
 texture = ExtResource("15_n0ck3")
 flip_h = true
 hframes = 4
@@ -601,9 +623,8 @@ libraries = {
 }
 
 [node name="Sprite2D10" type="Sprite2D" parent="Fish"]
-position = Vector2(-162, 16)
+position = Vector2(-126, 29)
 texture = ExtResource("16_80um3")
-flip_h = true
 hframes = 4
 script = ExtResource("7_io4mq")
 
