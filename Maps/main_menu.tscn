@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://mb5guikusuwf"]
+[gd_scene load_steps=39 format=3 uid="uid://mb5guikusuwf"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_c1b0f"]
 [ext_resource type="AudioStream" uid="uid://d3jnxvo4ra8ta" path="res://Audio/Music/ES_It's Not That Serious - Arthur Benson.wav" id="2_5t7ot"]
@@ -20,11 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://cx75fddt04bxa" path="res://Assets/Fish/Mako.png" id="10_15umh"]
 [ext_resource type="AudioStream" uid="uid://duybne78cdw3w" path="res://Audio/SFX/Klick.wav" id="11_wak5b"]
 [ext_resource type="Texture2D" uid="uid://boxtyd04tsjik" path="res://Assets/Fish/Pyramid.png" id="12_qq01b"]
+[ext_resource type="Texture2D" uid="uid://p6jjr1rfjeu6" path="res://Assets/PlayerSprites.png" id="13_sw2ke"]
 [ext_resource type="Texture2D" uid="uid://bcymfdi6crxmh" path="res://Assets/Fish/PinkTail.png" id="13_wkdj0"]
 [ext_resource type="Texture2D" uid="uid://d1owcc7scme0v" path="res://Assets/Fish/Yellowfin.png" id="14_casp1"]
+[ext_resource type="Texture2D" uid="uid://bby51xrvrpkv3" path="res://Assets/Trash.png" id="14_tdn0o"]
 [ext_resource type="Texture2D" uid="uid://rs45cot8ykrw" path="res://Assets/Fish/Seargant.png" id="15_n0ck3"]
 [ext_resource type="Texture2D" uid="uid://dy63d2yuev80c" path="res://Assets/Fish/MahiMahi.png" id="16_80um3"]
 [ext_resource type="Texture2D" uid="uid://lrlwrbug4ypq" path="res://Assets/Fish/Tiger.png" id="17_cpmla"]
+[ext_resource type="Texture2D" uid="uid://cod44hi0bfxq6" path="res://Assets/UI/EquipmentUI.png" id="18_52jmh"]
 [ext_resource type="Texture2D" uid="uid://e42sefsqsaoh" path="res://Assets/Fish/Grubfish.png" id="18_agw1f"]
 [ext_resource type="Texture2D" uid="uid://drdbu2kbyfsc0" path="res://Assets/Fish/Moonfish.png" id="19_irrd1"]
 [ext_resource type="Texture2D" uid="uid://dix3wfmnoshhr" path="res://Assets/Fish/Birdnosed.png" id="21_h5p2u"]
@@ -119,7 +122,6 @@ grow_horizontal = 2
 texture = ExtResource("2_u5xi1")
 
 [node name="Control" type="Control" parent="Camera2D"]
-visible = false
 custom_minimum_size = Vector2(480, 270)
 layout_mode = 3
 anchors_preset = 15
@@ -520,6 +522,7 @@ icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ControlHelp" type="Control" parent="Camera2D"]
+visible = false
 custom_minimum_size = Vector2(480, 270)
 layout_mode = 3
 anchors_preset = 15
@@ -539,12 +542,13 @@ grow_vertical = 2
 color = Color(0, 0.737255, 0.831373, 1)
 
 [node name="ButtonBackHelp" type="Button" parent="Camera2D/ControlHelp"]
+z_index = 2
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.877778
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.877778
 offset_left = -20.0
 offset_top = -12.0
 offset_right = 20.0
@@ -570,12 +574,193 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ControlHelp"]
 z_index = 2
 layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 237.0
-offset_bottom = 136.0
+offset_left = 245.0
+offset_top = 5.0
+offset_right = 474.0
+offset_bottom = 133.0
 texture = ExtResource("10_2ms5r")
 expand_mode = 1
+
+[node name="Fish" type="Control" parent="Camera2D/ControlHelp"]
+z_index = 2
+anchors_preset = 0
+offset_top = 7.0
+offset_right = 40.0
+offset_bottom = 47.0
+
+[node name="Fish" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
+z_index = 2
+position = Vector2(65, 37)
+texture = ExtResource("6_o060q")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/ControlHelp/Fish/Fish"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Fish2" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
+z_index = 2
+position = Vector2(77, 50)
+texture = ExtResource("12_qq01b")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/ControlHelp/Fish/Fish2"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Fish3" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
+z_index = 2
+position = Vector2(82, 225)
+texture = ExtResource("16_80um3")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/ControlHelp/Fish/Fish3"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Fish4" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
+z_index = 2
+position = Vector2(351, 192)
+texture = ExtResource("17_cpmla")
+hframes = 4
+script = ExtResource("7_io4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/ControlHelp/Fish/Fish4"]
+libraries = {
+"": SubResource("AnimationLibrary_vnvoe")
+}
+
+[node name="Hook" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
+z_index = 2
+position = Vector2(105, 11)
+texture = ExtResource("13_sw2ke")
+hframes = 10
+
+[node name="Trash" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
+z_index = 2
+position = Vector2(193, 16)
+texture = ExtResource("14_tdn0o")
+hframes = 2
+
+[node name="Hooks" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
+z_index = 2
+position = Vector2(59, 148)
+texture = ExtResource("18_52jmh")
+hframes = 10
+frame = 1
+
+[node name="Sinkers" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
+z_index = 2
+position = Vector2(67, 172)
+texture = ExtResource("18_52jmh")
+hframes = 10
+frame = 4
+
+[node name="Lines" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
+z_index = 2
+position = Vector2(135, 198)
+texture = ExtResource("18_52jmh")
+hframes = 10
+frame = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/ControlHelp"]
+z_index = 1
+layout_mode = 0
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 237.0
+offset_bottom = 131.0
+theme_override_colors/default_color = Color(0.129412, 0.129412, 0.129412, 1)
+theme_override_fonts/normal_font = ExtResource("3_mvntq")
+theme_override_font_sizes/normal_font_size = 12
+text = "Manouver your Hook			 around Trash,
+
+catch fish			and bring them to the Surface.
+Once the fish			is out of the Water you will
+be payed	  but beware, in Normal mode your boat
+costs 		 each day to rent.
+
+Use the Money	to upgrade your Equipment in the 
+Shop at the end of each day."
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Camera2D/ControlHelp"]
+z_index = 1
+layout_mode = 0
+offset_left = 244.0
+offset_top = 166.0
+offset_right = 476.0
+offset_bottom = 285.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.129412, 0.129412, 0.129412, 1)
+theme_override_fonts/normal_font = ExtResource("3_mvntq")
+theme_override_font_sizes/normal_font_size = 12
+text = "Your end goal is to catch the biggest fish around
+
+
+
+							Make a good catch!
+"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Camera2D/ControlHelp"]
+z_index = 1
+layout_mode = 0
+offset_left = 5.0
+offset_top = 151.0
+offset_right = 237.0
+offset_bottom = 382.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.129412, 0.129412, 0.129412, 1)
+theme_override_fonts/normal_font = ExtResource("3_mvntq")
+theme_override_font_sizes/normal_font_size = 12
+text = "The Hooks			make you move faster on the screen,
+
+the Sinkers		increase the speed at which you
+
+sink and rise & the Lines			allow you to drag
+
+bigger Fish					to the surface."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Camera2D/ControlHelp"]
+z_index = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 64.0
+offset_right = 75.0
+offset_bottom = 78.0
+theme_override_colors/default_color = Color(0.992157, 0.847059, 0.207843, 1)
+theme_override_fonts/normal_font = ExtResource("3_mvntq")
+theme_override_font_sizes/normal_font_size = 12
+text = "$"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Camera2D/ControlHelp"]
+z_index = 1
+layout_mode = 0
+offset_left = 70.0
+offset_top = 103.0
+offset_right = 99.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(0.992157, 0.847059, 0.207843, 1)
+theme_override_fonts/normal_font = ExtResource("3_mvntq")
+theme_override_font_sizes/normal_font_size = 12
+text = "$"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Camera2D/ControlHelp"]
+z_index = 1
+layout_mode = 0
+offset_left = 34.0
+offset_top = 77.0
+offset_right = 63.0
+offset_bottom = 91.0
+theme_override_colors/default_color = Color(0.992157, 0.847059, 0.207843, 1)
+theme_override_fonts/normal_font = ExtResource("3_mvntq")
+theme_override_font_sizes/normal_font_size = 12
+text = "30$"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5t7ot")
@@ -700,7 +885,7 @@ libraries = {
 }
 
 [node name="Sprite2D9" type="Sprite2D" parent="Fish"]
-position = Vector2(-102, -2)
+position = Vector2(-99, -4)
 texture = ExtResource("15_n0ck3")
 flip_h = true
 hframes = 4
@@ -712,7 +897,7 @@ libraries = {
 }
 
 [node name="Sprite2D10" type="Sprite2D" parent="Fish"]
-position = Vector2(-126, 29)
+position = Vector2(-118, 25)
 texture = ExtResource("16_80um3")
 hframes = 4
 script = ExtResource("7_io4mq")
@@ -723,7 +908,7 @@ libraries = {
 }
 
 [node name="Sprite2D11" type="Sprite2D" parent="Fish"]
-position = Vector2(-118, -48)
+position = Vector2(-120, -49)
 texture = ExtResource("17_cpmla")
 hframes = 4
 script = ExtResource("7_io4mq")
