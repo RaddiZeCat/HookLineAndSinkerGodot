@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var ocean_scene:Node2D
 @export var ocean_code:GDScript
 @onready var clownfish = $HookSprite2D/ClownfishSprite2D
+@onready var sound = $AudioStreamPlayer
 
 var mouse_position:Vector2
 var line_strength
@@ -172,6 +173,7 @@ func fish_caught(fish):
 		
 		$HookSprite2D/TigerSprite2D.visible = true
 	
+	sound.play()
 	print(fish," cught")
 	print(size)
 	if size == 0:

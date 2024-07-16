@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://mb5guikusuwf"]
+[gd_scene load_steps=36 format=3 uid="uid://mb5guikusuwf"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_c1b0f"]
 [ext_resource type="AudioStream" uid="uid://d3jnxvo4ra8ta" path="res://Audio/Music/ES_It's Not That Serious - Arthur Benson.wav" id="2_5t7ot"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://46dhykyqtkl2" path="res://Assets/UI/TextButtons7.png" id="8_cy1lw"]
 [ext_resource type="Texture2D" uid="uid://bfwwn3421k7av" path="res://Assets/Fish/Gemfish.png" id="8_mfqv6"]
 [ext_resource type="Texture2D" uid="uid://c8iqa5rs4x16d" path="res://Assets/Fish/Humphead.png" id="9_16eip"]
+[ext_resource type="Texture2D" uid="uid://bvehvmrq8hr7e" path="res://Assets/ControlsEmpty.png" id="10_2ms5r"]
 [ext_resource type="AudioStream" uid="uid://dm305u3v2y4fm" path="res://Audio/SFX/Klack.wav" id="10_4sb6n"]
 [ext_resource type="Texture2D" uid="uid://cx75fddt04bxa" path="res://Assets/Fish/Mako.png" id="10_15umh"]
 [ext_resource type="AudioStream" uid="uid://duybne78cdw3w" path="res://Audio/SFX/Klick.wav" id="11_wak5b"]
@@ -118,6 +119,7 @@ grow_horizontal = 2
 texture = ExtResource("2_u5xi1")
 
 [node name="Control" type="Control" parent="Camera2D"]
+visible = false
 custom_minimum_size = Vector2(480, 270)
 layout_mode = 3
 anchors_preset = 15
@@ -196,6 +198,7 @@ offset_right = 44.0
 offset_bottom = 40.0
 grow_horizontal = 2
 focus_neighbor_top = NodePath("../Button6")
+focus_neighbor_right = NodePath("../Button8")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -309,7 +312,7 @@ offset_bottom = 12.12
 grow_horizontal = 2
 focus_neighbor_left = NodePath("../Button6")
 focus_neighbor_top = NodePath("../Button5")
-focus_neighbor_bottom = NodePath("../Button3")
+focus_neighbor_bottom = NodePath("../Button8")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -319,6 +322,34 @@ theme_override_fonts/font = ExtResource("3_mvntq")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
 text = "Credits"
+icon = ExtResource("5_xs3sm")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button8" type="Button" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.781926
+anchor_right = 0.625
+anchor_bottom = 0.781926
+offset_left = -20.0002
+offset_top = -12.12
+offset_right = 19.9998
+offset_bottom = 11.88
+grow_horizontal = 2
+focus_neighbor_left = NodePath("../Button3")
+focus_neighbor_top = NodePath("../Button7")
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_mvntq")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
+text = "Help"
 icon = ExtResource("5_xs3sm")
 flat = true
 icon_alignment = 1
@@ -487,6 +518,64 @@ icon = ExtResource("5_xs3sm")
 flat = true
 icon_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="ControlHelp" type="Control" parent="Camera2D"]
+custom_minimum_size = Vector2(480, 270)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/ControlHelp"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.737255, 0.831373, 1)
+
+[node name="ButtonBackHelp" type="Button" parent="Camera2D/ControlHelp"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_mvntq")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ae85x")
+text = "Back"
+icon = ExtResource("5_xs3sm")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ControlHelp"]
+z_index = 2
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 237.0
+offset_bottom = 136.0
+texture = ExtResource("10_2ms5r")
+expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5t7ot")
@@ -675,6 +764,7 @@ libraries = {
 [connection signal="pressed" from="Camera2D/Control/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Camera2D/Control/Button8" to="." method="_on_button_8_pressed"]
 [connection signal="drag_started" from="Camera2D/ControlOptions/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_drag_started"]
 [connection signal="value_changed" from="Camera2D/ControlOptions/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_value_changed"]
 [connection signal="drag_started" from="Camera2D/ControlOptions/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_drag_started"]
@@ -683,4 +773,5 @@ libraries = {
 [connection signal="value_changed" from="Camera2D/ControlOptions/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_value_changed"]
 [connection signal="pressed" from="Camera2D/ControlOptions/VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
 [connection signal="pressed" from="Camera2D/ControlCredits/VBoxContainer/ButtonBackCredits" to="." method="_on_button_back_credits_pressed"]
+[connection signal="pressed" from="Camera2D/ControlHelp/ButtonBackHelp" to="." method="_on_button_back_help_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

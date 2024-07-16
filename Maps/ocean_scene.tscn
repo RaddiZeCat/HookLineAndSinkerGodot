@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=154 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://boibb8p5825bf" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle2.png" id="7_yscf3"]
 [ext_resource type="Texture2D" uid="uid://cidgcn3heji5s" path="res://Assets/UI/TextButtons6.png" id="8_c07x5"]
 [ext_resource type="Texture2D" uid="uid://b6keq8odd1pjr" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle3.png" id="8_ha36i"]
-[ext_resource type="Texture2D" uid="uid://cfbatax1p17q6" path="res://Assets/UI/BorderSmall2.png" id="8_l221o"]
 [ext_resource type="Texture2D" uid="uid://d3fj2i41tmves" path="res://Assets/UI/TextButtons5.png" id="9_nyw46"]
 [ext_resource type="Texture2D" uid="uid://6wim2yyjxcc5" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle4.png" id="9_sq4bt"]
 [ext_resource type="Texture2D" uid="uid://46dhykyqtkl2" path="res://Assets/UI/TextButtons7.png" id="9_twspj"]
@@ -27,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://4i2wxdex4eji" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle7.png" id="12_qpcnf"]
 [ext_resource type="Texture2D" uid="uid://qbcds828o1ux" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle8.png" id="13_gfa3b"]
 [ext_resource type="Texture2D" uid="uid://3w4n8il7y2uo" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle9.png" id="14_kheoc"]
+[ext_resource type="Texture2D" uid="uid://sg0s2ejico64" path="res://Assets/UI/BorderSmall1.png" id="14_xgj6q"]
 [ext_resource type="Texture2D" uid="uid://cvo88acuy3v52" path="res://Assets/UI/Equipment single Sprites/EquipmentUISingle10.png" id="15_qxavx"]
 [ext_resource type="AudioStream" uid="uid://hoomt3gujpvc" path="res://Audio/Music/ES_Organized Chaos - Arthur Benson.wav" id="17_jswkf"]
 [ext_resource type="PackedScene" uid="uid://btp2qkompbqe" path="res://Prefabs/flyingfish.tscn" id="20_5kkhy"]
@@ -45,7 +45,9 @@
 [ext_resource type="AudioStream" uid="uid://c4nn4vnyfh5s8" path="res://Audio/SFX/Lure.wav" id="27_s288r"]
 [ext_resource type="PackedScene" uid="uid://pajwutfla4pe" path="res://Prefabs/triggerfish.tscn" id="28_811y7"]
 [ext_resource type="PackedScene" uid="uid://bnyy22nas5adi" path="res://Prefabs/yellowfin.tscn" id="30_jxxx1"]
+[ext_resource type="AudioStream" uid="uid://ctvatklqv1ji7" path="res://Audio/SFX/Success.wav" id="31_2derf"]
 [ext_resource type="PackedScene" uid="uid://bjdq1dk4vy0k" path="res://Prefabs/marlin.tscn" id="31_ec43r"]
+[ext_resource type="AudioStream" uid="uid://duaxf4ct1r0tn" path="res://Audio/SFX/Fail.wav" id="32_jlysn"]
 [ext_resource type="PackedScene" uid="uid://djva6vjmakg03" path="res://Prefabs/birdnosed.tscn" id="32_v5x4y"]
 [ext_resource type="PackedScene" uid="uid://biqa2au4jlihs" path="res://Prefabs/lunar.tscn" id="34_xeyti"]
 [ext_resource type="PackedScene" uid="uid://rajtdpw6rc1w" path="res://Prefabs/baracuda.tscn" id="36_0wu4g"]
@@ -1161,6 +1163,9 @@ size_flags_horizontal = 4
 
 [node name="Button Iron Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("6_gki4e")
 flat = true
@@ -1179,10 +1184,13 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Button Aluminum Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("7_yscf3")
 flat = true
@@ -1201,7 +1209,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Aluminum Hook/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -1217,6 +1225,9 @@ text = "300$"
 
 [node name="Button Brass Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("8_ha36i")
 flat = true
@@ -1235,7 +1246,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks/Button Brass Hook/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -1255,6 +1266,9 @@ size_flags_horizontal = 4
 
 [node name="Button Splitshot" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("9_sq4bt")
 flat = true
@@ -1273,10 +1287,13 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Button Dipsey" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("10_fxuit")
 flat = true
@@ -1295,7 +1312,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Dipsey/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -1311,6 +1328,9 @@ text = "500$"
 
 [node name="Button Diamond" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("11_qdqhp")
 flat = true
@@ -1329,7 +1349,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers/Button Diamond/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -1349,6 +1369,9 @@ size_flags_horizontal = 4
 
 [node name="Button String" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("12_qpcnf")
 flat = true
@@ -1367,10 +1390,13 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Button Line" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("13_gfa3b")
 flat = true
@@ -1389,7 +1415,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Line/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -1405,6 +1431,9 @@ text = "200$"
 
 [node name="Button Premium Line" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("14_kheoc")
 flat = true
@@ -1423,7 +1452,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Premium Line/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -1439,6 +1468,9 @@ text = "600$"
 
 [node name="Button Hightest Line2" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m42rt")
 icon = ExtResource("15_qxavx")
 flat = true
@@ -1457,7 +1489,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_l221o")
+texture = ExtResource("14_xgj6q")
 
 [node name="Label" type="Label" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines/Button Hightest Line2/TextureRect"]
 modulate = Color(0.984314, 0.752941, 0.176471, 1)
@@ -1521,7 +1553,18 @@ stream = ExtResource("27_s288r")
 bus = &"Sound"
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+process_mode = 1
 stream = ExtResource("26_xaxvl")
+bus = &"Sound"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("31_2derf")
+bus = &"Sound"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("32_jlysn")
 bus = &"Sound"
 
 [node name="DepthCharge" type="RigidBody2D" parent="."]
@@ -1661,10 +1704,6 @@ frame = 1
 [node name="Trash" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(57, 103)
 
-[node name="Trash30" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
-position = Vector2(-25, -5)
-frame = 1
-
 [node name="Trash2" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(230, 36)
 frame = 1
@@ -1778,6 +1817,10 @@ state = 1
 [node name="Trash29" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(-62, 1837)
 state = 1
+
+[node name="Trash30" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
+position = Vector2(-25, -5)
+frame = 1
 
 [node name="Clownfish" type="Node" parent="Fish&Paths 89"]
 
@@ -3081,5 +3124,7 @@ rotation = 0.908067
 [connection signal="pressed" from="Camera2D/Control/Shop Menu/VBoxContainer/Button Menu" to="." method="_on_button_menu_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="finished" from="AudioStreamPlayer5" to="." method="_on_audio_stream_player_5_finished"]
+[connection signal="finished" from="AudioStreamPlayer6" to="." method="_on_audio_stream_player_6_finished"]
+[connection signal="finished" from="AudioStreamPlayer7" to="." method="_on_audio_stream_player_7_finished"]
 [connection signal="body_entered" from="Deathzone_Area2D" to="." method="_on_deathzone_area_2d_body_entered"]
 [connection signal="body_entered" from="GoalArea2D" to="." method="_on_goal_area_2d_body_entered"]

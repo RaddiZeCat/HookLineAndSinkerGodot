@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ckwjt14nv403b"]
+[gd_scene load_steps=29 format=3 uid="uid://ckwjt14nv403b"]
 
 [ext_resource type="Script" path="res://Code/hook.gd" id="1_be7q1"]
 [ext_resource type="Texture2D" uid="uid://p6jjr1rfjeu6" path="res://Assets/PlayerSprites.png" id="1_ff007"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dyorn4to1rpo3" path="res://Assets/Fish/GemfishSingle.png" id="24_wgp43"]
 [ext_resource type="Texture2D" uid="uid://dwbnflvpmljkv" path="res://Assets/Fish/MarlinSingle.png" id="25_5ao5s"]
 [ext_resource type="Texture2D" uid="uid://cbc61ovbp7kcc" path="res://Assets/Fish/TigerSingle.png" id="26_ek7sj"]
+[ext_resource type="AudioStream" uid="uid://dmq5jfcxe1as4" path="res://Audio/SFX/Nomm.wav" id="27_7wjik"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rudgo"]
 radius = 5.5
@@ -207,3 +208,7 @@ position = Vector2(0, -32)
 texture = ExtResource("1_ff007")
 hframes = 10
 frame = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_7wjik")
+bus = &"Sound"

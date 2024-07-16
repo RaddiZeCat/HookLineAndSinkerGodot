@@ -135,3 +135,17 @@ func _on_h_slider_music_value_changed(value):
 func _on_h_slider_sound_value_changed(value):
 	volume = $Camera2D/ControlOptions/VBoxContainer/HSliderSound.get("value")
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"),volume)
+
+
+func _on_button_8_pressed(): #Help
+	click()
+	$Camera2D/Control.visible = false
+	$Camera2D/ControlHelp.visible = true
+	$Camera2D/ControlHelp/ButtonBackHelp.grab_focus()
+
+
+func _on_button_back_help_pressed():
+	click()
+	$Camera2D/Control.visible = true
+	$Camera2D/ControlHelp.visible = false
+	$Camera2D/Control/Button.grab_focus()

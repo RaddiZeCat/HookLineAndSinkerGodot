@@ -71,7 +71,8 @@ func reel():
 	$AudioStreamPlayer5.play()
 
 func _on_audio_stream_player_5_finished():
-	$AudioStreamPlayer5.play()
+	if get_tree().paused == false:
+		$AudioStreamPlayer5.play()
 
 func _on_goal_area_2d_body_entered(body):
 	$AudioStreamPlayer5.stop()
@@ -182,10 +183,24 @@ func fish_caught():
 	else:
 		pass
 	ingame_purse.visible = false
+	$AudioStreamPlayer6.play()
+	$AudioStreamPlayer5.stop()
+	$AudioStreamPlayer.stream_paused = true
+
+
+func _on_audio_stream_player_6_finished():
+	$AudioStreamPlayer.stream_paused = false
+
+
+func _on_audio_stream_player_7_finished():
+	$AudioStreamPlayer.stream_paused = false
 
 
 func game_over():
 	get_tree().paused = true
+	$AudioStreamPlayer7.play()
+	$AudioStreamPlayer5.stop()
+	$AudioStreamPlayer.stream_paused = true
 	if Globals.boat_owned == false:
 		Globals.money = Globals.money - 30
 		boat_text_1.visible = true
@@ -501,3 +516,4 @@ func _on_h_slider_music_changed():
 func _on_h_slider_sound_changed():
 	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound".get("value")
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"),volume)
+
