@@ -9,7 +9,7 @@ height = 31.1127
 
 [node name="Trash" type="Sprite2D"]
 texture = ExtResource("1_16kqr")
-hframes = 2
+hframes = 4
 script = ExtResource("2_hepv2")
 speed = 2
 deviation = 3

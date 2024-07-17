@@ -1,4 +1,4 @@
-[gd_scene load_steps=154 format=3 uid="uid://b731hj45s5ovf"]
+[gd_scene load_steps=159 format=3 uid="uid://b731hj45s5ovf"]
 
 [ext_resource type="PackedScene" uid="uid://ckwjt14nv403b" path="res://Prefabs/hook.tscn" id="1_32uxd"]
 [ext_resource type="Script" path="res://Code/ocean_scene.gd" id="1_i2hc8"]
@@ -55,6 +55,8 @@
 [ext_resource type="PackedScene" uid="uid://86qn0i2h4cnc" path="res://Prefabs/spearfish.tscn" id="37_t50k6"]
 [ext_resource type="PackedScene" uid="uid://c4aah4tithh5n" path="res://Prefabs/shortfin.tscn" id="39_wjab3"]
 [ext_resource type="PackedScene" uid="uid://cojer2wymkcb3" path="res://Prefabs/gemfish.tscn" id="40_1ligm"]
+[ext_resource type="Texture2D" uid="uid://cypx7vj1k575y" path="res://Assets/Extras/Amandra.png" id="56_prp0b"]
+[ext_resource type="Script" path="res://Code/Amandra.gd" id="57_aqdj4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m42rt"]
 
@@ -649,6 +651,44 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 2, 1875, 0, 0, 0, 0, 34, 1916, 0, 0, 0, 0, -41, 1887, 0, 0, 0, 0, -39, 1844, 0, 0, 0, 0, 18, 1863, 0, 0, 0, 0, 61, 1833, 0, 0, 0, 0, 101, 1848, 0, 0, 0, 0, 95, 1889, 0, 0, 0, 0, 2, 1875)
 }
 point_count = 9
+
+[sub_resource type="Animation" id="Animation_2n06j"]
+resource_name = "bobbing"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_5kbox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0cour"]
+_data = {
+"RESET": SubResource("Animation_5kbox"),
+"bobbing": SubResource("Animation_2n06j")
+}
 
 [node name="OceanScene" type="Node2D"]
 process_mode = 1
@@ -1755,6 +1795,7 @@ frame = 1
 
 [node name="Trash" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(57, 103)
+frame = 2
 
 [node name="Trash2" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(230, 36)
@@ -1763,7 +1804,7 @@ state = 1
 
 [node name="Trash3" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(139, 230)
-frame = 1
+frame = 3
 
 [node name="Trash4" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(278, 352)
@@ -1780,6 +1821,7 @@ state = 1
 
 [node name="Trash7" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(32, 396)
+frame = 3
 
 [node name="Trash8" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(114, 472)
@@ -1787,7 +1829,7 @@ state = 1
 
 [node name="Trash9" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(305, 572)
-frame = 1
+frame = 2
 state = 1
 
 [node name="Trash10" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
@@ -1796,10 +1838,12 @@ frame = 1
 
 [node name="Trash11" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(106, 692)
+frame = 2
 state = 1
 
 [node name="Trash12" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(162, 739)
+frame = 3
 
 [node name="Trash13" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(242, 834)
@@ -1819,7 +1863,7 @@ frame = 1
 
 [node name="Trash17" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(113, 1161)
-frame = 1
+frame = 3
 state = 1
 
 [node name="Trash18" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
@@ -1827,7 +1871,7 @@ position = Vector2(275, 1250)
 
 [node name="Trash19" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(-49, 1258)
-frame = 1
+frame = 2
 
 [node name="Trash20" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(43, 1384)
@@ -1844,14 +1888,16 @@ state = 1
 
 [node name="Trash23" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(80, 1597)
+frame = 3
 state = 1
 
 [node name="Trash24" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(3, 1508)
+frame = 2
 
 [node name="Trash25" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(165, 1698)
-frame = 1
+frame = 2
 state = 1
 
 [node name="Trash26" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
@@ -1868,6 +1914,7 @@ state = 1
 
 [node name="Trash29" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
 position = Vector2(-62, 1837)
+frame = 3
 state = 1
 
 [node name="Trash30" parent="Fish&Paths 89/Trash that floats around" instance=ExtResource("10_kkswm")]
@@ -3146,6 +3193,21 @@ script = ExtResource("5_w1pj5")
 [node name="PathFollow2D" type="PathFollow2D" parent="Fish&Paths 89/Birdnosed8/Path2D"]
 position = Vector2(2, 1875)
 rotation = 0.908067
+
+[node name="Eastereggs" type="Node" parent="."]
+
+[node name="Amandra" type="Sprite2D" parent="Eastereggs"]
+position = Vector2(344, 1074)
+texture = ExtResource("56_prp0b")
+flip_h = true
+hframes = 2
+frame = 1
+script = ExtResource("57_aqdj4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Eastereggs/Amandra"]
+libraries = {
+"": SubResource("AnimationLibrary_0cour")
+}
 
 [connection signal="pressed" from="Camera2D/Control/ButtonPause" to="." method="_on_button_pause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/ButtonUnpause" to="." method="_on_button_unpause_pressed"]
