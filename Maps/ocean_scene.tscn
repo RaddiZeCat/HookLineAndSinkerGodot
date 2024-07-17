@@ -937,6 +937,7 @@ offset_right = 25.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_bottom = NodePath("../Shop Button 2")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -962,6 +963,7 @@ offset_right = 48.0
 offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../Shop Button 2")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -985,6 +987,8 @@ offset_top = 154.0
 offset_right = 44.0
 offset_bottom = 194.0
 grow_horizontal = 2
+focus_neighbor_top = NodePath("../ButtonRetry")
+focus_neighbor_bottom = NodePath("../ButtonMainMenu")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -1068,6 +1072,7 @@ theme_override_constants/separation = -5
 
 [node name="ButtonRecast" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Shop Button 3")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -1082,6 +1087,8 @@ icon_alignment = 1
 
 [node name="Shop Button 3" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonRecast")
+focus_neighbor_bottom = NodePath("../ButtonMainMenu2")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -1096,6 +1103,7 @@ icon_alignment = 1
 
 [node name="ButtonMainMenu2" type="Button" parent="Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Shop Button 3")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -1121,8 +1129,10 @@ grow_vertical = 2
 [node name="Shop Purse" type="RichTextLabel" parent="Camera2D/Control/Shop Menu"]
 modulate = Color(0.258824, 0.258824, 0.258824, 1)
 layout_mode = 1
-offset_right = 107.0
-offset_bottom = 23.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 110.0
+offset_bottom = 26.0
 theme_override_fonts/normal_font = ExtResource("6_2f7jt")
 fit_content = true
 scroll_active = false
@@ -1145,6 +1155,9 @@ grow_vertical = 2
 [node name="Button Play" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../HBoxContainerHooks/Button Iron Hook")
+focus_neighbor_right = NodePath("../HBoxContainerHooks/Button Brass Hook")
+focus_neighbor_bottom = NodePath("../HBoxContainerHooks/Button Aluminum Hook")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -1163,6 +1176,9 @@ size_flags_horizontal = 4
 
 [node name="Button Iron Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../Button Play")
+focus_neighbor_right = NodePath("../Button Aluminum Hook")
+focus_neighbor_bottom = NodePath("../../HBoxContainerSinkers/Button Splitshot")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1188,6 +1204,10 @@ texture = ExtResource("14_xgj6q")
 
 [node name="Button Aluminum Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Button Iron Hook")
+focus_neighbor_top = NodePath("../../Button Play")
+focus_neighbor_right = NodePath("../Button Brass Hook")
+focus_neighbor_bottom = NodePath("../../HBoxContainerSinkers/Button Dipsey")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1225,6 +1245,9 @@ text = "300$"
 
 [node name="Button Brass Hook" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerHooks"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Button Aluminum Hook")
+focus_neighbor_top = NodePath("../../Button Play")
+focus_neighbor_bottom = NodePath("../../HBoxContainerSinkers/Button Diamond")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1266,6 +1289,10 @@ size_flags_horizontal = 4
 
 [node name="Button Splitshot" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../HBoxContainerLines/Button String")
+focus_neighbor_top = NodePath("../../HBoxContainerHooks/Button Iron Hook")
+focus_neighbor_right = NodePath("../Button Dipsey")
+focus_neighbor_bottom = NodePath("../../HBoxContainerLines/Button String")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1291,6 +1318,10 @@ texture = ExtResource("14_xgj6q")
 
 [node name="Button Dipsey" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Button Splitshot")
+focus_neighbor_top = NodePath("../../HBoxContainerHooks/Button Aluminum Hook")
+focus_neighbor_right = NodePath("../Button Diamond")
+focus_neighbor_bottom = NodePath("../../HBoxContainerLines/Button Line")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1328,6 +1359,10 @@ text = "500$"
 
 [node name="Button Diamond" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerSinkers"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Button Dipsey")
+focus_neighbor_top = NodePath("../../HBoxContainerHooks/Button Brass Hook")
+focus_neighbor_right = NodePath("../../HBoxContainerLines/Button Hightest Line2")
+focus_neighbor_bottom = NodePath("../../HBoxContainerLines/Button Premium Line")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1369,6 +1404,9 @@ size_flags_horizontal = 4
 
 [node name="Button String" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainerSinkers/Button Splitshot")
+focus_neighbor_right = NodePath("../Button Line")
+focus_neighbor_bottom = NodePath("../../Button Menu")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1394,6 +1432,10 @@ texture = ExtResource("14_xgj6q")
 
 [node name="Button Line" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Button String")
+focus_neighbor_top = NodePath("../../HBoxContainerSinkers/Button Dipsey")
+focus_neighbor_right = NodePath("../Button Premium Line")
+focus_neighbor_bottom = NodePath("../../Button Menu")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1431,6 +1473,10 @@ text = "200$"
 
 [node name="Button Premium Line" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Button Line")
+focus_neighbor_top = NodePath("../../HBoxContainerSinkers/Button Diamond")
+focus_neighbor_right = NodePath("../Button Hightest Line2")
+focus_neighbor_bottom = NodePath("../../Button Menu")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1468,6 +1514,9 @@ text = "600$"
 
 [node name="Button Hightest Line2" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer/HBoxContainerLines"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Button Premium Line")
+focus_neighbor_top = NodePath("../../HBoxContainerSinkers/Button Diamond")
+focus_neighbor_bottom = NodePath("../../Button Menu")
 theme_override_colors/icon_normal_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
@@ -1506,6 +1555,9 @@ text = "800$"
 [node name="Button Menu" type="Button" parent="Camera2D/Control/Shop Menu/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../HBoxContainerLines/Button String")
+focus_neighbor_top = NodePath("../HBoxContainerLines/Button Line")
+focus_neighbor_right = NodePath("../HBoxContainerLines/Button Hightest Line2")
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)

@@ -9,10 +9,12 @@ extends CharacterBody2D
 @export var ocean_code:GDScript
 @onready var clownfish = $HookSprite2D/ClownfishSprite2D
 @onready var sound = $AudioStreamPlayer
+@onready var vibrate = false
 
 var mouse_position:Vector2
 var line_strength
 var size
+var contVib
 
 func _ready():
 	if Globals.hook_state == 1:
@@ -74,6 +76,12 @@ func _physics_process(delta):
 	velocity = input.normalized() * speed * speed_multiplyer
 	
 	move_and_slide()
+	
+	if vibrate == true:
+		Input.start_joy_vibration(0,contVib,contVib,0)
+		#await get_tree().create_timer(5).timeout
+	elif vibrate == false:
+		Input.stop_joy_vibration(0)
 
 func fish_caught(fish):
 	if fish == "clownfish":
@@ -176,15 +184,39 @@ func fish_caught(fish):
 	sound.play()
 	print(fish," cught")
 	print(size)
+	var minVib
+	var maxVib
 	if size == 0:
 		speed_multiplyer = 1.0
+		minVib = 0.3
+		maxVib = 0.4
+		contVib = 0
 	elif size == 1:
 		speed_multiplyer = 0.9
+		minVib = 0.4
+		maxVib = 0.5
+		contVib = 0.1
 	elif size == 2:
 		speed_multiplyer = 0.8
+		minVib = 0.5
+		maxVib = 0.6
+		contVib = 0.2
 	elif size == 3:
 		speed_multiplyer = 0.7
+		minVib = 0.6
+		maxVib = 0.7
+		contVib = 0.3
 	elif size == 4:
 		speed_multiplyer = 0.6
+		minVib = 0.7
+		maxVib = 0.8
+		contVib = 0.4
 	elif size == 5:
 		speed_multiplyer = 0.5
+		minVib = 0.8
+		maxVib = 1
+		contVib = 0.5
+	vibrate = false
+	Input.start_joy_vibration(0,minVib,maxVib,0.2)
+	await get_tree().create_timer(0.2).timeout
+	vibrate = true

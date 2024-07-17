@@ -87,11 +87,11 @@ func quicksave():
 # Win and Loose
 
 func fish_caught():
+	Input.stop_joy_vibration(0)
 	print(fish)
 	fish_caught_screen.show()
 	$Camera2D/Control/ButtonPause.visible = false
 	$Camera2D/Control/DepthText.visible = false
-	$Hook.visible = false
 	#use fish to dertermine money gathered and declare fish values here (exmp. clownfish = 10)
 	if fish == "clownfish":
 		Globals.money = Globals.money + 10
@@ -173,6 +173,7 @@ func fish_caught():
 		SceneSwitcher.switch_scene(victory_menu)
 	else:
 		print("No fish found. Check if the fish is spelled correctly.")
+	$Hook.vibrate = false
 	get_tree().paused = true
 	if Globals.boat_owned == false:
 		Globals.money = Globals.money - 30
@@ -186,6 +187,7 @@ func fish_caught():
 	$AudioStreamPlayer6.play()
 	$AudioStreamPlayer5.stop()
 	$AudioStreamPlayer.stream_paused = true
+	$"Camera2D/Control/Fish Caught Menu/VBoxContainer/VBoxContainer/ButtonRecast".grab_focus()
 
 
 func _on_audio_stream_player_6_finished():
@@ -197,6 +199,7 @@ func _on_audio_stream_player_7_finished():
 
 
 func game_over():
+	Input.stop_joy_vibration(0)
 	get_tree().paused = true
 	$AudioStreamPlayer7.play()
 	$AudioStreamPlayer5.stop()
@@ -214,6 +217,7 @@ func game_over():
 	$Camera2D/Control/ButtonPause.visible = false
 	$Hook.visible = false
 	ingame_purse.visible = false
+	$"Camera2D/Control/Game Over Menu/ButtonRetry".grab_focus()
 
 # UI Screens after this
 # ingame pause button
@@ -332,6 +336,7 @@ func _on_shop_button_3_pressed():
 	$Camera2D/Control/ButtonPause.visible=false
 	fish_caught_screen.hide()
 	shop_menu.show()
+	$"Camera2D/Control/Shop Menu/VBoxContainer/Button Play".grab_focus()
 	money = str(Globals.money)
 	purse.add_text(money)
 	purse.add_text("$")
@@ -342,6 +347,7 @@ func _on_shop_button_2_pressed():
 	$Camera2D/Control/ButtonPause.visible=false
 	game_over_screen.hide()
 	shop_menu.show()
+	$"Camera2D/Control/Shop Menu/VBoxContainer/Button Play".grab_focus()
 	money = str(Globals.money)
 	purse.add_text(money)
 	purse.add_text("$")
