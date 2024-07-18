@@ -238,6 +238,7 @@ func _on_button_unpause_pressed():
 	Globals.save_options()
 	$Camera2D/Control/ButtonPause.visible=true
 	get_tree().paused = false
+	Globals.save_options()
 	click()
 
 func pause_game():
@@ -509,17 +510,16 @@ func _on_h_slider_sound_drag_started():
 	clack()
 
 
-func _on_h_slider_master_changed():
+func _on_h_slider_master_value_changed(value):
 	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster".get("value")
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),volume)
 
 
-func _on_h_slider_music_changed():
+func _on_h_slider_music_value_changed(value):
 	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic".get("value")
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),volume)
 
 
-func _on_h_slider_sound_changed():
+func _on_h_slider_sound_value_changed(value):
 	volume = $"Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound".get("value")
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"),volume)
-

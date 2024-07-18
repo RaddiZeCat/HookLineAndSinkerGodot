@@ -50,7 +50,7 @@ func _ready():
 		$Control/HBoxContainer/TextureRect2.visible = false
 		$Control/HBoxContainer/TextureRect3.visible = false
 		$Control/HBoxContainer/TextureRect4.visible = true
-		line_strength = 4
+		line_strength = 5
 	
 	if Globals.sinker_state == 1:
 		sinker.set_frame(3)

@@ -652,6 +652,21 @@ _data = {
 }
 point_count = 9
 
+[sub_resource type="Animation" id="Animation_5kbox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_2n06j"]
 resource_name = "bobbing"
 length = 2.0
@@ -667,21 +682,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
-}
-
-[sub_resource type="Animation" id="Animation_5kbox"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0cour"]
@@ -3212,12 +3212,12 @@ libraries = {
 [connection signal="pressed" from="Camera2D/Control/ButtonPause" to="." method="_on_button_pause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/ButtonUnpause" to="." method="_on_button_unpause_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Menu Paused/Button" to="." method="_on_button_pressed"]
-[connection signal="changed" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_changed"]
 [connection signal="drag_started" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_drag_started"]
-[connection signal="changed" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_changed"]
+[connection signal="value_changed" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMaster" to="." method="_on_h_slider_master_value_changed"]
 [connection signal="drag_started" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_drag_started"]
-[connection signal="changed" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_changed"]
+[connection signal="value_changed" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderMusic" to="." method="_on_h_slider_music_value_changed"]
 [connection signal="drag_started" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_drag_started"]
+[connection signal="value_changed" from="Camera2D/Control/Menu Paused/VBoxContainer/HSliderSound" to="." method="_on_h_slider_sound_value_changed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonRetry" to="." method="_on_button_retry_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Game Over Menu/Shop Button 2" to="." method="_on_shop_button_2_pressed"]
