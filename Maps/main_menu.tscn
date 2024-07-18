@@ -646,7 +646,7 @@ hframes = 10
 z_index = 2
 position = Vector2(193, 16)
 texture = ExtResource("14_tdn0o")
-hframes = 2
+hframes = 4
 
 [node name="Hooks" type="Sprite2D" parent="Camera2D/ControlHelp/Fish"]
 z_index = 2
